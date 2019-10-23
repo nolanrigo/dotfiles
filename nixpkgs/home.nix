@@ -1,0 +1,84 @@
+{ pkgs, config, lib, ... }:
+
+let
+  inherit (import <nixpkgs> {}) fetchFromGitHub;
+in {
+  programs = {
+    home-manager = {
+      enable = true;
+      path = "${config.home.homeDirectory}/dotfiles/resources/home-manager";
+    };
+  };
+
+  nixpkgs = {
+    config.allowUnfree = true;
+  };
+
+  imports = [
+    ./config/theme.nix
+    ./config/xcape.nix
+    ./config/fish.nix
+    ./config/starship.nix
+    ./config/alacritty.nix
+    ./config/git.nix
+    ./config/htop.nix
+    ./config/i3.nix
+    ./config/neovim.nix
+    ./config/polybar.nix
+    ./config/compton.nix
+    ./config/rofi.nix
+    ./config/ssh.nix
+    ./config/zathura.nix
+    ./config/dunst.nix
+    ./config/direnv.nix
+    ./packages.nix
+  ];
+
+  systemd.user.startServices = true;
+
+  xdg = {
+    enable = true;
+    userDirs = {
+      enable = true;
+    };
+    configFile.nixpkgs = { # allowUnfree for nix-shell -p
+      target = "nixpkgs/config.nix";
+      text = ''
+        { allowUnfree = true; }
+      '';
+    };
+  };
+
+  home = {
+    sessionVariables = {
+      COLORTHEME = "onedark";
+      EDITOR = "nvim";
+    };
+    keyboard = {
+      layout = "us";
+      variant = "altgr-intl";
+    };
+  };
+
+
+  services = {
+    udiskie.enable = true;
+    redshift = {
+      enable = true;
+      provider = "geoclue2";
+    };
+    network-manager-applet.enable = true;
+    blueman-applet.enable = true;
+    unclutter = {
+      enable = true;
+      timeout = 5;
+    };
+    # nextcloud-client.enable = true;
+    # gnome-keyring = {
+    #   enable = true;
+    #   components = [ "pkcs11" "secrets" "ssh" ];
+    # };
+
+  };
+
+}
