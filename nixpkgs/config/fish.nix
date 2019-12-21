@@ -22,6 +22,7 @@
       gpl = "git pull";
       gpu = "git push";
       gpuu = "git push -u origin";
+      gpuf = "git push --force";
       gm = "git merge";
       gss = "git stash save -u";
       gsp = "git stash pop --index";
