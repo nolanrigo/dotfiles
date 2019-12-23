@@ -2,7 +2,7 @@
 
 let
   font = "FuraCode\\ Nerd\\ Font 12";
-  modifier = "Mod4";
+  modifier = "Mod1";
 in {
   xsession = {
     enable = true;
@@ -22,7 +22,11 @@ in {
         floating = {
           titlebar = false;
           border = 2;
-          # criteria = [ { title = "Network Connections"; } { class = "Pavucontrol"; } ];
+          criteria = [
+            { window_role = "pop-up"; }
+            { class = "Nm-connection-editor"; }
+            { class = "Pavucontrol"; }
+          ];
         };
 
         focus = {
@@ -48,64 +52,59 @@ in {
             always = true;
             notification = false;
           }
-          {
-            command = "${pkgs.xorg.xrandr}/bin/xrandr --output eDP-1 --mode 1680x1050";
-            always = true;
-            notification = false;
-          }
         ];
 
         bars = [];
 
         keybindings = {
-          "${modifier}+Return" = "exec ${pkgs.alacritty}/bin/alacritty"; 
+          "${modifier}+Return" = "exec ${pkgs.alacritty}/bin/alacritty";
           "${modifier}+q" = "kill";
-          "${modifier}+d" = "exec --no-startup-id \"${pkgs.rofi}/bin/rofi -modi drun -show drun\""; 
+          "${modifier}+d" = "exec --no-startup-id \"${pkgs.rofi}/bin/rofi -modi drun -show drun\"";
           "${modifier}+Shift+d" = "exec --no-startup-id \"rofi -modi 'emoji:${config.xdg.configHome}/rofi/rofiemoji.sh' -show emoji\"";
 
-          "${modifier}+h" = "focus left"; 
-          "${modifier}+j" = "focus down"; 
-          "${modifier}+k" = "focus up"; 
-          "${modifier}+l" = "focus right"; 
+          "${modifier}+h" = "focus left";
+          "${modifier}+j" = "focus down";
+          "${modifier}+k" = "focus up";
+          "${modifier}+l" = "focus right";
 
-          "${modifier}+Shift+h" = "move left"; 
-          "${modifier}+Shift+j" = "move down"; 
-          "${modifier}+Shift+k" = "move up"; 
-          "${modifier}+Shift+l" = "move right"; 
+          "${modifier}+Shift+h" = "move left";
+          "${modifier}+Shift+j" = "move down";
+          "${modifier}+Shift+k" = "move up";
+          "${modifier}+Shift+l" = "move right";
 
-          "${modifier}+c" = "split h"; 
-          "${modifier}+v" = "split v"; 
-          "${modifier}+f" = "fullscreen toggle"; 
+          "${modifier}+c" = "split h";
+          "${modifier}+v" = "split v";
+          "${modifier}+f" = "fullscreen toggle";
           "${modifier}+a" = "focus parent";
 
-          "${modifier}+s" = "layout stacking"; 
-          "${modifier}+w" = "layout tabbed"; 
-          "${modifier}+e" = "layout toggle split"; 
+          "${modifier}+s" = "layout stacking";
+          "${modifier}+w" = "layout tabbed";
+          "${modifier}+e" = "layout toggle split";
 
           "${modifier}+Shift+space" = "floating toggle";
           "${modifier}+space" = "focus mode_toggle";
 
-          "${modifier}+1" = "workspace 1"; 
-          "${modifier}+2" = "workspace 2"; 
-          "${modifier}+3" = "workspace 3"; 
-          "${modifier}+4" = "workspace 4"; 
-          "${modifier}+5" = "workspace 5"; 
-          "${modifier}+6" = "workspace 6"; 
-          "${modifier}+7" = "workspace 7"; 
-          "${modifier}+8" = "workspace 8"; 
-          "${modifier}+9" = "workspace 9"; 
-          "${modifier}+0" = "workspace 10"; 
+          "${modifier}+1" = "workspace 1";
+          "${modifier}+2" = "workspace 2";
+          "${modifier}+3" = "workspace 3";
+          "${modifier}+4" = "workspace 4";
+          "${modifier}+5" = "workspace 5";
+          "${modifier}+6" = "workspace 6";
+          "${modifier}+7" = "workspace 7";
+          "${modifier}+8" = "workspace 8";
+          "${modifier}+9" = "workspace 9";
+          "${modifier}+0" = "workspace 10";
 
-          "${modifier}+Shift+1" = "move container to workspace 1"; 
-          "${modifier}+Shift+2" = "move container to workspace 2"; 
-          "${modifier}+Shift+3" = "move container to workspace 3"; 
-          "${modifier}+Shift+4" = "move container to workspace 4"; 
-          "${modifier}+Shift+5" = "move container to workspace 5"; 
-          "${modifier}+Shift+6" = "move container to workspace 6"; 
-          "${modifier}+Shift+7" = "move container to workspace 7"; 
-          "${modifier}+Shift+8" = "move container to workspace 8"; 
-          "${modifier}+Shift+9" = "move container to workspace 9"; 
-          "${modifier}+Shift+0" = "move container to workspace 10"; 
+          "${modifier}+Shift+1" = "move container to workspace 1";
+          "${modifier}+Shift+2" = "move container to workspace 2";
+          "${modifier}+Shift+3" = "move container to workspace 3";
+          "${modifier}+Shift+4" = "move container to workspace 4";
+          "${modifier}+Shift+5" = "move container to workspace 5";
+          "${modifier}+Shift+6" = "move container to workspace 6";
+          "${modifier}+Shift+7" = "move container to workspace 7";
+          "${modifier}+Shift+8" = "move container to workspace 8";
+          "${modifier}+Shift+9" = "move container to workspace 9";
+          "${modifier}+Shift+0" = "move container to workspace 10";
 
           "${modifier}+r" = "mode 类";
           "${modifier}+Delete" = "mode ";
@@ -194,7 +193,7 @@ in {
         };
 
         gaps = {
-          inner = 15;
+          inner = 7;
           outer = 7;
           smartGaps = false;
         };

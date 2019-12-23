@@ -11,13 +11,23 @@
     autoUpgrade.enable = true;
   };
 
-  networking.hostName = "earth";
+  networking = {
+    hostName = "earth";
+    networkmanager.enable = true;
+    useDHCP = false;
+    interfaces = {
+      enp0s31f6.useDHCP = true;
+      wlp0s20f3.useDHCP = true;
+    };
+  };
 
   time.timeZone = "Europe/Paris";
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.grub.useOSProber = true;
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+    grub.useOSProber = true;
+  };
 
   users = {
     mutableUsers = false;
@@ -29,12 +39,10 @@
         shell = pkgs.fish;
         home = "/home/nolan";
         hashedPassword = "$6$c8tydkzzdHLfjan$2YB01HDIawthnPisIN/DgSzMPsZxiUDO7SCbcx3FQRuqhFIZySiWGMzckqmUJcflor2plAtCA7bbaq2iSsJI/0";
-        extraGroups = [ "wheel" "networkmanager" "vboxusers" "docker" ];
+        extraGroups = [ "wheel" "networkmanager" "docker" ];
       };
     };
   };
-
-  networking.networkmanager.enable = true;
 
   i18n = {
     consoleFont = "Lat2-Terminus16";
@@ -59,9 +67,9 @@
   ];
 
   hardware = {
-    # enableAllFirmware = true;
-    # cpu.intel.updateMicrocode = true; # Activate on Thinkpad
-    #
+    enableAllFirmware = true;
+    cpu.intel.updateMicrocode = true;
+
     opengl = {
       enable = true;
       driSupport = true;
@@ -71,10 +79,6 @@
     bluetooth = {
       enable = true;
       powerOnBoot = true;
-      extraConfig = "
-        [General]
-        Enable=Source,Sink,Media,Socket
-      ";
     };
 
     pulseaudio = {
@@ -84,24 +88,6 @@
       ];
       package = pkgs.pulseaudioFull;
       support32Bit = true;
-
-      daemon.config = {
-        default-sample-format = "float32le";
-        default-sample-rate = 48000;
-        alternate-sample-rate = 44100;
-        default-sample-channels = 2;
-        default-channel-map = "front-left,front-right";
-        default-fragments = 2;
-        default-fragment-size-msec = 125;
-        resample-method = "soxr-vhq";
-        enable-lfe-remixing = "no";
-        high-priority = "yes";
-        nice-level = -11;
-        realtime-scheduling = "yes";
-        realtime-priority = 9;
-        rlimit-rtprio = 9;
-        daemonize = "no";
-      };
     };
   };
 
@@ -113,6 +99,7 @@
     light.enable = true;
     dconf.enable = true;
     fish.enable = true;
+    ssh.startAgent = false;
     gnupg.agent = {
       enable = true;
       enableSSHSupport = true;
@@ -130,16 +117,14 @@
     printing = {
       enable = true;
       browsing = true;
-      drivers = with pkgs; [
-        gutenprint
-        gutenprintBin
-        brlaser
-        brgenml1lpr
-        brgenml1cupswrapper
-
-      ];
     };
     avahi.enable = true;
+    blueman.enable = true;
+    dbus.packages = with pkgs; [ blueman ]; # FIXTHAT: https://github.com/rycee/home-manager/issues/84
+    pcscd.enable = true;
+    udev.packages = with pkgs; [
+      yubikey-personalization
+    ];
     xserver = {
       enable = true;
       exportConfiguration = true;
@@ -162,11 +147,5 @@
     };
   };
 
-  virtualisation = {
-    docker.enable = true;
-    virtualbox.host = {
-      enable = true;
-      enableExtensionPack = true;
-    };
-  };
+  virtualisation.docker.enable = true;
 }

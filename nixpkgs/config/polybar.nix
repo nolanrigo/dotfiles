@@ -95,13 +95,6 @@
         label-mode-foreground = var "theme.base00";
         label-mode-padding = 1;
       };
-      "module/i3_i" = {
-        type = "custom/text";
-        content = "";
-        content-background = var "theme.base0D";
-        content-foreground = var "theme.base01";
-        content-padding = 1;
-      };
       "module/date_i" = {
         type = "custom/text";
         content = "";
@@ -167,9 +160,9 @@
         icon-play = "";
         icon-pause = "";
       };
-      "module/network" = {
+      "module/wireless" = {
         type = "internal/network";
-        interface = "wlp3s0";
+        interface = "wlp0s20f3";
         interval = "1.0";
         accumulate-stats = true;
         unknown-as-up = true;
@@ -177,20 +170,27 @@
         format-connected-background = var "theme.base02";
         format-connected-foreground = var "theme.base05";
         format-connected-padding = 1;
-        format-disconnected = "<label-disconnected>";
-        format-disconnected-background = var "theme.base02";
-        format-disconnected-foreground = var "theme.base05";
-        format-disconnected-padding = 1;
-        label-connected = "%essid% (%signal%%) |  %downspeed% | 祝 %upspeed%";
-        label-disconnected = "Disconnected";
+        label-connected = "%essid% (%signal%%)  %downspeed% 祝 %upspeed%";
       };
-      "module/network_i" = {
-        inherit (click_i "${pkgs.gnome3.networkmanagerapplet}/bin/nm-connection-editor") click-left click-middle click-right;
-        type = "custom/text";
-        content = "直";
-        content-background = var "color.purple";
-        content-foreground = var "color.fg";
-        content-padding = 1;
+      "module/wireless_i" = {
+        type = "internal/network";
+        interface = "wlp0s20f3";
+        interval = "1.0";
+        format-connected = "<label-connected>";
+        format-connected-background = var "color.purple";
+        format-connected-foreground = var "color.fg";
+        format-connected-padding = 1;
+        label-connected = "";
+      };
+      "module/wired_i" = {
+        type = "internal/network";
+        interface = "enp0s31f6";
+        interval = "1.0";
+        format-connected = "<label-connected>";
+        format-connected-background = var "color.purple";
+        format-connected-foreground = var "color.fg";
+        format-connected-padding = 1;
+        label-connected = "";
       };
       "module/cpu" = {
         type = "internal/cpu";
@@ -241,7 +241,7 @@
       "module/battery_i" = {
         type = "internal/battery";
 
-        full-at = 97;
+        full-at = 99;
         battery = "BAT0";
         adapter = "ADP1";
         poll-interval = 2;
@@ -327,9 +327,9 @@
         content-padding = "0.5";
       };
       "bar/main" = {
-        modules-left = "i3_i separator i3 separator network_i network";
+        modules-left = "i3 separator wired_i wireless_i wireless";
         modules-center = "";
-        modules-right = "memory_i memory separator battery_i battery separator cpu_i cpu separator pulseaudio_i pulseaudio separator date_i date";
+        modules-right = "cpu_i cpu separator memory_i memory separator battery_i battery separator pulseaudio_i pulseaudio separator date_i date";
 
         font-0 = "FuraCode Nerd Font:size=14;4";
         width = "100%";
@@ -346,9 +346,9 @@
         radius-bottom = "0.0";
         border-size = 0;
         border-color = var "color.trans";
-        border-bottom-size = 20;
-        padding-left = 2;
-        padding-right = 2;
+        border-bottom-size = 14;
+        padding-left = 1;
+        padding-right = 1;
         module-margin-left = 0;
         module-margin-right = 0;
         separator = "";

@@ -78,7 +78,6 @@ in {
     #   enable = true;
     #   components = [ "pkcs11" "secrets" "ssh" ];
     # };
-
   };
 
 }

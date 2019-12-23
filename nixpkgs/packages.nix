@@ -47,9 +47,17 @@
     zip unzip p7zip unrar # archive tools
     nox
     blueman
+    gnome3.networkmanagerapplet
     youtube-dl
     jq
     neofetch
+
+    # Yubikey
+    yubikey-personalization
+    yubikey-personalization-gui
+    yubico-piv-tool
+    yubikey-manager
+    yubikey-manager-qt
 
     # VPN
     protonvpn-cli
