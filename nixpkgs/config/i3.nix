@@ -26,6 +26,7 @@ in {
             { window_role = "pop-up"; }
             { class = "Nm-connection-editor"; }
             { class = "Pavucontrol"; }
+            { class = ".blueman-manager-wrapped"; }
           ];
         };
 
