@@ -74,10 +74,14 @@ in {
       timeout = 5;
     };
     # nextcloud-client.enable = true;
-    # gnome-keyring = {
-    #   enable = true;
-    #   components = [ "pkcs11" "secrets" "ssh" ];
-    # };
+    gnome-keyring = {
+      enable = true;
+      components = [
+        "secrets"
+        "pkcs11"
+        "ssh"
+      ];
+    };
   };
 
 }
