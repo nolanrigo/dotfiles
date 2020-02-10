@@ -18,6 +18,7 @@
       vim-polyglot
       ctrlp-vim
       coc-nvim
+      Rename
     ];
 
     extraConfig = ''
