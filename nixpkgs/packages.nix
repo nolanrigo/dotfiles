@@ -4,9 +4,13 @@
   home.packages = with pkgs; [
     # Main
     brave
+
+    # Print Scan
     gnome3.simple-scan
     system-config-printer
-    freemind
+
+    # Network
+    networkmanagerapplet
 
     # File
     xfce.thunar
@@ -20,9 +24,6 @@
     spotify
     vlc
 
-    # Video
-    kdeApplications.kdenlive
-
     # Dev
     insomnia
     exercism
@@ -30,7 +31,7 @@
     awscli
     sqliteman
     dbeaver
-    pgadmin
+    mysql-workbench
     docker-compose
     gcc
 
@@ -47,10 +48,11 @@
     zip unzip p7zip unrar # archive tools
     nox
     blueman
-    gnome3.networkmanagerapplet
     youtube-dl
     jq
     neofetch
+    xorg.xev # X event monitor
+    xorg.xwininfo # X window info
 
     # Yubikey
     yubikey-personalization
@@ -58,9 +60,6 @@
     yubico-piv-tool
     yubikey-manager
     yubikey-manager-qt
-
-    # VPN
-    protonvpn-cli
 
     # Needed
     psmisc
@@ -107,8 +106,6 @@
     # tree # depth-indented directory listing
     # usbutils # USB device tools
     # curl wget youtube-dl # downloaders
-    # xorg.xev # X event monitor
-    # xorg.xwininfo # X window info
 
     # Development
     # jetbrains.idea-ultimate # Java IDE (UNFREE)
