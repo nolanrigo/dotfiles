@@ -40,6 +40,7 @@
       nr = "npm repo";
       ns = "npm start";
       nt = "npm test";
+      ntu = "npm test -- -u";
       nb = "npm run build";
       nd = "npm run dev";
       ncl = "npm run clear";
@@ -51,12 +52,17 @@
 
       # Terraform
       t = "terraform";
+      ti = "terraform init";
       ta = "terraform apply";
-      yta = "yes yes | terraform apply";
+      taa = "terraform apply -auto-approve";
       tp = "terraform plan";
       td = "terraform destroy";
 
       # System
+      e = "nvim";
+      hms = "home-manager switch";
+      hmsi3 = "home-manager switch; i3-msg restart";
+      nrs = "sudo nixos-rebuild switch";
       psgrep = "ps -ax | grep";
     };
     loginShellInit = ''
