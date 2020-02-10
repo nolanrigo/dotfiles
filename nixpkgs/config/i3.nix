@@ -288,6 +288,9 @@ in {
       };
 
       extraConfig = ''
+        # Remove Alt_R/AltGr from Mod1
+        exec --no-startup-id ${pkgs.xorg.xmodmap}/bin/xmodmap -e 'remove Mod1 = Alt_R'
+
         # See https://i3wm.org/docs/userguide.html#xresources
         set_from_resource $base00 i3wm.color0
         set_from_resource $base01 i3wm.color10
@@ -305,6 +308,7 @@ in {
         set_from_resource $base0D i3wm.color4
         set_from_resource $base0E i3wm.color5
         set_from_resource $base0F i3wm.color14
+
         exec --no-startup-id i3-msg workspace 1
       '';
     };

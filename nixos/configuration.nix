@@ -131,11 +131,15 @@
       videoDrivers = [ "intel" ];
       exportConfiguration = true;
       multitouch.enable = true;
+      # Mouse
       libinput = {
         enable = true;
         tapping = false;
         tappingDragLock = false;
       };
+      # Keyboard
+      layout = "us";
+      xkbVariant = "altgr-intl";
       displayManager.lightdm = {
         enable = true;
         background = "dark";
