@@ -331,6 +331,9 @@
         modules-center = "";
         modules-right = "cpu_i cpu separator memory_i memory separator battery_i battery separator pulseaudio_i pulseaudio separator date_i date";
 
+        tray-position = "center";
+        tray-maxsize = 24;
+
         font-0 = "FuraCode Nerd Font:size=14;4";
         width = "100%";
         height = 30;
