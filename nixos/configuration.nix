@@ -39,7 +39,7 @@
         shell = pkgs.fish;
         home = "/home/nolan";
         hashedPassword = "$6$c8tydkzzdHLfjan$2YB01HDIawthnPisIN/DgSzMPsZxiUDO7SCbcx3FQRuqhFIZySiWGMzckqmUJcflor2plAtCA7bbaq2iSsJI/0";
-        extraGroups = [ "wheel" "networkmanager" "docker" ];
+        extraGroups = [ "wheel" "networkmanager" "docker" "video" ];
       };
     };
   };
@@ -89,6 +89,8 @@
       package = pkgs.pulseaudioFull;
       support32Bit = true;
     };
+
+    brightnessctl.enable = true;
   };
 
   security = {
@@ -96,7 +98,6 @@
   };
 
   programs = {
-    light.enable = true;
     dconf.enable = true;
     fish.enable = true;
     ssh.startAgent = false;
@@ -127,6 +128,7 @@
     ];
     xserver = {
       enable = true;
+      videoDrivers = [ "intel" ];
       exportConfiguration = true;
       multitouch.enable = true;
       libinput = {
