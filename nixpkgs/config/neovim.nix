@@ -61,7 +61,7 @@
       let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
       " Coc configuration
-      let g:coc_global_extensions = [ 'coc-tailwindcss', 'coc-highlight', 'coc-svg', 'coc-css', 'coc-html', 'coc-tsserver', 'coc-json' ]
+      let g:coc_global_extensions = [ 'coc-highlight', 'coc-svg', 'coc-css', 'coc-html', 'coc-tsserver', 'coc-eslint', 'coc-pairs',  'coc-json' ]
       set updatetime=300
       set shortmess+=c
 
