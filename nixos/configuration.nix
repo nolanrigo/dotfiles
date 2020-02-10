@@ -39,7 +39,7 @@
         shell = pkgs.fish;
         home = "/home/nolan";
         hashedPassword = "$6$c8tydkzzdHLfjan$2YB01HDIawthnPisIN/DgSzMPsZxiUDO7SCbcx3FQRuqhFIZySiWGMzckqmUJcflor2plAtCA7bbaq2iSsJI/0";
-        extraGroups = [ "wheel" "networkmanager" "docker" "video" ];
+        extraGroups = [ "wheel" "networkmanager" "docker" "audio" "video" ];
       };
     };
   };
@@ -57,6 +57,8 @@
       nerdfonts
     ];
   };
+
+  sound.enable = true;
 
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
@@ -83,11 +85,11 @@
 
     pulseaudio = {
       enable = true;
+      support32Bit = true;
       extraModules = with pkgs; [
         pulseaudio-modules-bt
       ];
       package = pkgs.pulseaudioFull;
-      support32Bit = true;
     };
 
     brightnessctl.enable = true;

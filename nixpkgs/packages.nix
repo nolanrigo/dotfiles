@@ -48,7 +48,6 @@
     zip unzip p7zip unrar # archive tools
     nox
     blueman
-    youtube-dl
     jq
     neofetch
     xorg.xev # X event monitor
@@ -63,8 +62,8 @@
 
     # Needed
     psmisc
-    playerctl
-    pulseaudio-ctl
+    # playerctl
+    # pulseaudio-ctl
     deepin.deepin-screenshot
 
     # qgis libnotify logisim
