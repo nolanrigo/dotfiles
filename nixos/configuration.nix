@@ -143,7 +143,17 @@
         enable = true;
         tapping = false;
         tappingDragLock = false;
+        accelProfile = "flat";
       };
+      config = ''
+        Section "InputClass"
+          Identifier "MX Vertical Mouse"
+          Driver "libinput"
+          MatchIsPointer "yes"
+          Option "AccelProfile" "flat"
+          Option "AccelSpeed" "0"
+        EndSection
+      '';
       # Keyboard
       layout = "us";
       xkbVariant = "altgr-intl";
