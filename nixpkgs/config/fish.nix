@@ -18,9 +18,7 @@
       gco = "git checkout";
       gcm = "git commit";
       gcmf = "git commit --fixup";
-      gca = "git commit --amend";
-      gfu = "git commit --no-verify";
-      gfa = "git commit --no-verify --amend";
+      gcma = "git commit --amend";
       grb = "git rebase";
       grbi = "git rebase -i";
       grbc = "git rebase --continue";
@@ -34,6 +32,8 @@
       gsp = "git stash pop --index";
       gsl = "git stash list";
       gsc = "git stash clear";
+      gbr = "git branch -avv";
+      gbrd = "git brand -d";
 
       # Npm
       n = "npm";
@@ -49,7 +49,16 @@
       ntu = "npm test -- -u";
       nb = "npm run build";
       nd = "npm run dev";
+      nl = "npm run lint";
       ncl = "npm run clear";
+
+      # Yarn
+      y = "yarn";
+      ya = "yarn add";
+      yad = "yarn add --dev";
+      ys = "yarn start";
+      yb = "yarn build";
+      yd = "yarn dev";
 
       # Rails
       r = "rails";
