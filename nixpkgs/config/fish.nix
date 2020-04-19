@@ -4,6 +4,12 @@
   programs.fish = {
     enable = true;
     shellAbbrs = {
+      # Project
+      cpf = "cd ~/Projects/filtercast;";
+      cpz = "cd ~/Projects/zap4you;";
+      cpc = "cd ~/Projects/cloudformation;";
+      cpe = "cd ~/Projects/project-e;";
+
       # Git
       gs = "git status";
       gl = "git lg";
