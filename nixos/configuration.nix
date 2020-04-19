@@ -19,6 +19,11 @@
       enp0s31f6.useDHCP = true;
       wlp0s20f3.useDHCP = true;
     };
+    hosts = {
+      "127.0.0.1" = [
+        "20min.ch"
+      ];
+    };
   };
 
   time.timeZone = "Europe/Paris";
