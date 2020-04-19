@@ -1,7 +1,8 @@
 { pkgs, config, ... }:
-
 {
-  programs.neovim = { enable = true; viAlias = true;
+  programs.neovim = {
+    enable = true;
+    viAlias = true;
     vimAlias = true;
     withNodeJs = true;
 
@@ -16,8 +17,8 @@
       vim-airline-themes
       ale
       vim-polyglot
-      ctrlp-vim
       coc-nvim
+      ctrlp-vim
       Rename
     ];
 
@@ -57,11 +58,14 @@
       set hidden
       set cmdheight=2
       set signcolumn=yes
+      set nopaste
 
       let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
       " Coc configuration
-      let g:coc_global_extensions = [ 'coc-highlight', 'coc-svg', 'coc-css', 'coc-html', 'coc-tsserver', 'coc-eslint', 'coc-pairs',  'coc-json' ]
+      let g:coc_global_extensions = [ 'coc-highlight', 'coc-svg', 'coc-css', 'coc-tailwindcss',  'coc-html', 'coc-tsserver', 'coc-json' ]
+      " Unused coc plugins: 'coc-pairs'
+
       set updatetime=300
       set shortmess+=c
 
@@ -124,4 +128,12 @@
       let g:ctrlp_custom_ignore = 'node_modules\|git\|elm-stuff'
     '';
   };
+
+  home.file = {
+    ".config/nvim/coc-settings.json".text = builtins.toJSON {
+      "tsserver.enableJavascript" =  false;
+      "tsserver.implicitProjectConfig.checkJs" = true;
+    };
+  };
+
 }
