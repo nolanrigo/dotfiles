@@ -52,6 +52,7 @@
     neofetch
     xorg.xev # X event monitor
     xorg.xwininfo # X window info
+    tldr
 
     # Yubikey
     yubikey-personalization
