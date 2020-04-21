@@ -69,7 +69,7 @@
       };
 
       pull = {
-        rebase = "preserve";
+        rebase = "merges";
       };
 
       rebase = {
