@@ -51,6 +51,7 @@
       nd = "npm run dev";
       nl = "npm run lint";
       ncl = "npm run clear";
+      ncu = "npx npm-check-updates -u";
 
       # Yarn
       y = "yarn";
