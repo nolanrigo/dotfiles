@@ -123,9 +123,6 @@ in {
           XF86AudioNext = "exec --no-startup-id ${pkgs.playerctl}/bin/playerctl next";
           XF86AudioPrev = "exec --no-startup-id ${pkgs.playerctl}/bin/playerctl previous";
           Print = "exec --no-startup-id ${pkgs.deepin.deepin-screenshot}/bin/deepin-screenshot";
-
-          "${modifier}+F1" = "mode ";
-          "${modifier}+F2" = "mode ";
         };
 
         colors = {
@@ -191,90 +188,6 @@ in {
             "${modifier}+BackSpace" = BackSpace;
             "${modifier}+Home" = Home;
             "${modifier}+End" = End;
-
-            Escape = "mode default";
-          };
-          "" = let
-            perc = n: (toString (n * 11.111)) + "%";
-            g_0 = "exec --no-startup-id ${pkgs.brightnessctl}/bin/brightnessctl s ${perc 0}";
-            g_1 = "exec --no-startup-id ${pkgs.brightnessctl}/bin/brightnessctl s ${perc 1}";
-            g_2 = "exec --no-startup-id ${pkgs.brightnessctl}/bin/brightnessctl s ${perc 2}";
-            g_3 = "exec --no-startup-id ${pkgs.brightnessctl}/bin/brightnessctl s ${perc 3}";
-            g_4 = "exec --no-startup-id ${pkgs.brightnessctl}/bin/brightnessctl s ${perc 4}";
-            g_5 = "exec --no-startup-id ${pkgs.brightnessctl}/bin/brightnessctl s ${perc 5}";
-            g_6 = "exec --no-startup-id ${pkgs.brightnessctl}/bin/brightnessctl s ${perc 6}";
-            g_7 = "exec --no-startup-id ${pkgs.brightnessctl}/bin/brightnessctl s ${perc 7}";
-            g_8 = "exec --no-startup-id ${pkgs.brightnessctl}/bin/brightnessctl s ${perc 8}";
-            g_9 = "exec --no-startup-id ${pkgs.brightnessctl}/bin/brightnessctl s ${perc 9}";
-            increase = "exec --no-startup-id ${pkgs.brightnessctl}/bin/brightnessctl s +5%";
-            decrease = "exec --no-startup-id ${pkgs.brightnessctl}/bin/brightnessctl s 5%-";
-          in rec {
-            "1" = g_0;
-            "${modifier}+1" = g_0;
-            "2" = g_1;
-            "${modifier}+2" = g_1;
-            "3" = g_2;
-            "${modifier}+3" = g_2;
-            "4" = g_3;
-            "${modifier}+4" = g_3;
-            "5" = g_4;
-            "${modifier}+5" = g_4;
-            "6" = g_5;
-            "${modifier}+6" = g_5;
-            "7" = g_6;
-            "${modifier}+7" = g_6;
-            "8" = g_7;
-            "${modifier}+8" = g_7;
-            "9" = g_8;
-            "${modifier}+9" = g_8;
-            "0" = g_9;
-            "${modifier}+0" = g_9;
-            "j" = decrease;
-            "${modifier}+j" = decrease;
-            "k" = increase;
-            "${modifier}+k" = decrease;
-
-            Escape = "mode default";
-          };
-          "" = let
-            perc = n: toString (n * 11);
-            g_0 = "exec --no-startup-id ${pkgs.pulseaudio-ctl}/bin/pulseaudio-ctl down 200";
-            g_1 = "exec --no-startup-id ${pkgs.pulseaudio-ctl}/bin/pulseaudio-ctl set ${perc 1}";
-            g_2 = "exec --no-startup-id ${pkgs.pulseaudio-ctl}/bin/pulseaudio-ctl set ${perc 2}";
-            g_3 = "exec --no-startup-id ${pkgs.pulseaudio-ctl}/bin/pulseaudio-ctl set ${perc 3}";
-            g_4 = "exec --no-startup-id ${pkgs.pulseaudio-ctl}/bin/pulseaudio-ctl set ${perc 4}";
-            g_5 = "exec --no-startup-id ${pkgs.pulseaudio-ctl}/bin/pulseaudio-ctl set ${perc 5}";
-            g_6 = "exec --no-startup-id ${pkgs.pulseaudio-ctl}/bin/pulseaudio-ctl set ${perc 6}";
-            g_7 = "exec --no-startup-id ${pkgs.pulseaudio-ctl}/bin/pulseaudio-ctl set ${perc 7}";
-            g_8 = "exec --no-startup-id ${pkgs.pulseaudio-ctl}/bin/pulseaudio-ctl set ${perc 8}";
-            g_9 = "exec --no-startup-id ${pkgs.pulseaudio-ctl}/bin/pulseaudio-ctl set ${perc 9}";
-            increase = "exec --no-startup-id ${pkgs.pulseaudio-ctl}/bin/pulseaudio-ctl up";
-            decrease = "exec --no-startup-id ${pkgs.pulseaudio-ctl}/bin/pulseaudio-ctl down";
-          in rec {
-            "1" = g_0;
-            "${modifier}+1" = g_0;
-            "2" = g_1;
-            "${modifier}+2" = g_1;
-            "3" = g_2;
-            "${modifier}+3" = g_2;
-            "4" = g_3;
-            "${modifier}+4" = g_3;
-            "5" = g_4;
-            "${modifier}+5" = g_4;
-            "6" = g_5;
-            "${modifier}+6" = g_5;
-            "7" = g_6;
-            "${modifier}+7" = g_6;
-            "8" = g_7;
-            "${modifier}+8" = g_7;
-            "9" = g_8;
-            "${modifier}+9" = g_8;
-            "0" = g_9;
-            "${modifier}+0" = g_9;
-            "j" = decrease;
-            "${modifier}+j" = decrease;
-            "k" = increase;
-            "${modifier}+k" = decrease;
 
             Escape = "mode default";
           };
