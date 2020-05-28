@@ -12,9 +12,10 @@
       base16-vim
       vim-gitgutter
       vim-fugitive
-      editorconfig-vim
+      vim-surround
       vim-airline
       vim-airline-themes
+      editorconfig-vim
       ale
       vim-polyglot
       coc-nvim
@@ -125,7 +126,7 @@
       let g:airline#extensions#ale#enabled = 1
 
       " Ctrl Config
-      let g:ctrlp_custom_ignore = 'node_modules\|git\|elm-stuff'
+      let g:ctrlp_custom_ignore = 'node_modules\|git\|elm-stuff\|dist\|.cache\|cdk.out'
     '';
   };
 
