@@ -6,9 +6,15 @@
     shellAbbrs = {
       # Project
       cpf = "cd ~/Projects/filtercast;";
-      cpz = "cd ~/Projects/zap4you;";
-      cpc = "cd ~/Projects/cloudformation;";
+      cpd = "cd ~/dotfiles";
       cpe = "cd ~/Projects/project-e;";
+      cpei = "cd ~/Projects/project-e/infra;";
+      cpeai = "cd ~/Projects/project-e/api;";
+      cpead = "cd ~/Projects/project-e/admin;";
+      cpeau = "cd ~/Projects/project-e/auth;";
+      cpeb = "cd ~/Projects/project-e/builder;";
+      cpebw = "cd ~/Projects/project-e/builder/website;";
+      cpebi = "cd ~/Projects/project-e/builder/infra;";
 
       # Git
       gs = "git status";
@@ -80,6 +86,7 @@
       hmsi3 = "home-manager switch; i3-msg restart";
       nrs = "sudo nixos-rebuild switch";
       psgrep = "ps -ax | grep";
+      rf = "rm -rf";
     };
     loginShellInit = ''
     '';
