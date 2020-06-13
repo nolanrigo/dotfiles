@@ -164,9 +164,10 @@
       # Keyboard
       layout = "us";
       xkbVariant = "altgr-intl";
+      desktopManager.xterm.enable = true;
       displayManager.lightdm = {
         enable = true;
-        background = "dark";
+        # background = "dark";
         greeter.enable = true;
         # greeter.enable = false;
         # autoLogin = {
