@@ -15,6 +15,7 @@ in {
   };
 
   imports = [
+    ./config/pazi.nix
     ./config/theme.nix
     ./config/xcape.nix
     ./config/grobi.nix
