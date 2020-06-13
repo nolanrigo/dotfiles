@@ -8,7 +8,11 @@
 
   system = {
     stateVersion = "20.03";
-    autoUpgrade.enable = true;
+    autoUpgrade = {
+      enable = true;
+      allowReboot = true;
+      channel = https://nixos.org/channels/nixos-20.03;
+    };
   };
 
   networking = {
@@ -53,9 +57,11 @@
     };
   };
 
+  console = {
+    font = "Lat2-Terminus16";
+    keyMap = "us";
+  };
   i18n = {
-    consoleFont = "Lat2-Terminus16";
-    consoleKeyMap = "us";
     defaultLocale = "en_US.UTF-8";
   };
 
@@ -100,8 +106,6 @@
       ];
       package = pkgs.pulseaudioFull;
     };
-
-    brightnessctl.enable = true;
   };
 
   security = {
@@ -141,7 +145,6 @@
       enable = true;
       videoDrivers = [ "intel" ];
       exportConfiguration = true;
-      multitouch.enable = true;
       # Mouse
       libinput = {
         enable = true;
