@@ -1,7 +1,7 @@
 { pkgs, config, ... }:
 
 {
-  services.compton = {
+  services.picom = {
     enable = true;
     blur = true;
     fade = false;

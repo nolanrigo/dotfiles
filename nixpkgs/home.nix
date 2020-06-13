@@ -25,7 +25,7 @@ in {
     ./config/i3.nix
     ./config/neovim.nix
     ./config/polybar.nix
-    ./config/compton.nix
+    ./config/picom.nix
     ./config/rofi.nix
     ./config/ssh.nix
     ./config/zathura.nix
