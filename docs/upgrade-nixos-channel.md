@@ -16,6 +16,16 @@ Change the `stateVersion` with the new channel number
 + stateVersion = "20.03";
 ```
 
+# Update manually the channel
+
+I wished, I could just update the `stateVersion` and run `nrs`
+but it seems that we need to update the channel manually to perform the update.
+
+```sh
+$ sudo nix-channel --add https://nixos.org/channels/nixos-20.03 nixos
+$ sudo nix-channel --update
+```
+
 # Apply the update on the computer
 
 ```sh
