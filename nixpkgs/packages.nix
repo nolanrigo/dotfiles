@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     # Main
     brave
+    lastpass-cli
 
     # Print Scan
     gnome3.simple-scan
