@@ -17,6 +17,7 @@ in {
   imports = [
     ./config/theme.nix
     ./config/xcape.nix
+    ./config/grobi.nix
     ./config/fish.nix
     ./config/qutebrowser.nix
     ./config/starship.nix
