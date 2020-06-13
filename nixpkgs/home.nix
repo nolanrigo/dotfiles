@@ -18,6 +18,7 @@ in {
     ./config/theme.nix
     ./config/xcape.nix
     ./config/fish.nix
+    ./config/qutebrowser.nix
     ./config/starship.nix
     ./config/alacritty.nix
     ./config/git.nix
