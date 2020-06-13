@@ -7,7 +7,7 @@
   ];
 
   system = {
-    stateVersion = "19.09";
+    stateVersion = "20.03";
     autoUpgrade.enable = true;
   };
 
