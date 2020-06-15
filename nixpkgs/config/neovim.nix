@@ -113,6 +113,7 @@
       \   '*': ['trim_whitespace'],
       \   'javascript': ['prettier', 'eslint'],
       \   'typescript': ['prettier', 'eslint'],
+      \   'typescriptreact': ['prettier', 'eslint'],
       \   'css': ['prettier'],
       \   'html': ['prettier'],
       \   'markdown': ['prettier'],
