@@ -89,6 +89,10 @@
       nrs = "sudo nixos-rebuild switch";
       psgrep = "ps -ax | grep";
       rf = "rm -rf";
+
+      # Copy / Paste
+      copy = "xclip -selection clipboard";
+      paste = "xclip -o -selection clipboard";
     };
     loginShellInit = ''
     '';
