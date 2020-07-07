@@ -24,13 +24,7 @@
       wlp0s20f3.useDHCP = true;
     };
     hosts = {
-      "127.0.0.1" = [
-        "20min.ch"
-        "choualbox.com"
-        "koreus.com"
-        "nokenny.com"
-        "nokenny.co"
-      ];
+      "127.0.0.1" = [];
     };
   };
 
