@@ -87,6 +87,10 @@
       map <C-K> :bprevious<CR>
       map <C-W> :bdelete<CR>
 
+      " Inverse () to )(
+      nnoremap ( )
+      nnoremap ) (
+
       " Ctrl-L to clear search
       map <C-C> :nohlsearch<CR>
       map <F2> :NERDTreeToggle<CR>
