@@ -2,7 +2,8 @@
 
 let
   font = "FuraCode\\ Nerd\\ Font 12";
-  modifier = "Mod1";
+  alt = "Mod4";
+  cmd = "Mod1";
 in {
   xsession = {
     enable = true;
@@ -58,59 +59,91 @@ in {
         bars = [];
 
         keybindings = {
-          "${modifier}+Return" = "exec ${pkgs.alacritty}/bin/alacritty";
-          "${modifier}+q" = "kill";
-          "${modifier}+d" = "exec --no-startup-id \"${pkgs.rofi}/bin/rofi -modi drun -show drun\"";
-          "${modifier}+Shift+d" = "exec --no-startup-id \"rofi -modi 'emoji:${config.xdg.configHome}/rofi/rofiemoji.sh' -show emoji\"";
+          "${cmd}+q" = "workspace q";
+          "${cmd}+w" = "workspace w";
+          "${cmd}+e" = "workspace e";
+          "${cmd}+r" = "workspace r";
+          "${cmd}+t" = "workspace t";
+          "${cmd}+y" = "workspace y";
+          "${cmd}+u" = "workspace u";
+          "${cmd}+i" = "workspace i";
+          "${cmd}+o" = "workspace o";
+          "${cmd}+p" = "workspace p";
+          "${cmd}+a" = "workspace a";
+          "${cmd}+s" = "workspace s";
+          "${cmd}+d" = "workspace d";
+          "${cmd}+f" = "workspace f";
+          "${cmd}+g" = "workspace g";
+          "${cmd}+h" = "workspace h";
+          "${cmd}+j" = "workspace j";
+          "${cmd}+k" = "workspace k";
+          "${cmd}+l" = "workspace l";
+          "${cmd}+z" = "workspace z";
+          "${cmd}+x" = "workspace x";
+          "${cmd}+c" = "workspace c";
+          "${cmd}+v" = "workspace v";
+          "${cmd}+b" = "workspace b";
+          "${cmd}+n" = "workspace n";
+          "${cmd}+m" = "workspace m";
 
-          "${modifier}+h" = "focus left";
-          "${modifier}+j" = "focus down";
-          "${modifier}+k" = "focus up";
-          "${modifier}+l" = "focus right";
+          "${cmd}+Shift+q" = "move container to workspace q";
+          "${cmd}+Shift+w" = "move container to workspace w";
+          "${cmd}+Shift+e" = "move container to workspace e";
+          "${cmd}+Shift+r" = "move container to workspace r";
+          "${cmd}+Shift+t" = "move container to workspace t";
+          "${cmd}+Shift+y" = "move container to workspace y";
+          "${cmd}+Shift+u" = "move container to workspace u";
+          "${cmd}+Shift+i" = "move container to workspace i";
+          "${cmd}+Shift+o" = "move container to workspace o";
+          "${cmd}+Shift+p" = "move container to workspace p";
+          "${cmd}+Shift+a" = "move container to workspace a";
+          "${cmd}+Shift+s" = "move container to workspace s";
+          "${cmd}+Shift+d" = "move container to workspace d";
+          "${cmd}+Shift+f" = "move container to workspace f";
+          "${cmd}+Shift+g" = "move container to workspace g";
+          "${cmd}+Shift+h" = "move container to workspace h";
+          "${cmd}+Shift+j" = "move container to workspace j";
+          "${cmd}+Shift+k" = "move container to workspace k";
+          "${cmd}+Shift+l" = "move container to workspace l";
+          "${cmd}+Shift+z" = "move container to workspace z";
+          "${cmd}+Shift+x" = "move container to workspace x";
+          "${cmd}+Shift+c" = "move container to workspace c";
+          "${cmd}+Shift+v" = "move container to workspace v";
+          "${cmd}+Shift+b" = "move container to workspace b";
+          "${cmd}+Shift+n" = "move container to workspace n";
+          "${cmd}+Shift+m" = "move container to workspace m";
+        } // {
+          "${alt}+Return" = "exec ${pkgs.alacritty}/bin/alacritty";
+          "${alt}+q" = "kill";
+          "${alt}+d" = "exec --no-startup-id \"${pkgs.rofi}/bin/rofi -modi drun -show drun\"";
+          "${alt}+Shift+d" = "exec --no-startup-id \"rofi -modi 'emoji:${config.xdg.configHome}/rofi/rofiemoji.sh' -show emoji\"";
 
-          "${modifier}+Shift+h" = "move left";
-          "${modifier}+Shift+j" = "move down";
-          "${modifier}+Shift+k" = "move up";
-          "${modifier}+Shift+l" = "move right";
+          "${alt}+h" = "focus left";
+          "${alt}+j" = "focus down";
+          "${alt}+k" = "focus up";
+          "${alt}+l" = "focus right";
 
-          "${modifier}+c" = "split h";
-          "${modifier}+v" = "split v";
-          "${modifier}+f" = "fullscreen toggle";
-          "${modifier}+a" = "focus parent";
+          "${alt}+Shift+h" = "move left";
+          "${alt}+Shift+j" = "move down";
+          "${alt}+Shift+k" = "move up";
+          "${alt}+Shift+l" = "move right";
 
-          "${modifier}+s" = "layout stacking";
-          "${modifier}+w" = "layout tabbed";
-          "${modifier}+e" = "layout toggle split";
+          "${alt}+c" = "split h";
+          "${alt}+v" = "split v";
+          "${alt}+f" = "fullscreen toggle";
+          "${alt}+a" = "focus parent";
 
-          "${modifier}+Shift+space" = "floating toggle";
-          "${modifier}+space" = "focus mode_toggle";
+          "${alt}+s" = "layout stacking";
+          "${alt}+w" = "layout tabbed";
+          "${alt}+e" = "layout toggle split";
 
-          "${modifier}+1" = "workspace 1";
-          "${modifier}+2" = "workspace 2";
-          "${modifier}+3" = "workspace 3";
-          "${modifier}+4" = "workspace 4";
-          "${modifier}+5" = "workspace 5";
-          "${modifier}+6" = "workspace 6";
-          "${modifier}+7" = "workspace 7";
-          "${modifier}+8" = "workspace 8";
-          "${modifier}+9" = "workspace 9";
-          "${modifier}+0" = "workspace 10";
+          "${alt}+Shift+space" = "floating toggle";
+          "${alt}+space" = "focus mode_toggle";
 
-          "${modifier}+Shift+1" = "move container to workspace 1";
-          "${modifier}+Shift+2" = "move container to workspace 2";
-          "${modifier}+Shift+3" = "move container to workspace 3";
-          "${modifier}+Shift+4" = "move container to workspace 4";
-          "${modifier}+Shift+5" = "move container to workspace 5";
-          "${modifier}+Shift+6" = "move container to workspace 6";
-          "${modifier}+Shift+7" = "move container to workspace 7";
-          "${modifier}+Shift+8" = "move container to workspace 8";
-          "${modifier}+Shift+9" = "move container to workspace 9";
-          "${modifier}+Shift+0" = "move container to workspace 10";
+          "${alt}+r" = "mode 类";
+          "${alt}+Delete" = "mode ";
 
-          "${modifier}+r" = "mode 类";
-          "${modifier}+Delete" = "mode ";
-
-          "${modifier}+Shift+r" = "restart";
+          "${alt}+Shift+r" = "restart";
 
           XF86AudioRaiseVolume = "exec --no-startup-id ${pkgs.pulseaudio-ctl}/bin/pulseaudio-ctl up";
           XF86AudioLowerVolume = "exec --no-startup-id ${pkgs.pulseaudio-ctl}/bin/pulseaudio-ctl down";
@@ -167,16 +200,16 @@ in {
         modes = {
           "类" = rec {
             h = "resize shrink width 10 px or 10 ppt";
-            "${modifier}+h" = h;
+            "${alt}+h" = h;
 
             j = "resize grow height 10 px or 10 ppt";
-            "${modifier}+j" = j;
+            "${alt}+j" = j;
 
             k = "resize shrink height 10 px or 10 ppt";
-            "${modifier}+k" = k;
+            "${alt}+k" = k;
 
             l = "resize grow width 10 px or 10 ppt";
-            "${modifier}+l" = l;
+            "${alt}+l" = l;
 
             Escape = "mode default";
           };
@@ -185,9 +218,9 @@ in {
             Home = "${Escape}; exec --no-startup-id reboot";
             End = "${Escape}; exec --no-startup-id  shutdown now";
 
-            "${modifier}+BackSpace" = BackSpace;
-            "${modifier}+Home" = Home;
-            "${modifier}+End" = End;
+            "${alt}+BackSpace" = BackSpace;
+            "${alt}+Home" = Home;
+            "${alt}+End" = End;
 
             Escape = "mode default";
           };
@@ -198,7 +231,6 @@ in {
           outer = 7;
           smartGaps = false;
         };
-
       };
 
       extraConfig = ''
@@ -223,7 +255,7 @@ in {
         set_from_resource $base0E i3wm.color5
         set_from_resource $base0F i3wm.color14
 
-        exec --no-startup-id i3-msg workspace 1
+        exec --no-startup-id i3-msg workspace q
       '';
     };
   };
