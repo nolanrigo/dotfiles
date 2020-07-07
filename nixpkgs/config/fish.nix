@@ -9,6 +9,7 @@
       cpd = "cd ~/dotfiles";
       cpe = "cd ~/Projects/project-e;";
       cpec = "cd ~/Projects/project-e/crawlers;";
+      cpel = "cd ~/Projects/project-e/landing;";
       cpei = "cd ~/Projects/project-e/infra;";
       cpeai = "cd ~/Projects/project-e/api;";
       cpead = "cd ~/Projects/project-e/admin;";
