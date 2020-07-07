@@ -48,40 +48,12 @@
       n = "npm";
       nx = "npx";
       ni = "npm i";
-      nid = "npm i -D";
       nci = "npm ci";
+      nid = "npm i -D";
       nun = "npm un";
       nh = "npm home";
       nr = "npm repo";
-      ns = "npm start";
-      nt = "npm test";
-      ntu = "npm test -- -u";
-      nb = "npm run build";
-      nd = "npm run dev";
-      nl = "npm run lint";
-      ncl = "npm run clear";
       ncu = "npx npm-check-updates -u";
-
-      # Yarn
-      y = "yarn";
-      ya = "yarn add";
-      yad = "yarn add --dev";
-      ys = "yarn start";
-      yb = "yarn build";
-      yd = "yarn dev";
-
-      # Rails
-      r = "rails";
-      rs = "rails server";
-      rc = "rails console";
-
-      # Terraform
-      t = "terraform";
-      ti = "terraform init";
-      ta = "terraform apply";
-      taa = "terraform apply -auto-approve";
-      tp = "terraform plan";
-      td = "terraform destroy";
 
       # System
       e = "nvim";
