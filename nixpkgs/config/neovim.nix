@@ -83,8 +83,8 @@
       inoremap <silent><expr> <c-space> coc#refresh()
 
       " Buffer
-      map <C-H> :bnext<CR>
-      map <C-L> :bprevious<CR>
+      map <C-J> :bnext<CR>
+      map <C-K> :bprevious<CR>
       map <C-W> :bdelete<CR>
 
       " Ctrl-L to clear search
