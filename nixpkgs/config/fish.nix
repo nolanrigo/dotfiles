@@ -35,6 +35,7 @@
       gpu = "git push";
       gpuu = "git push -u origin";
       gpuf = "git push --force";
+      gpufl = "git push --force-with-lease";
       gm = "git merge";
       gss = "git stash save -u";
       gsp = "git stash pop --index";
