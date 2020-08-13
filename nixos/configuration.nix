@@ -95,10 +95,12 @@
     pulseaudio = {
       enable = true;
       support32Bit = true;
-      extraModules = with pkgs; [
-        pulseaudio-modules-bt
-      ];
+      systemWide = true;
       package = pkgs.pulseaudioFull;
+      #
+      # extraModules = with pkgs; [
+      #   pulseaudio-modules-bt
+      # ];
     };
   };
 
