@@ -14,6 +14,10 @@
     extraConfig = {
       github.user = "nolanrigo";
 
+      init = {
+        defaultBranch = "production";
+      };
+
       alias = {
         lg = "log --graph --date=relative --pretty=tformat:'%Cred%h%Creset - %C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'";
       };
