@@ -6,6 +6,9 @@
     brave
     lastpass-cli
 
+    kdenlive
+    audacity
+
     # Print Scan
     gnome3.simple-scan
     system-config-printer
