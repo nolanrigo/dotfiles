@@ -56,6 +56,9 @@ in {
     sessionVariables = {
       COLORTHEME = "onedark";
       EDITOR = "nvim";
+
+      # Disable random stuffs
+      NEXT_TELEMETRY_DISABLED = 1;
     };
     keyboard = {
       layout = "us";
