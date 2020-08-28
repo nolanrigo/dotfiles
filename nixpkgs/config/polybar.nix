@@ -67,28 +67,14 @@
         ws-icon-1  = "w;W";
         ws-icon-2  = "e;E";
         ws-icon-3  = "r;R";
-        ws-icon-4  = "t;T";
-        ws-icon-5  = "y;Y";
-        ws-icon-6  = "u;U";
-        ws-icon-7  = "i;I";
-        ws-icon-8  = "o;O";
-        ws-icon-9  = "p;P";
-        ws-icon-10 = "a;A";
-        ws-icon-11 = "s;S";
-        ws-icon-12 = "d;D";
-        ws-icon-13 = "f;F";
-        ws-icon-14 = "g;G";
-        ws-icon-15 = "h;H";
-        ws-icon-16 = "j;J";
-        ws-icon-17 = "k;K";
-        ws-icon-18 = "l;L";
-        ws-icon-19 = "z;Z";
-        ws-icon-20 = "x;X";
-        ws-icon-21 = "c;C";
-        ws-icon-22 = "v;V";
-        ws-icon-23 = "b;B";
-        ws-icon-24 = "n;N";
-        ws-icon-25 = "m;M";
+        ws-icon-4 = "a;A";
+        ws-icon-5 = "s;S";
+        ws-icon-6 = "d;D";
+        ws-icon-7 = "f;F";
+        ws-icon-8 = "z;Z";
+        ws-icon-9 = "x;X";
+        ws-icon-10 = "c;C";
+        ws-icon-11 = "v;V";
 
         label-focused = "%icon%";
         label-focused-background = var "theme.base0D";
@@ -344,7 +330,7 @@
         content-padding = "0.5";
       };
       "bar/main" = {
-        modules-left = "i3 separator wired_i wireless_i wireless";
+        modules-left = "i3 separator wired_i wireless_i";
         modules-center = "";
         modules-right = "cpu_i cpu separator memory_i memory separator battery_i battery separator pulseaudio_i pulseaudio separator date_i date";
 
