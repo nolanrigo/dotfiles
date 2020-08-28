@@ -56,6 +56,12 @@
       nr = "npm repo";
       ncu = "npx npm-check-updates -u";
 
+      # Yarn
+      y = "yarn";
+      ya = "yarn add";
+      yad = "yarn add --dev";
+      yr = "yarn remove";
+
       # System
       e = "nvim";
       hms = "home-manager switch";
