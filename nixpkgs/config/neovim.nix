@@ -137,8 +137,10 @@
 
   home.file = {
     ".config/nvim/coc-settings.json".text = builtins.toJSON {
-      "tsserver.enableJavascript" =  false;
-      "tsserver.implicitProjectConfig.checkJs" = true;
+      tsserver = {
+        enableJavascript = false;
+        implicitProjectConfig.checkJs = true;
+      };
     };
   };
 
