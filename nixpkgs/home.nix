@@ -36,6 +36,7 @@ in {
     ./config/zathura.nix
     ./config/dunst.nix
     ./config/direnv.nix
+    ./config/autorandr.nix
     ./packages.nix
   ];
 

@@ -48,6 +48,7 @@
 
     # Utils
     zip unzip p7zip unrar # archive tools
+    arandr
     nox
     blueman
     jq
