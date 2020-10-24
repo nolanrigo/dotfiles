@@ -109,11 +109,7 @@
   programs = {
     dconf.enable = true;
     fish.enable = true;
-    ssh.startAgent = false;
-    gnupg.agent = {
-      enable = true;
-      enableSSHSupport = true;
-    };
+    ssh.startAgent = true;
   };
 
   services = {
@@ -131,10 +127,6 @@
     avahi.enable = true;
     blueman.enable = true;
     dbus.packages = with pkgs; [ blueman ]; # FIXTHAT: https://github.com/rycee/home-manager/issues/84
-    pcscd.enable = true;
-    udev.packages = with pkgs; [
-      yubikey-personalization
-    ];
     xserver = {
       enable = true;
       videoDrivers = [ "intel" ];

@@ -65,13 +65,6 @@
     brightnessctl
     playerctl
 
-    # Yubikey
-    yubikey-personalization
-    yubikey-personalization-gui
-    yubico-piv-tool
-    yubikey-manager
-    yubikey-manager-qt
-
     # Needed
     psmisc
     pantheon.elementary-screenshot-tool
