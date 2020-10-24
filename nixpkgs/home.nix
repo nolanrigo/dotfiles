@@ -37,6 +37,7 @@ in {
     ./config/dunst.nix
     ./config/direnv.nix
     ./config/autorandr.nix
+    ./config/mcfly.nix
     ./packages.nix
   ];
 
@@ -69,7 +70,6 @@ in {
       variant = "altgr-intl";
     };
   };
-
 
   services = {
     udiskie.enable = true;
