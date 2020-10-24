@@ -67,7 +67,7 @@
     psmisc
     # playerctl
     # pulseaudio-ctl
-    deepin.deepin-screenshot
+    pantheon.elementary-screenshot-tool
 
     # qgis libnotify logisim
 

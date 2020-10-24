@@ -128,7 +128,7 @@ in {
         XF86AudioPause = "exec --no-startup-id playerctl play-pause";
         XF86AudioNext = "exec --no-startup-id playerctl next";
         XF86AudioPrev = "exec --no-startup-id playerctl previous";
-        Print = "exec --no-startup-id find_something"; # TODO: Find an other tools to take printscreen
+        Print = "exec --no-startup-id io.elementary.screenshot-tool";
       };
 
       colors = {
