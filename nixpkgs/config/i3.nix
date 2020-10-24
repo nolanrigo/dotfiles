@@ -84,10 +84,10 @@ in {
           "${alt}+Shift+c" = "move container to workspace c";
           "${alt}+Shift+v" = "move container to workspace v";
         } // {
-          "${alt}+apostrophe" = "exec --no-startup-id \"${pkgs.rofi}/bin/rofi -modi drun -show drun\"";
+          "${alt}+apostrophe" = "exec --no-startup-id \"rofi -modi drun -show drun\"";
           "${alt}+Shift+apostrophe" = "exec --no-startup-id \"rofi -modi 'emoji:${config.xdg.configHome}/rofi/rofiemoji.sh' -show emoji\"";
-          "${alt}+Return" = "exec ${pkgs.alacritty}/bin/alacritty";
-          "${alt}+slash" = "exec ${pkgs.brave}/bin/brave";
+          "${alt}+Return" = "exec alacritty";
+          "${alt}+slash" = "exec qutebrowser";
           "${alt}+p" = "kill";
 
           "${alt}+g" = "mode 类";
@@ -118,17 +118,17 @@ in {
 
         "${alt}+Delete" = "mode "; # Keep the old way to shutdown my computer by laptop keyboard
 
-        XF86AudioRaiseVolume = "exec --no-startup-id ${pkgs.pulseaudio-ctl}/bin/pulseaudio-ctl up";
-        XF86AudioLowerVolume = "exec --no-startup-id ${pkgs.pulseaudio-ctl}/bin/pulseaudio-ctl down";
-        XF86AudioMute = "exec --no-startup-id ${pkgs.pulseaudio-ctl}/bin/pulseaudio-ctl mute";
-        XF86AudioMicMute = "exec --no-startup-id ${pkgs.pulseaudio-ctl}/bin/pulseaudio-ctl mute-input";
-        XF86MonBrightnessUp = "exec --no-startup-id ${pkgs.brightnessctl}/bin/brightnessctl s +5%";
-        XF86MonBrightnessDown = "exec --no-startup-id ${pkgs.brightnessctl}/bin/brightnessctl s 5%-";
-        XF86AudioPlay = "exec --no-startup-id ${pkgs.playerctl}/bin/playerctl play-pause";
-        XF86AudioPause = "exec --no-startup-id ${pkgs.playerctl}/bin/playerctl play-pause";
-        XF86AudioNext = "exec --no-startup-id ${pkgs.playerctl}/bin/playerctl next";
-        XF86AudioPrev = "exec --no-startup-id ${pkgs.playerctl}/bin/playerctl previous";
-        Print = "exec --no-startup-id ${pkgs.deepin.deepin-screenshot}/bin/deepin-screenshot";
+        XF86AudioRaiseVolume = "exec --no-startup-id pulseaudio-ctl up";
+        XF86AudioLowerVolume = "exec --no-startup-id pulseaudio-ctl down";
+        XF86AudioMute = "exec --no-startup-id pulseaudio-ctl mute";
+        XF86AudioMicMute = "exec --no-startup-id pulseaudio-ctl mute-input";
+        XF86MonBrightnessUp = "exec --no-startup-id brightnessctl s +5%";
+        XF86MonBrightnessDown = "exec --no-startup-id brightnessctl s 5%-";
+        XF86AudioPlay = "exec --no-startup-id playerctl play-pause";
+        XF86AudioPause = "exec --no-startup-id playerctl play-pause";
+        XF86AudioNext = "exec --no-startup-id playerctl next";
+        XF86AudioPrev = "exec --no-startup-id playerctl previous";
+        Print = "exec --no-startup-id find_something"; # TODO: Find an other tools to take printscreen
       };
 
       colors = {
