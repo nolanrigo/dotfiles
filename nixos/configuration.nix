@@ -150,7 +150,7 @@
         Section "InputClass"
           Identifier "MX Vertical Mouse"
           Driver "libinput"
-          MatchIsPointer "yes"
+          MatchIsPointer "on"
           Option "AccelProfile" "flat"
           Option "AccelSpeed" "0"
         EndSection
