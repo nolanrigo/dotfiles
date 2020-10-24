@@ -62,7 +62,6 @@
   fonts = {
     enableFontDir = true;
     fonts = with pkgs; [
-      joypixels
       nerdfonts
     ];
   };

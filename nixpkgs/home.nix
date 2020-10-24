@@ -38,6 +38,7 @@ in {
   ];
 
   systemd.user.startServices = true;
+  fonts.fontconfig.enable = true;
 
   xdg = {
     enable = true;
