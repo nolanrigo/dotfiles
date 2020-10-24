@@ -7,8 +7,6 @@
     withNodeJs = true;
 
     plugins = with pkgs.vimPlugins; [
-      nerdtree
-      nerdtree-git-plugin
       base16-vim
       vim-gitgutter
       vim-fugitive
