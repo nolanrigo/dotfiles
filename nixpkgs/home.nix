@@ -77,6 +77,7 @@ in {
       enable = true;
       provider = "geoclue2";
     };
+    clipmenu.enable = true;
     network-manager-applet.enable = true;
     blueman-applet.enable = true;
     unclutter = {

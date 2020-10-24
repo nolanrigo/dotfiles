@@ -86,6 +86,7 @@ in {
         } // {
           "${alt}+apostrophe" = "exec --no-startup-id \"rofi -modi drun -show drun\"";
           "${alt}+Shift+apostrophe" = "exec --no-startup-id \"rofi -modi 'emoji:${config.xdg.configHome}/rofi/rofiemoji.sh' -show emoji\"";
+          "${alt}+Shift+slash" = "exec --no-startup-id \"CM_LAUNCHER=rofi clipmenu\"";
           "${alt}+Return" = "exec alacritty";
           "${alt}+slash" = "exec qutebrowser";
           "${alt}+p" = "kill";
