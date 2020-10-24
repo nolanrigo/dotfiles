@@ -49,9 +49,12 @@
 
       # System
       e = "nvim";
+      emd = "glow";
+      epdf = "zathura";
       hms = "home-manager switch";
       hmsi3 = "home-manager switch; i3-msg restart";
       nrs = "sudo nixos-rebuild switch";
+      nrsu = "sudo nixos-rebuild switch --upgrade";
       psgrep = "ps -ax | grep";
       rf = "rm -rf";
 

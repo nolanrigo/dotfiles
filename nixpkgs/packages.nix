@@ -4,8 +4,12 @@
   home.packages = with pkgs; [
     lastpass-cli
 
+    # Editing
     kdenlive
     audacity
+
+    # Download
+    transmission-gtk
 
     # Print Scan
     gnome3.simple-scan
@@ -28,7 +32,6 @@
 
     # Dev
     insomnia
-    exercism
     awless
     awscli
     sqliteman
@@ -36,6 +39,7 @@
     mysql-workbench
     docker-compose
     gcc
+    tldr
 
     # Messaging
     tdesktop
@@ -45,17 +49,21 @@
     # General
     xclip xsel # X clipboard console support
     et
+    glow
 
     # Utils
     zip unzip p7zip unrar # archive tools
     arandr
     nox
     blueman
+    fontmatrix
     jq
     neofetch
     xorg.xev # X event monitor
     xorg.xwininfo # X window info
-    tldr
+    pulseaudio-ctl
+    brightnessctl
+    playerctl
 
     # Yubikey
     yubikey-personalization
@@ -66,8 +74,6 @@
 
     # Needed
     psmisc
-    # playerctl
-    # pulseaudio-ctl
     pantheon.elementary-screenshot-tool
 
     # qgis libnotify logisim
