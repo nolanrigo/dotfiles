@@ -14,6 +14,7 @@
         'npmd': 'https://www.npmjs.com/package/@types/{}',
         'npms': 'https://www.npmjs.com/search?q={}',
         'nix': 'https://nixos.org/nixos/packages.html?query={}',
+        'e':'http://e.localhost:{}',
       }
 
       DEEPL_TRANSLATE_URL = 'https://www.deepl.com/translator'
@@ -38,16 +39,8 @@
       tui = "https://tailwindui.com";
       ricons = "https://react-icons.github.io/react-icons";
       awssdk = "https://docs.aws.amazon.com/AWSJavaScriptSDK/latest";
+      aws = "https://aws.amazon.com";
       cdk = "https://docs.aws.amazon.com/cdk/api/latest";
-
-      # ProjectE
-      cpeai = "http://e.localhost:3203";
-      cpead = "http://e.localhost:3202";
-      cpeau = "http://e.localhost:3201";
-      cpebw = "http://e.localhost:3204";
-      cpebwg = "http://e.localhost:3204/___graphql";
-      cpel = "http://e.localhost:3205";
-      cpelg = "http://e.localhost:3205/___graphql";
     };
     mapAttrsToList = f: attrs: map (name: f name (builtins.getAttr name attrs)) (builtins.attrNames attrs);
     attrsToConfigLines = mapAttrsToList (key: value: key + " " + value);

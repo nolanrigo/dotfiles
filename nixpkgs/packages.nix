@@ -2,8 +2,6 @@
 
 {
   home.packages = with pkgs; [
-    # Main
-    brave
     lastpass-cli
 
     kdenlive
