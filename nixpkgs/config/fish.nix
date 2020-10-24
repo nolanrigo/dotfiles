@@ -4,21 +4,6 @@
   programs.fish = {
     enable = true;
     shellAbbrs = {
-      # Project
-      cpf = "cd ~/Projects/filtercast;";
-      cpd = "cd ~/dotfiles";
-      cpe = "cd ~/Projects/project-e;";
-      cpec = "cd ~/Projects/project-e/crawlers;";
-      cpel = "cd ~/Projects/project-e/landing;";
-      cpei = "cd ~/Projects/project-e/infra;";
-      cpeai = "cd ~/Projects/project-e/api;";
-      cpead = "cd ~/Projects/project-e/admin;";
-      cpeau = "cd ~/Projects/project-e/auth;";
-      cpeb = "cd ~/Projects/project-e/builder;";
-      cpebw = "cd ~/Projects/project-e/builder/website;";
-      cpebi = "cd ~/Projects/project-e/builder/infra;";
-      cpebe = "cd ~/Projects/project-e/builder/edge;";
-
       # Git
       gs = "git status";
       gl = "git lg";
