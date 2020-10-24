@@ -15,6 +15,7 @@ in {
   };
 
   imports = [
+    ./config/dropbox.nix
     ./config/pazi.nix
     ./config/theme.nix
     ./config/xcape.nix

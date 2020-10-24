@@ -3,7 +3,6 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./services/dropbox.nix
   ];
 
   system = {
