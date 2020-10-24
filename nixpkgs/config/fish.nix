@@ -58,6 +58,12 @@
       # Copy / Paste
       copy = "xclip -selection clipboard";
       paste = "xclip -o -selection clipboard";
+
+      # Lastpass
+      lpwd = "lpass show -c --password";
+      lusr = "lpass show -c --username";
+      lgen = "lpass generate -c (head /dev/urandom | tr -dc A-Za-z0-9 | head -c 13) 50";
+      ladd = "lpass add";
     };
     loginShellInit = ''
     '';
