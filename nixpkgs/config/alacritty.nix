@@ -9,7 +9,7 @@
           family = "FuraCode Nerd Font";
           style = "Regular";
         };
-        size = 7;
+        size = 12;
       };
       # TODO/FIXME: When extraConfig exist, implement https://github.com/aaron-williamson/base16-alacritty/blob/master/colors/base16-onedark.yml from resources (as other base16 theme)
       # Or Read it from xrdb / Xresources : https://github.com/jwilm/alacritty/issues/1771
@@ -45,5 +45,8 @@
       };
       draw_bold_text_with_bright_colors = false;
     };
+  };
+  home.sessionVariables = {
+    WINIT_X11_SCALE_FACTOR = 1;
   };
 }
