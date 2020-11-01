@@ -7,6 +7,7 @@
     withNodeJs = true;
 
     plugins = with pkgs.vimPlugins; [
+      vim-addon-nix
       base16-vim
       vim-gitgutter
       vim-fugitive
