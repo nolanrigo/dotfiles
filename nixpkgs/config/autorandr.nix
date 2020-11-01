@@ -36,14 +36,14 @@ in {
       };
       thorigny = {
         fingerprint = {
-          DP2 = monitors.taras;
+          HDMI1 = monitors.taras;
         };
         config = {
           eDP1.enable = false;
           DP1.enable = false;
-          HDMI1.enable = false;
+          DP2.enable = false;
           VIRTUAL1.enable = false;
-          DP2 = {
+          HDMI1 = {
             enable = true;
             primary = true;
             mode = "2560x1440";
