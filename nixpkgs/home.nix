@@ -17,7 +17,7 @@ in {
   imports = [
     ./config/firefox.nix
     ./config/dropbox.nix
-    ./config/qutebrowser.nix
+    ./config/qutebrowser/default.nix
     ./config/pazi.nix
     ./config/theme.nix
     ./config/xcape.nix
