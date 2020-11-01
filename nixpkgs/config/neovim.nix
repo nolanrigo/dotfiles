@@ -20,6 +20,7 @@
       coc-nvim
       ctrlp-vim
       Rename
+      rust-vim
     ];
 
     extraConfig = ''
@@ -131,6 +132,9 @@
 
       " Ctrl Config
       let g:ctrlp_custom_ignore = 'node_modules\|git\|elm-stuff\|dist\|.cache\|cdk.out'
+
+      " Rust
+      let g:rustfmt_autosave = 1
     '';
   };
 
