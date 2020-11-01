@@ -56,6 +56,7 @@
     arandr
     nox
     blueman
+    qview
     fontmatrix
     jq
     neofetch
@@ -173,7 +174,6 @@
   ];
 
   programs = {
-    feh.enable = true;
     obs-studio.enable = true;
     man.enable = true;
     lsd.enable = true;

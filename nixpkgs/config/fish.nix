@@ -51,6 +51,7 @@
       e = "nvim";
       emd = "glow";
       epdf = "zathura";
+      eimg = "qview";
       hms = "home-manager switch";
       hmsi3 = "home-manager switch; i3-msg restart";
       nrs = "sudo nixos-rebuild switch";
