@@ -25,9 +25,9 @@ in {
         default_page = "https://start.duckduckgo.com/?kae=d&kp=-2&kak=-1&kax=-1&kaq=-1&kap=-1&kao=-1&kt=p&t=hk&ia=web";
       };
       tabs = {
-        show = "never";
-        tabs_are_windows = true;
-        last_close = "ignore";
+        show = "always";
+        tabs_are_windows = false;
+        last_close = "close";
       };
       statusbar = {
         widgets = ["keypress" "url" "scroll" "history" "tabs" "progress"];

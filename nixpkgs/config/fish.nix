@@ -56,6 +56,7 @@
       hmsi3 = "home-manager switch; i3-msg restart";
       nrs = "sudo nixos-rebuild switch";
       nrsu = "sudo nixos-rebuild switch --upgrade";
+      nip = "nix-shell -p";
       psgrep = "ps -ax | grep";
       rf = "rm -rf";
 
