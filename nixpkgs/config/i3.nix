@@ -211,6 +211,20 @@ in {
       # Remove Alt_R/AltGr from Mod1
       exec --no-startup-id ${pkgs.xorg.xmodmap}/bin/xmodmap -e 'remove Mod1 = Alt_R'
 
+      # Bind numpad keys to french accent character
+      # The technique is not really but it will works
+      exec --no-startup-id ${pkgs.xorg.xmodmap}/bin/xmodmap -e 'keycode 90 = eacute Eacute eacute Eacute'                      # Num0
+      exec --no-startup-id ${pkgs.xorg.xmodmap}/bin/xmodmap -e 'keycode 87 = egrave Egrave egrave Egrave'                      # Num1
+      exec --no-startup-id ${pkgs.xorg.xmodmap}/bin/xmodmap -e 'keycode 88 = ecircumflex Ecircumflex ecircumflex Ecircumflex'  # Num2
+      exec --no-startup-id ${pkgs.xorg.xmodmap}/bin/xmodmap -e 'keycode 89 = ccedilla Ccedilla ccedilla Ccedilla'              # Num3
+      exec --no-startup-id ${pkgs.xorg.xmodmap}/bin/xmodmap -e 'keycode 83 = agrave Agrave agrave Agrave'                      # Num4
+      exec --no-startup-id ${pkgs.xorg.xmodmap}/bin/xmodmap -e 'keycode 84 = acircumflex Acircumflex acircumflex Acircumflex'  # Num5
+      exec --no-startup-id ${pkgs.xorg.xmodmap}/bin/xmodmap -e 'keycode 85 = ugrave Ugrave ugrave Ugrave'                      # Num6
+      exec --no-startup-id ${pkgs.xorg.xmodmap}/bin/xmodmap -e 'keycode 79 = ucircumflex Ucircumflex ucircumflex Ucircumflex'  # Num7
+      exec --no-startup-id ${pkgs.xorg.xmodmap}/bin/xmodmap -e 'keycode 80 = idiaeresis Idiaeresis idiaeresis Idiaeresis'      # Num8
+      exec --no-startup-id ${pkgs.xorg.xmodmap}/bin/xmodmap -e 'keycode 81 = icircumflex Icircumflex icircumflex Icircumflex'  # Num9
+      exec --no-startup-id ${pkgs.xorg.xmodmap}/bin/xmodmap -e 'keycode 125 = ocircumflex Ocircumflex ocircumflex Ocircumflex' # NumEqual
+
       # See https://i3wm.org/docs/userguide.html#xresources
       set_from_resource $base00 i3wm.color0
       set_from_resource $base01 i3wm.color10

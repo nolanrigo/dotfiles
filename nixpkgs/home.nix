@@ -65,11 +65,9 @@ in {
       # Disable random stuffs
       NEXT_TELEMETRY_DISABLED = 1;
     };
-    keyboard = {
-      layout = "us";
-      variant = "altgr-intl";
-    };
   };
+
+  xsession.numlock.enable = true;
 
   services = {
     udiskie.enable = true;
