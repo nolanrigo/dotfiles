@@ -1,5 +1,13 @@
 # Installation on NixOS
 
+## Init submodules
+
+```sh
+$ git submodule update --init --recursive
+```
+
+## WIP
+
 * Install Git with `nix-env -i git`
 * Clone these dotfiles with `git clone "git@github.com:gmarmstrong/dotfiles" "$HOME/dotfiles"`
 * Back up system configuration with `sudo mv /etc/nixos /etc/nixos.bak`

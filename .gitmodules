@@ -16,3 +16,6 @@
 [submodule "resources/base16-alacritty"]
 	path = resources/base16-alacritty
 	url = https://github.com/aaron-williamson/base16-alacritty.git
+[submodule "resources/qmk_firmware"]
+	path = resources/qmk_firmware
+	url = git@github.com:qmk/qmk_firmware.git
