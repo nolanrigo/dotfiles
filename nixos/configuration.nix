@@ -150,7 +150,7 @@
       # Keyboard
       layout = "us";
       xkbVariant = "altgr-intl";
-      desktopManager.xterm.enable = true;
+      desktopManager.xterm.enable = true; # INFO: When disable it makes failing the greeting login
       displayManager.lightdm = {
         enable = true;
         # background = "dark";
