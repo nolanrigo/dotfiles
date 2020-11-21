@@ -1,0 +1,53 @@
+let
+  pkgs = import <nixpkgs> { config = {}; };
+in {
+  home-manager = version: pkgs.fetchFromGitHub {
+    name = "home-manager";
+    owner = "nix-community";
+    repo = "home-manager";
+    rev = "release-${version}";
+    sha256 = "0iksjch94wfvyq0cgwv5wq52j0dc9cavm68wka3pahhdvjlxd3js";
+  };
+  base16-i3 = pkgs.fetchFromGitHub {
+    name = "base16-i3";
+    owner = "khamer";
+    repo = "base16-i3";
+    rev = "78292138812a3f88c3fc4794f615f5b36b0b6d7c";
+    sha256 = "1ikhywvf6gzyw6win07rzn0zna5bl516gpvkfrr4lfq25xh3vy4x";
+  };
+  base16-xresources = pkgs.fetchFromGitHub {
+    name = "base16-xresources";
+    owner = "base16-templates";
+    repo = "base16-xresources";
+    rev = "79e6e1de591f7444793fd8ed38b67ce7fce25ab6";
+    sha256 = "1nnj5py5n0m8rkq3ic01wzyzkgl3g9a8q5dc5pcgj3qr47hhddbw";
+  };
+  base16-qutebrowser = pkgs.fetchFromGitHub {
+    name = "base16-qutebrowser";
+    owner = "theova";
+    repo = "base16-qutebrowser";
+    rev = "144d4f7cdec8d5a8968da03268949965340f838a";
+    sha256 = "0vn9xw6xi9x1gl6ask33ss53s0kmn9yjmx44pyljqh5a42m7p73x";
+  };
+  base16-rofi = pkgs.fetchFromGitHub {
+    name = "base16-rofi";
+    owner = "0xdec";
+    repo = "base16-rofi";
+    rev = "afbc4b22d8f415dc89f36ee509ac35fb161c6df4";
+    sha256 = "1f9gkfc4icdgdj0fkkgg1fw3n6imlr1sbi42qm9hbkjxy5fmzay2";
+  };
+  rofi-emoji = pkgs.fetchFromGitHub {
+    name = "rofiemoji";
+    owner = "nkoehring";
+    repo = "rofiemoji";
+    rev = "ad61572830c9d3c00e30eec078d46dad3cfdb4a2";
+    sha256 = "16rhb2cs8cqwflkcyw5dr77alp5wik4bv1dg66m4hkgcplxv0dx0";
+  };
+  polybar-pulseaudio-control = pkgs.fetchFromGitHub {
+    name = "polybar-pulseaudio-control";
+    owner = "marioortizmanero";
+    repo = "polybar-pulseaudio-control";
+    rev = "0fbd77816fba6abdd8175647393d49b0db2c947a";
+    sha256 = "0mmd1j1nzp69b0b59npdmpcjsaf2kgg85hh4m1xr7af026mblvh9";
+  };
+}
