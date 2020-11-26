@@ -114,17 +114,17 @@ in {
               "${mod}+Delete" = "mode ";
 
               # Media
-              XF86AudioRaiseVolume = exec "pulseaudio-ctl up";
-              XF86AudioLowerVolume = exec "pulseaudio-ctl down";
-              XF86AudioMute = exec "pulseaudio-ctl mute";
-              XF86AudioMicMute = exec "pulseaudio-ctl mute-input";
-              XF86AudioPlay = exec "playerctl play-pause";
-              XF86AudioPause = exec "playerctl play-pause";
-              XF86AudioNext = exec "playerctl next";
-              XF86AudioPrev = exec "playerctl previous";
+              XF86AudioRaiseVolume = exec "${pkgs.pulseaudio-ctl}/bin/pulseaudio-ctl up";
+              XF86AudioLowerVolume = exec "${pkgs.pulseaudio-ctl}/bin/pulseaudio-ctl down";
+              XF86AudioMute = exec "${pkgs.pulseaudio-ctl}/bin/pulseaudio-ctl mute";
+              XF86AudioMicMute = exec "${pkgs.pulseaudio-ctl}/bin/pulseaudio-ctl mute-input";
+              XF86AudioPlay = exec "${pkgs.playerctl}/bin/playerctl play-pause";
+              XF86AudioPause = exec "${pkgs.playerctl}/bin/playerctl play-pause";
+              XF86AudioNext = exec "${pkgs.playerctl}/bin/playerctl next";
+              XF86AudioPrev = exec "${pkgs.playerctl}/bin/playerctl previous";
 
-              XF86MonBrightnessUp = exec "brightnessctl s +5%";
-              XF86MonBrightnessDown = exec "brightnessctl s 5%-";
+              XF86MonBrightnessUp = exec "${pkgs.brightnessctl}/bin/brightnessctl s +5%";
+              XF86MonBrightnessDown = exec "${pkgs.brightnessctl}/bin/brightnessctl s 5%-";
             };
 
             colors = {
