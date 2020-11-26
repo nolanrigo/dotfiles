@@ -8,6 +8,13 @@ let
 in {
 
   home-manager.users."${params.username}" = {
+    home.packages = with pkgs; [
+      # xclip & xsel are dependencies to rofi emoji
+      xclip
+      xsel
+    ];
+
+
     programs.rofi = {
       enable = true;
       extraConfig = "";
