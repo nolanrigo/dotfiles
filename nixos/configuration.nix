@@ -40,6 +40,7 @@
     ./launcher.nix
     ./explore.nix
     ./stream.nix
+    ./pdf.nix
   ];
 
   # TODO: Move it elsewhere

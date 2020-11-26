@@ -36,6 +36,13 @@ with import <nixpkgs> {};
     rev = "1d9e52afb74e03f5a2fdc53d9327428fe00c70c7";
     sha256 = "1h10ynqdrnh9xh9pxjzrd2yk85zavmmqs9mx6hb2v0dq4m81hkmr";
   };
+  base16-zathura = fetchFromGitHub {
+    name = "base16-zathura";
+    owner = "HaoZeke";
+    repo = "base16-zathura";
+    rev = "34e5a16dac5ddbd7764fcbefaa3340002abec0e5";
+    sha256 = "001ygv385y6n910s9bd7gmyl9bvkxzj5hdchi7zfh77gs6vpg5b5";
+  };
   base16-rofi = fetchFromGitHub {
     name = "base16-rofi";
     owner = "0xdec";
