@@ -30,6 +30,9 @@ in {
       insomnia
       awscli
       dbeaver
+
+      # Printscreen
+      gnome3.gnome-screenshot
     ];
   };
 
