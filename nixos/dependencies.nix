@@ -29,6 +29,13 @@ with import <nixpkgs> {};
     rev = "144d4f7cdec8d5a8968da03268949965340f838a";
     sha256 = "0vn9xw6xi9x1gl6ask33ss53s0kmn9yjmx44pyljqh5a42m7p73x";
   };
+  base16-textmate = fetchFromGitHub {
+    name = "base16-textmate";
+    owner = "chriskempson";
+    repo = "base16-textmate";
+    rev = "1d9e52afb74e03f5a2fdc53d9327428fe00c70c7";
+    sha256 = "1h10ynqdrnh9xh9pxjzrd2yk85zavmmqs9mx6hb2v0dq4m81hkmr";
+  };
   base16-rofi = fetchFromGitHub {
     name = "base16-rofi";
     owner = "0xdec";

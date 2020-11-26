@@ -28,6 +28,7 @@
     #
     # User
     ./user.nix
+    ./cli-toolkit.nix
     ./git.nix
     ./terminal.nix
     ./editor.nix
