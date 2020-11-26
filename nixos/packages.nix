@@ -25,6 +25,11 @@ in {
       spotify
       vlc
       molotov
+
+      # Dev tools
+      insomnia
+      awscli
+      dbeaver
     ];
   };
 
