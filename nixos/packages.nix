@@ -21,8 +21,10 @@ in {
       tdesktop
       slack
 
-      # Music
+      # Media
       spotify
+      vlc
+      molotov
     ];
   };
 
