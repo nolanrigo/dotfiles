@@ -256,7 +256,7 @@ in {
         };
         "module/battery" = {
           type = "internal/battery";
-          # full-at = 99;
+          full-at = 98;
           battery = "BAT1";
           adapter = "ADP1";
           poll-interval = 5;
