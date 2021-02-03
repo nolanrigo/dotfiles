@@ -14,12 +14,11 @@ in {
   };
 
   # Swapiness to 0
-  # Note: I want to use my 16go swap only if there is not other options
+  # Note: I want to use my swap only if there is not other options
   boot.kernel.sysctl."vm.swap" = 0;
 
   # Use all firmware (unfree too)
   hardware.enableAllFirmware = true;
 
-  # Don't upate microcode as I am on my comany computer
-  hardware.cpu.intel.updateMicrocode = false;
+  hardware.cpu.intel.updateMicrocode = true;
 }

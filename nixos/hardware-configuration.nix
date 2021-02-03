@@ -2,6 +2,7 @@
 
 {
   imports = [
+    # Lenovo
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
@@ -10,9 +11,6 @@
       availableKernelModules = [
         "xhci_pci"
         "nvme"
-        "usb_storage"
-        "sd_mod"
-        "rtsx_pci_sdmmc"
       ];
       kernelModules = [];
     };
@@ -26,15 +24,13 @@
 
   fileSystems = {
     "/" = {
-      device = "/dev/disk/by-uuid/41a7e9fe-071e-4c08-a113-2b79fc151358";
+      device = "/dev/disk/by-uuid/3663ae93-4a81-4ae7-8d1c-89856367e9de";
       fsType = "ext4";
     };
     "/boot" = {
-      device = "/dev/disk/by-uuid/625E-2849";
+      device = "/dev/disk/by-uuid/7494-732B";
       fsType = "vfat";
     };
   };
-  swapDevices = [
-    { device = "/dev/disk/by-uuid/8fa77a96-b239-47c9-b905-ff2f121239d3"; }
-  ];
+  swapDevices = [];
 }

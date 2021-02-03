@@ -6,7 +6,7 @@ with import <nixpkgs> {};
     owner = "nix-community";
     repo = "home-manager";
     rev = "release-${version}";
-    sha256 = "0iksjch94wfvyq0cgwv5wq52j0dc9cavm68wka3pahhdvjlxd3js";
+    sha256 = "1pwn2w21rmnk7nqzx9wmgb4k4kph7vfd1r9wcq9xdn7w27cjdg7v";
   };
   base16-i3 = fetchFromGitHub {
     name = "base16-i3";

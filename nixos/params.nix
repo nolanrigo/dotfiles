@@ -8,8 +8,8 @@
     version = "20.09";
   };
   networkInterfaces = [
-    "enp4s0" # Ethernet
-    "wlo1"   # Wireless
+    "enp0s31f6"   # Ethernet
+    "wlp0s20f3"   # Wireless
   ];
   denyDomains = [
     "20min.ch"
