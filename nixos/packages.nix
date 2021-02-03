@@ -19,6 +19,7 @@ in {
       # Messaging
       discord
       tdesktop
+      signal-desktop
       slack
 
       # Media
