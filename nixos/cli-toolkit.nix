@@ -26,9 +26,9 @@ in {
     };
 
     # as fish abbrs
-    programs.fish.shellAbbrs = {
-      ls = "exa";
+    programs.fish.shellAbbrs = rec {
       l = "exa -al --icons --git --group-directories-first";
+      ls = l;
       ltree = "exa -al --git --icons --tree --group-directories-first";
       cat = "bat";
       find = "fd";
