@@ -41,6 +41,7 @@ in {
         };
         colors.webpage = {
           prefers_color_scheme_dark = true;
+          darkmode.enabled = true;
         };
       };
 
