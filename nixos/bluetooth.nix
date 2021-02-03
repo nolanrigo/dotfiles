@@ -28,6 +28,7 @@ in {
 
     # Bind media buttons on bluetooth headset
     # Info: https://nixos.wiki/wiki/Bluetooth#Using_Bluetooth_headset_buttons_to_control_media_player
+    /*
     systemd.user.services.mpris-proxy = {
       Unit = {
         Description = "Mpris proxy";
@@ -39,6 +40,7 @@ in {
       Service.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
       Install.WantedBy = ["default.target"];
     };
+    */
 
     # Open blueman as a popup
     xsession.windowManager.i3.config.floating.criteria = [{ class = ".blueman-manager-wrapped"; }];
