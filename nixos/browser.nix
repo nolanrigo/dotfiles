@@ -58,7 +58,7 @@ in {
       ricons = "https://react-icons.github.io/react-icons";
       awssdk = "https://docs.aws.amazon.com/AWSJavaScriptSDK/latest";
       awscdk = "https://docs.aws.amazon.com/cdk/api/latest";
-      aws = "https://aws.amazon.com";
+      aws = "https://eu-west-3.console.aws.amazon.com/console/home?region=eu-west-3";
     };
 
     # Firefox as backup browser
