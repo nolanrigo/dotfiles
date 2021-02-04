@@ -10,12 +10,11 @@ in {
   # Display Manager
   services.xserver = {
     enable = true;
-    desktopManager.xterm.enable = false;
-    displayManager = {
-      defaultSession = "none+i3";
-      lightdm.enable = true;
+    desktopManager.xterm.enable = true;
+    displayManager.lightdm = {
+      enable = true;
+      greeter.enable = true;
     };
-    windowManager.i3.enable = true;
   };
 
   # I3

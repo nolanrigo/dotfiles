@@ -9,7 +9,7 @@
     ./boot.nix
     ./packages.nix
     ./network.nix
-    # INFO: delete on lenovo ./gpu.nix
+    ./gpu.nix
     ./home-manager.nix
     ./locale.nix
     ./bluetooth.nix

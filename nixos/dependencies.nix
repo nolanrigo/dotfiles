@@ -8,6 +8,13 @@ with import <nixpkgs> {};
     rev = "release-${version}";
     sha256 = "1pwn2w21rmnk7nqzx9wmgb4k4kph7vfd1r9wcq9xdn7w27cjdg7v";
   };
+  nixos-hardware = fetchFromGitHub {
+    name = "nixos-hardware";
+    owner = "NixOS";
+    repo = "nixos-hardware";
+    rev = "d6a123118152f766cb87983ed60b9a0094fa4306";
+    sha256 = "0qcsjvjq9wcdy6jfnp4299ng2497g8kk2gh85jxr5zij9v6jl7pr";
+  };
   base16-i3 = fetchFromGitHub {
     name = "base16-i3";
     owner = "khamer";

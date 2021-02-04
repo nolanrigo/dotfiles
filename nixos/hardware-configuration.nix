@@ -1,8 +1,10 @@
 { config, lib, pkgs, modulesPath, ... }:
 
-{
+let
+  deps = import ./dependencies.nix;
+in {
   imports = [
-    # Lenovo
+    (import "${deps.nixos-hardware}/lenovo/thinkpad/x1/7th-gen")
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
