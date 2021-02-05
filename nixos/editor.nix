@@ -23,6 +23,12 @@ in {
         ale
         vim-polyglot
         coc-nvim
+        coc-tsserver
+        coc-highlight
+        coc-css
+        coc-html
+        # coc-svg
+        # coc-tailwindcss
         ctrlp-vim
         Rename
         rust-vim
@@ -68,17 +74,9 @@ in {
 
         let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
-        " Coc configuration
-        let g:coc_global_extensions = [ 'coc-highlight', 'coc-svg', 'coc-css', 'coc-tailwindcss',  'coc-html', 'coc-tsserver' ]
-        " Unused coc plugins: 'coc-pairs'
-
         set updatetime=300
         set shortmess+=c
 
-        inoremap <silent><expr> <TAB>
-          \ pumvisible() ? "\<C-n>" :
-          \ <SID>check_back_space() ? "\<TAB>" :
-          \ coc#refresh()
         inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
         function! s:check_back_space() abort
           let col = col('.') - 1
