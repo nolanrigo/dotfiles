@@ -7,12 +7,14 @@ in {
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
+      /*
     config = {
       General = {
         # Enable A2DP Sink
         Enable = "Source,Sink,Media,Socket";
       };
     };
+      */
   };
 
   # Active Blueman
