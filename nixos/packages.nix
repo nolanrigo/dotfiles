@@ -16,6 +16,9 @@ in {
 
 
     home.packages = with pkgs; [
+      # Doc
+      libreoffice
+
       # Messaging
       discord
       tdesktop
