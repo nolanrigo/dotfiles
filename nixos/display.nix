@@ -11,9 +11,15 @@ in {
   services.xserver = {
     enable = true;
     desktopManager.xterm.enable = true;
-    displayManager.lightdm = {
-      enable = true;
-      greeter.enable = true;
+    displayManager = {
+      autoLogin = {
+        user = params.username;
+        enable = true;
+      };
+      lightdm = {
+        enable = true;
+        greeter.enable = true;
+      };
     };
   };
 
