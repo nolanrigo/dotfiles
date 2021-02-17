@@ -25,18 +25,17 @@ in {
       signal-desktop
       slack
 
-      # Media
-      spotify
-      vlc
-      molotov
+      spotify                           # Music player
+      molotov                           # TV player
+      vlc                               # Video viewer
+      qview                             # Image viewer
+      gnome3.gnome-screenshot           # Screenshot
 
       # Dev tools
       insomnia
       awscli
       dbeaver
 
-      # Printscreen
-      gnome3.gnome-screenshot
     ];
   };
 
