@@ -41,7 +41,7 @@ in {
         };
         colors.webpage = {
           prefers_color_scheme_dark = true;
-          darkmode.enabled = true;
+          darkmode.enabled = false;
         };
       };
 
@@ -50,6 +50,8 @@ in {
     xdg.configFile."qutebrowser/quickmarks".text = quickmarksConf {
       # General
       mail = "https://beta.protonmail.com";
+      maps = "https://maps.google.com";
+      wsp = "https://web.whatsapp.com";
 
       # Daily tools
       home-manager = "https://github.com/nix-community/home-manager";
