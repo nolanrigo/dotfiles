@@ -7,8 +7,8 @@ in {
     # Git
     programs.git = {
       enable = true;
-      userName = "Nolan Rigo";
-      userEmail = "nolan@rigo.dev";
+      userName = params.fullname;
+      userEmail = params.email;
 
       extraConfig = {
         github.user = "nolanrigo";
