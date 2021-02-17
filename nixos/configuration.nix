@@ -41,6 +41,7 @@
     ./explore.nix
     ./stream.nix
     ./pdf.nix
+    ./npm.nix
   ];
 
   # TODO: Move it elsewhere
