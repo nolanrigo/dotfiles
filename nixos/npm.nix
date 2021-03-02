@@ -12,13 +12,11 @@ in {
     home.file.".npm-init.js" = {
       text = ''
         module.exports = {
-          init: {
-            version: '1.0.0',
-            license: 'WTFPL',
-            author: {
-              email: '${params.email}',
-              name: '${params.fullname}',
-            },
+          version: '0.1.0',
+          license: 'WTFPL',
+          author: {
+            email: '${params.email}',
+            name: '${params.fullname}',
           },
         };
       '';
