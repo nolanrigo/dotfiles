@@ -63,9 +63,6 @@ in {
       aws = "https://eu-west-3.console.aws.amazon.com/console/home?region=eu-west-3";
     };
 
-    # Firefox as backup browser
-    programs.firefox.enable = true;
-
     # qutebrowser as $BROWSER
     home.sessionVariables.BROWSER = "qutebrowser";
 
@@ -75,5 +72,9 @@ in {
     in {
       "${mod}+slash" = exec "$BROWSER";
     };
+
+    # Backup browsers
+    programs.firefox.enable = true;
+    home.packages = [pkgs.google-chrome];
   };
 }
