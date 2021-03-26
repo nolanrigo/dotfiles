@@ -15,9 +15,11 @@
   ];
   denyDomains = [
     "20min.ch"
+    "20minutes.fr"
     "koreus.com"
     "nokenny.co"
     "choualbox.com"
+    "9gag.com"
   ];
   fonts = rec {
     size = 12;
