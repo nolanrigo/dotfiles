@@ -61,6 +61,10 @@ in {
       awssdk = "https://docs.aws.amazon.com/AWSJavaScriptSDK/latest";
       awscdk = "https://docs.aws.amazon.com/cdk/api/latest";
       aws = "https://eu-west-3.console.aws.amazon.com/console/home?region=eu-west-3";
+      awslbd = "https://eu-west-3.console.aws.amazon.com/lambda/home?region=eu-west-3#/functions";
+      awslog = "https://eu-west-3.console.aws.amazon.com/cloudwatch/home?region=eu-west-3#logsV2:log-groups";
+      awsddb = "https://eu-west-3.console.aws.amazon.com/dynamodb/home?region=eu-west-3#tables:";
+      awssqs = "https://eu-west-3.console.aws.amazon.com/sqs/v2/home?region=eu-west-3#/queues";
     };
 
     # qutebrowser as $BROWSER
