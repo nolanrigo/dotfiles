@@ -11,8 +11,10 @@ in {
       fd
       procs
       sd
-      ripgrep
-      ripgrep-all
+      ripgrep-all # ripgrep
+      broot
+      zip
+      unzip
     ];
 
     programs.bat = {
