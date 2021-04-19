@@ -50,6 +50,7 @@ in {
     xdg.configFile."qutebrowser/quickmarks".text = quickmarksConf {
       # General
       mail = "https://beta.protonmail.com";
+      cal = "https://calendar.protonmail.com";
       maps = "https://maps.google.com";
       wsp = "https://web.whatsapp.com";
 
