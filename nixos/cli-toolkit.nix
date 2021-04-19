@@ -39,6 +39,10 @@ in {
       sed = "sd";
       grep = "rg";
       rgf = "rg -F";
+      md = "make dev";
+      mb = "make build";
+      mc = "make clean";
+      mt = "make test";
     };
   };
 }
