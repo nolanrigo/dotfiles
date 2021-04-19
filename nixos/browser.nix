@@ -65,8 +65,10 @@ in {
       aws = "https://eu-west-3.console.aws.amazon.com/console/home?region=eu-west-3";
       awslbd = "https://eu-west-3.console.aws.amazon.com/lambda/home?region=eu-west-3#/functions";
       awslog = "https://eu-west-3.console.aws.amazon.com/cloudwatch/home?region=eu-west-3#logsV2:log-groups";
-      awsddb = "https://eu-west-3.console.aws.amazon.com/dynamodb/home?region=eu-west-3#tables:";
+      awsddb = "https://eu-west-3.console.aws.amazon.com/dynamodbv2/home?region=eu-west-3#tables";
       awssqs = "https://eu-west-3.console.aws.amazon.com/sqs/v2/home?region=eu-west-3#/queues";
+      awss3 = "https://s3.console.aws.amazon.com/s3/home?region=eu-west-3";
+      awscdn = "https://console.aws.amazon.com/cloudfront/home?region=eu-west-3";
     };
 
     # qutebrowser as $BROWSER
