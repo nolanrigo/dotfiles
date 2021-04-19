@@ -59,6 +59,7 @@ in {
       tcss = "https://nerdcave.com/tailwind-cheat-sheet";
       tui = "https://tailwindui.com";
       ricons = "https://react-icons.github.io/react-icons";
+      wdns = "https://www.whatsmydns.net";
       awssdk = "https://docs.aws.amazon.com/AWSJavaScriptSDK/latest";
       awscdk = "https://docs.aws.amazon.com/cdk/api/latest";
       aws = "https://eu-west-3.console.aws.amazon.com/console/home?region=eu-west-3";
