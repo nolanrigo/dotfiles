@@ -11,7 +11,8 @@ in {
       fd
       procs
       sd
-      ripgrep-all # ripgrep
+      ripgrep
+      ripgrep-all
       broot
       zip
       unzip
@@ -37,6 +38,7 @@ in {
       ps = "procs";
       sed = "sd";
       grep = "rg";
+      rgf = "rg -F";
     };
   };
 }
