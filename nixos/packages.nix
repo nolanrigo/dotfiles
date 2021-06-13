@@ -35,7 +35,7 @@ in {
       insomnia
       awscli
       dbeaver
-
+      robomongo
     ];
   };
 
