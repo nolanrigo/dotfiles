@@ -42,6 +42,7 @@
     ./stream.nix
     ./pdf.nix
     ./npm.nix
+    ./sql.nix
   ];
 
   # TODO: Move it elsewhere
