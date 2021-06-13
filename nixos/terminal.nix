@@ -31,6 +31,7 @@ in {
         nrs = "sudo nixos-rebuild switch";
         nrsu = "sudo nixos-rebuild switch --upgrade";
         nrsi = "sudo nixos-rebuild switch; i3-msg restart";
+        ngd = "sudo nix-collect-garbage -d";
         nip = "nix-shell -p";
         psgrep = "ps -ax | grep";
         rf = "rm -rf";
