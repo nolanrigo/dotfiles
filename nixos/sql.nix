@@ -12,5 +12,13 @@ in {
         email = params.email;
       };
     };
+
+    programs.fish.shellAbbrs = {
+      # Sqish
+      sq = "sq";
+      sqd = "sqitch deploy";
+      sqr = "sqitch revert";
+      sqv = "sqitch verify";
+    };
   };
 }
