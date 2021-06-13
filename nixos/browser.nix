@@ -40,8 +40,12 @@ in {
           widgets = ["keypress" "url" "scroll" "history" "tabs" "progress"];
         };
         colors.webpage = {
+          bg = params.theme.colors.primary.background;
           prefers_color_scheme_dark = true;
-          darkmode.enabled = false;
+          darkmode = {
+            enabled = true;
+            algorithm = "lightness-cielab";
+          };
         };
       };
 
@@ -53,6 +57,9 @@ in {
       cal = "https://calendar.protonmail.com";
       maps = "https://maps.google.com";
       wsp = "https://web.whatsapp.com";
+
+      # Qutebrowser
+      settings = "https://www.qutebrowser.org/doc/help/settings.html";
 
       # Daily tools
       home-manager = "https://github.com/nix-community/home-manager";
