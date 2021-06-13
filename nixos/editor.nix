@@ -12,7 +12,6 @@ in {
       withNodeJs = true;
 
       plugins = with pkgs.vimPlugins; [
-        vim-addon-nix
         base16-vim
         vim-gitgutter
         vim-fugitive
@@ -31,6 +30,9 @@ in {
         # coc-tailwindcss
         ctrlp-vim
         Rename
+        vim-nix
+        vim-fish
+        vim-toml
         rust-vim
       ];
 
