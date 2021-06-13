@@ -21,5 +21,22 @@ in {
         };
       '';
     };
+
+    programs.fish.shellAbbrs = {
+      # Npm
+      ni = "npm i";
+      nci = "npm ci";
+      nid = "npm i -D";
+      nun = "npm un";
+      nh = "npm home";
+      nr = "npm repo";
+      ncu = "npx npm-check-updates -u";
+
+      # Yarn
+      y = "yarn";
+      ya = "yarn add";
+      yad = "yarn add --dev";
+      yr = "yarn remove";
+    };
   };
 }

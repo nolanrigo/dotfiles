@@ -41,7 +41,7 @@
     ./explore.nix
     ./stream.nix
     ./pdf.nix
-    ./npm.nix
+    ./node.nix
     ./sql.nix
   ];
 
