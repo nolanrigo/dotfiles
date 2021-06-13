@@ -124,7 +124,9 @@ in {
       gsl = "git stash list";
       gsc = "git stash clear";
       gbr = "git branch -avv";
-      gbrd = "git brand -d";
+      gbrd = "git branch -d";
+      gdf = "git diff";
+      gdfs = "git diff --staged";
     };
   };
 }
