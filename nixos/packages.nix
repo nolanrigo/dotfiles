@@ -24,6 +24,7 @@ in {
       tdesktop
       signal-desktop
       slack
+      chatterino2                       # twitch
 
       molotov                           # TV player
       vlc                               # Video viewer
