@@ -15,7 +15,7 @@ in {
 
     programs.fish.shellAbbrs = {
       # Sqish
-      sq = "sq";
+      sq = "sqitch";
       sqd = "sqitch deploy";
       sqr = "sqitch revert";
       sqv = "sqitch verify";

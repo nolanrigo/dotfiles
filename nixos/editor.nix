@@ -73,6 +73,7 @@ in {
         set cmdheight=2
         set signcolumn=yes
         set nopaste
+        set clipboard=unnamedplus
 
         let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 

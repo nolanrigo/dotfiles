@@ -29,11 +29,13 @@ in {
       molotov                           # TV player
       vlc                               # Video viewer
       qview                             # Image viewer
+      glow                              # Markdown viewer
       gnome3.gnome-screenshot           # Screenshot
 
       # Dev tools
       insomnia
       awscli
+      google-cloud-sdk
       dbeaver
       robomongo
     ];

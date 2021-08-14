@@ -24,7 +24,7 @@ in {
       enable = true;
       shellAbbrs = {
         # System
-        emd = "glow";
+        emd = "glow -p";
         epdf = "zathura";
         eimg = "qview";
 
@@ -33,7 +33,7 @@ in {
         nrsi = "sudo nixos-rebuild switch; i3-msg restart";
         ngd = "sudo nix-collect-garbage -d";
         nip = "nix-shell -p";
-        psgrep = "ps -ax | grep";
+        psgrep = "ps -ax | rg";
         rf = "rm -rf";
       };
 

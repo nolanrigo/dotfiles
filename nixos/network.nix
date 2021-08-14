@@ -12,7 +12,7 @@ in {
       params.networkInterfaces
     );
     hosts = {
-      "127.0.0.1" = params.denyDomains;
+      "127.0.0.1" = params.localDomains;
     };
     nameservers = [
       "208.67.222.222"

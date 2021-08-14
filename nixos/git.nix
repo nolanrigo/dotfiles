@@ -101,10 +101,11 @@ in {
 
     # Git as fish abbrs
     programs.fish.shellAbbrs = {
-      gs = "git status";
+      gs = "git status -sb";
       gl = "git lg";
       ga = "git add";
       gap = "git add -p";
+      gan = "git add -N";
       gco = "git checkout";
       gcm = "git commit";
       gcmf = "git commit --fixup";

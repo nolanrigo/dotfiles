@@ -13,13 +13,21 @@
     "enp0s31f6"   # Ethernet
     "wlp0s20f3"   # Wireless
   ];
-  denyDomains = [
+  localDomains = [
+    # Dev
+    "meetanja.local"
+    "api.meetanja.local"
+    "auth.meetanja.local"
+
+    # Deny
+    # "twitch.tv"
     "20min.ch"
     "20minutes.fr"
-    "koreus.com"
-    "nokenny.co"
-    "choualbox.com"
-    "9gag.com"
+    "lematin.ch"
+    # "koreus.com"
+    # "nokenny.co"
+    # "choualbox.com"
+    # "9gag.com"
   ];
   fonts = rec {
     size = 12.0;

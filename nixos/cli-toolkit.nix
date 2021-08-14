@@ -8,6 +8,7 @@ in {
   home-manager.users."${params.username}" = {
     home.packages = with pkgs; [
       exa
+      sl
       fd
       procs
       sd
@@ -16,6 +17,7 @@ in {
       broot
       zip
       unzip
+      nettools
     ];
 
     programs.bat = {
@@ -39,6 +41,7 @@ in {
       sed = "sd";
       grep = "rg";
       rgf = "rg -F";
+      rgfl = "rg --files-with-matches -F";
       md = "make dev";
       mb = "make build";
       mc = "make clean";
