@@ -47,5 +47,13 @@ in {
       mc = "make clean";
       mt = "make test";
     };
+
+    # nix-index
+    programs.nix-index = {
+      enable = true;
+      enableBashIntegration = false;
+      enableZshIntegration = false;
+      enableFishIntegration = true;
+    };
   };
 }
