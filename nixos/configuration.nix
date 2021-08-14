@@ -43,6 +43,7 @@
     ./pdf.nix
     ./node.nix
     ./sql.nix
+    ./music.nix
   ];
 
   # TODO: Move it elsewhere

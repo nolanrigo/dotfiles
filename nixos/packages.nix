@@ -25,7 +25,6 @@ in {
       signal-desktop
       slack
 
-      spotify                           # Music player
       molotov                           # TV player
       vlc                               # Video viewer
       qview                             # Image viewer
