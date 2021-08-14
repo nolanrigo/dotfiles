@@ -41,7 +41,7 @@ in {
         };
         colors.webpage = {
           bg = params.theme.colors.primary.background;
-          prefers_color_scheme_dark = true;
+          preferred_color_scheme = "dark";
           darkmode = {
             enabled = true;
             algorithm = "lightness-cielab";
