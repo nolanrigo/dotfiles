@@ -6,22 +6,21 @@ in {
   services.xserver = {
     libinput = {
       enable = true;
-      touchpad = {
-        tapping = false;
-        tappingDragLock = false;
+      mouse = {
+        accelSpeed = "4";
         accelProfile = "flat";
+        leftHanded = false;
+        naturalScrolling = false;
+      };
+      touchpad = {
+        accelSpeed = "0";
+        accelProfile = "flat";
+        leftHanded = false;
+        naturalScrolling = true;
+        tapping = false;
+        scrollMethod = "twofinger";
       };
     };
-    # LOOK AT: synaptics for advandced trackpad gestures
-    config = ''
-      Section "InputClass"
-        Identifier "MX Vertical Mouse"
-        Driver "libinput"
-        MatchIsPointer "on"
-        Option "AccelProfile" "flat"
-        Option "AccelSpeed" "0"
-      EndSection
-    '';
   };
 
   home-manager.users."${params.username}".services.unclutter = {
