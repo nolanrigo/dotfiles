@@ -212,6 +212,7 @@ in {
       };
     };
 
+    # TODO: replace by i3status-rust
     services.polybar = let
       xrdb = color: "\${xrdb:${color}}";
     in {
@@ -220,6 +221,7 @@ in {
       package = pkgs.polybar.override {
         pulseSupport = true;
       };
+      # INFO: try settings instead, same than config but nix friendly
       config = {
         "global/wm" = {
           margin-bottom = 0;
