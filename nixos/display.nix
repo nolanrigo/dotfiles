@@ -39,9 +39,11 @@ in {
           config = let
               mod = params.modifier;
           in {
-            fonts = [
-              "${params.fonts.sansSerif} ${toString params.fonts.size}"
-            ];
+            fonts = {
+              names = [params.fonts.sansSerif];
+              style = params.fonts.sansSerif;
+              size = params.fonts.size;
+            };
 
             window = {
               hideEdgeBorders = "smart";

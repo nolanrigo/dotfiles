@@ -17,7 +17,7 @@ in {
 
     programs.rofi = {
       enable = true;
-      extraConfig = "";
+      extraConfig = {};
       # extraConfig = ''
       #   modi: "window,run,ssh,drun"
       # '';

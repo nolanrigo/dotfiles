@@ -6,9 +6,11 @@ in {
   services.xserver = {
     libinput = {
       enable = true;
-      tapping = false;
-      tappingDragLock = false;
-      accelProfile = "flat";
+      touchpad = {
+        tapping = false;
+        tappingDragLock = false;
+        accelProfile = "flat";
+      };
     };
     # LOOK AT: synaptics for advandced trackpad gestures
     config = ''

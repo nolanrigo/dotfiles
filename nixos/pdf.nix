@@ -17,7 +17,7 @@ in {
         window-title-basename = true;
         selection-clipboard = "clipboard";
       };
-      extraConfig = readFile "${deps.base16-zathura}/build_schemes/base16-${params.theme.base16-name}.config";
+      extraConfig = readFile "${deps.base16-zathura}/build_schemes/colors/base16-${params.theme.base16-name}.config";
     };
   };
 }

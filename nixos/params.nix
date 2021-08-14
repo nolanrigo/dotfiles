@@ -7,7 +7,7 @@
   password = "$6$c8tydkzzdHLfjan$2YB01HDIawthnPisIN/DgSzMPsZxiUDO7SCbcx3FQRuqhFIZySiWGMzckqmUJcflor2plAtCA7bbaq2iSsJI/0";
   timeZone = "Europe/Paris";
   nixos = {
-    version = "20.09";
+    version = "21.05";
   };
   networkInterfaces = [
     "enp0s31f6"   # Ethernet
@@ -22,7 +22,7 @@
     "9gag.com"
   ];
   fonts = rec {
-    size = 12;
+    size = 12.0;
 
     emoji = "FiraCode Nerd Font";
     serif = "Ubuntu";
