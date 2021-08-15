@@ -3,7 +3,8 @@
 {
   environment.systemPackages = [];
   services.xserver = {
-    videoDrivers = ["intel"];
+    videoDrivers = ["modesetting"];
+    useGlamor = true;
     exportConfiguration = true;
   };
 
