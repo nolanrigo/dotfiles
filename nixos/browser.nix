@@ -15,7 +15,7 @@ in {
 
       extraConfig = readFile "${deps.base16-qutebrowser}/themes/default/base16-${params.theme.base16-name}.config.py";
 
-      searchEngines = (translationEngines ["fr" "en" "de"]) // {
+      searchEngines = (translationEngines ["fr" "en" "de" "es"]) // {
         DEFAULT = "https://duckduckgo.com/?q={}&kae=d&kp=-2&kak=-1&kax=-1&kaq=-1&kap=-1&kao=-1&kt=p&t=hk&ia=web";
         g = "https://www.google.com/search?q={}";
         yt = "https://www.youtube.com/results?search_query={}";
@@ -42,10 +42,6 @@ in {
         colors.webpage = {
           bg = params.theme.colors.primary.background;
           preferred_color_scheme = "dark";
-          darkmode = {
-            enabled = true;
-            algorithm = "lightness-cielab";
-          };
         };
       };
 
