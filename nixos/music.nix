@@ -24,14 +24,18 @@ in {
           # Spotify nav
           O = "open current";
           o = "open selected";
-          A = "goto artist";
-          a = "goto album";
+          A = "goto album";
+          a = "goto artist";
           c = "share selected";
           C = "share current";
           v = "insert";
 
           # ncspot nav
           Esc = "back";
+          Backspace = "back";
+          q = "focus queue";
+          w = "focus library";
+          e = "focus search";
           h = "move left 1";
           j = "move down 1";
           k = "move up 1";
