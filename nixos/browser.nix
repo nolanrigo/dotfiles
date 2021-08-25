@@ -65,6 +65,8 @@ in {
       home-manager = "https://github.com/nix-community/home-manager";
       tcss = "https://nerdcave.com/tailwind-cheat-sheet";
       tui = "https://tailwindui.com";
+      tvalues = "https://tailwind-match.netlify.app";
+      tcolors = "https://find-nearest-tailwind-colour.netlify.app";
       ricons = "https://react-icons.github.io/react-icons";
       wdns = "https://www.whatsmydns.net";
       awssdk = "https://docs.aws.amazon.com/AWSJavaScriptSDK/latest";
