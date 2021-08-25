@@ -42,6 +42,10 @@ in {
         colors.webpage = {
           bg = params.theme.colors.primary.background;
           preferred_color_scheme = "dark";
+          darkmode = {
+            enabled = true;
+            algorithm = "lightness-cielab";
+          };
         };
       };
 
