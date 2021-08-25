@@ -35,6 +35,7 @@ in {
         nip = "nix-shell -p";
         psgrep = "ps -ax | rg";
         rf = "rm -rf";
+        cpr = "cp -R";
       };
 
       loginShellInit = "";
