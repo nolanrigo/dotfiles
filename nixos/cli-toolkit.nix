@@ -18,6 +18,8 @@ in {
       zip
       unzip
       nettools
+      bandwhich
+      grex
     ];
 
     programs.bat = {

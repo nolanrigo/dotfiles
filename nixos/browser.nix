@@ -69,6 +69,7 @@ in {
       tcolors = "https://find-nearest-tailwind-colour.netlify.app";
       ricons = "https://react-icons.github.io/react-icons";
       wdns = "https://www.whatsmydns.net";
+      httpbin = "https://requestbin.net";
       awssdk = "https://docs.aws.amazon.com/AWSJavaScriptSDK/latest";
       awscdk = "https://docs.aws.amazon.com/cdk/api/latest";
       aws = "https://eu-west-3.console.aws.amazon.com/console/home?region=eu-west-3";
@@ -78,6 +79,9 @@ in {
       awssqs = "https://eu-west-3.console.aws.amazon.com/sqs/v2/home?region=eu-west-3#/queues";
       awss3 = "https://s3.console.aws.amazon.com/s3/home?region=eu-west-3";
       awscdn = "https://console.aws.amazon.com/cloudfront/home?region=eu-west-3";
+
+      # travel
+      lyria = "https://wifi.tgv-lyria.com";
     };
 
     # qutebrowser as $BROWSER
