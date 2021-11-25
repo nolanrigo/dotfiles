@@ -16,9 +16,9 @@
   localDomains = [
     # Deny
     # "twitch.tv"
-    "20min.ch"
-    "20minutes.fr"
-    "lematin.ch"
+    # "20min.ch"
+    # "20minutes.fr"
+    # "lematin.ch"
     # "koreus.com"
     # "nokenny.co"
     # "choualbox.com"
