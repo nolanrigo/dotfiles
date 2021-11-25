@@ -31,6 +31,9 @@ in {
         url = {
           default_page = "https://start.duckduckgo.com/?kae=d&kp=-2&kak=-1&kax=-1&kaq=-1&kap=-1&kao=-1&kt=p&t=hk&ia=web";
         };
+        content = {
+          pdfjs = true;
+        };
         tabs = {
           show = "multiple";
           tabs_are_windows = false;
@@ -42,10 +45,6 @@ in {
         colors.webpage = {
           bg = params.theme.colors.primary.background;
           preferred_color_scheme = "dark";
-          darkmode = {
-            enabled = true;
-            algorithm = "lightness-cielab";
-          };
         };
       };
 
