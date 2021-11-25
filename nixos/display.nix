@@ -24,11 +24,17 @@ in {
   };
 
   # I3
-  home-manager.users."${params.username}" = {
+  home-manager.users."${params.username}" = let
+    lockScreen = "${pkgs.i3lock}/bin/i3lock -c 000000";
+  in {
     home.packages = with pkgs; [
       xorg.xev # X event monitor
       xorg.xwininfo # X window info
     ];
+
+    programs.fish.shellAbbrs = {
+      lock = lockScreen;
+    };
 
     xsession = {
       enable = true;
@@ -190,7 +196,7 @@ in {
                 Escape = "mode default";
               };
               "" = rec {
-                BackSpace = "${Escape}; ${exec "${pkgs.i3lock}/bin/i3lock -c '$base00'"}";
+                BackSpace = "${Escape}; ${exec lockScreen}";
                 Home = "${Escape}; ${exec "reboot"}";
                 End = "${Escape}; ${exec "shutdown now"}";
 

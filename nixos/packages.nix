@@ -31,6 +31,7 @@ in {
       qview                             # Image viewer
       glow                              # Markdown viewer
       gnome3.gnome-screenshot           # Screenshot
+      tmatrix
 
       # Dev tools
       insomnia
