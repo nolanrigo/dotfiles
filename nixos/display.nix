@@ -104,6 +104,10 @@ in {
               "${mod}+Shift+k" = "move up";
               "${mod}+Shift+l" = "move right";
 
+              # Output
+              "${mod}+t" = "move workspace to output left";
+              "${mod}+y" = "move workspace to output right";
+
               # Layout
               "${mod}+m" = "layout tabbed";
               "${mod}+comma" = "layout stacking";
