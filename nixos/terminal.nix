@@ -32,6 +32,9 @@ in {
         nrsu = "sudo nixos-rebuild switch --upgrade";
         nrsi = "sudo nixos-rebuild switch; i3-msg restart";
         ngd = "sudo nix-collect-garbage -d";
+        dre = "direnv reload";
+        dal = "direnv allow .";
+        dde = "direnv deny .";
         nip = "nix-shell -p";
         psgrep = "ps -ax | rg";
         rf = "rm -rf";
