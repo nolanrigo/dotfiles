@@ -14,11 +14,6 @@
     "wlp0s20f3"   # Wireless
   ];
   localDomains = [
-    # Dev
-    "meetanja.local"
-    "api.meetanja.local"
-    "auth.meetanja.local"
-
     # Deny
     # "twitch.tv"
     "20min.ch"
