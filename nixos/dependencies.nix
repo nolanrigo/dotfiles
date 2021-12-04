@@ -6,14 +6,14 @@ with import <nixpkgs> {};
     owner = "nix-community";
     repo = "home-manager";
     rev = "release-${version}";
-    sha256 = "0xw1vgwfdn75rgamcsi5j1iqfl0j06x8xp92k24wr9hayfr5m400";
+    sha256 = "1liqvc6bhfypscbvq953j8izw806xn4vklh86zyqpkmsa5ac0yvp";
   };
   nixos-hardware = fetchFromGitHub {
     name = "nixos-hardware";
     owner = "NixOS";
     repo = "nixos-hardware";
     rev = "master"; # 7da029f26849f8696ac49652312c9171bf9eb170
-    sha256 = "0qcsjvjq9wcdy6jfnp4299ng2497g8kk2gh85jxr5zij9v6jl7pr";
+    sha256 = "0kz99f42173dh6sa7vw31vr4w348whmbv5n8yfylcjk6widhsslj";
   };
   base16-i3 = fetchFromGitHub {
     name = "base16-i3";
