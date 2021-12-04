@@ -3,7 +3,7 @@
   name = "earth";
   username = "nolan";
   fullname = "Nolan Rigo";
-  email = "nolan@rigo.dev";
+  email = "nolanrigo@users.noreply.github.com";
   password = "$6$c8tydkzzdHLfjan$2YB01HDIawthnPisIN/DgSzMPsZxiUDO7SCbcx3FQRuqhFIZySiWGMzckqmUJcflor2plAtCA7bbaq2iSsJI/0";
   timeZone = "Europe/Paris";
   nixos = {
@@ -16,9 +16,9 @@
   localDomains = [
     # Deny
     # "twitch.tv"
-    # "20min.ch"
-    # "20minutes.fr"
-    # "lematin.ch"
+    "20min.ch"
+    "20minutes.fr"
+    "lematin.ch"
     # "koreus.com"
     # "nokenny.co"
     # "choualbox.com"
