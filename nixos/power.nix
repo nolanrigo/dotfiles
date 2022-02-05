@@ -1,13 +1,15 @@
 { config, pkgs, ... }:
 
 # INFO: Dealing with battery, power, and sleep mode
+# INFO: For now, I'm not using a laptop, power management doesn't make sense
 let
   params = import ./params.nix;
 in {
-  services.upower.enable = true;
+  powerManagement.enable = false;
+  services.upower.enable = false;
 
   # Caffeine allow to temporally disable sleeping mode through the tray
   home-manager.users."${params.username}" = {
-    services.caffeine.enable = true;
+    services.caffeine.enable = false;
   };
 }
