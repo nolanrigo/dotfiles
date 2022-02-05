@@ -8,22 +8,23 @@ let
   exec = import ./helpers/i3-exec.nix;
 in {
   # Display Manager
-  services.xserver = {
+  services.xserver = let
     enable = true;
-    desktopManager.xterm.enable = true;
+  in {
+    enable = enable;
+    desktopManager.xterm.enable = enable;
     displayManager = {
       autoLogin = {
         user = params.username;
-        enable = true;
+        enable = enable;
       };
       lightdm = {
-        enable = true;
-        greeter.enable = true;
+        enable = enable;
+        greeter.enable = enable;
       };
     };
   };
 
-  # I3
   home-manager.users."${params.username}" = let
     lockScreen = "${pkgs.i3lock}/bin/i3lock -c 000000";
   in {
@@ -36,6 +37,7 @@ in {
       lock = lockScreen;
     };
 
+    # I3
     xsession = {
       enable = true;
       windowManager = {
@@ -226,7 +228,7 @@ in {
     services.polybar = let
       xrdb = color: "\${xrdb:${color}}";
     in {
-      enable = true;
+      enable = false;
       script = "";
       package = pkgs.polybar.override {
         pulseSupport = true;
@@ -314,6 +316,50 @@ in {
           interval = 2;
           format = "<label>";
           label = " %percentage_used%%";
+        };
+      };
+    };
+
+    # Monitors
+    programs.autorandr = let
+      monitors = {
+        rog = "00ffffffffffff0006b3e017bb7701000a1f0104a52616783ba335a6534a9c27105054bfef00d1cf818081c0814081009500b300714f0cdf80a070384040304035007ed71000001e023a801871382d40582c45007ed71000001e000000fc00415355532058473137410a2020000000fd0030f0ffff3c010a2020202020200157020330f14c0103051404131f120211903f2309170783010000e200d565030c0010006d1a0000020130f0000000000000023a80d072382d40102c96807ed710000018047480d072382d40102c45807ed71000001e0474801871382d40582c45007ed71000001e2982805070384d400820f80c7ed71000001a00000000000000f2";
+      };
+      screens = {
+        dp2 = "DP-2";
+        dp3 = "DP-3";
+        dp4 = "DP-4";
+        dp5 = "DP-5";
+      };
+    in {
+      enable = true;
+      hooks = {
+        postswitch = {
+          i3 = "${pkgs.i3}/bin/i3-msg restart";
+        };
+      };
+      profiles = {
+        default = {
+          fingerprint = {
+            "${screens.dp3}" = monitors.rog;
+            "${screens.dp4}" = monitors.rog;
+          };
+          config = {
+            "${screens.dp2}".enable = false;
+            "${screens.dp3}" = {
+              enable = true;
+              position = "1920x0";
+              mode = "1920x1080";
+              rate = "120";
+            };
+            "${screens.dp4}" = {
+              enable = true;
+              position = "0x0";
+              mode = "1920x1080";
+              rate = "120";
+            };
+            "${screens.dp5}".enable = false;
+          };
         };
       };
     };
