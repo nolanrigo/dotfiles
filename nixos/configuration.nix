@@ -44,6 +44,7 @@
     ./node.nix
     ./sql.nix
     ./music.nix
+    ./localhost.nix
   ];
 
   # TODO: Move it elsewhere
