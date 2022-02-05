@@ -1,17 +1,17 @@
 {
   modifier = "Mod1";
-  name = "earth";
+  name = "nuc-nixos";
   username = "nolan";
   fullname = "Nolan Rigo";
   email = "nolan@rigo.dev";
   password = "$6$c8tydkzzdHLfjan$2YB01HDIawthnPisIN/DgSzMPsZxiUDO7SCbcx3FQRuqhFIZySiWGMzckqmUJcflor2plAtCA7bbaq2iSsJI/0";
   timeZone = "Europe/Paris";
   nixos = {
-    version = "21.05";
+    version = "21.11";
   };
   networkInterfaces = [
-    "enp0s31f6"   # Ethernet
-    "wlp0s20f3"   # Wireless
+    "enp89s0"   # Ethernet
+    "wlp0s20f3" # Wireless
   ];
   localDomains = [
     # Deny

@@ -4,7 +4,7 @@ let
   deps = import ./dependencies.nix;
 in {
   imports = [
-    (import "${deps.nixos-hardware}/lenovo/thinkpad/x1/7th-gen")
+    # (import "${deps.nixos-hardware}/lenovo/thinkpad/x1/7th-gen")
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
@@ -12,7 +12,12 @@ in {
     initrd = {
       availableKernelModules = [
         "xhci_pci"
+        "thunderbolt"
         "nvme"
+        "usb_storage"
+        "usbhid"
+        "sd_mod"
+        "rtsx_pci_sdmmc"
       ];
       kernelModules = [];
     };
@@ -26,13 +31,15 @@ in {
 
   fileSystems = {
     "/" = {
-      device = "/dev/disk/by-uuid/3663ae93-4a81-4ae7-8d1c-89856367e9de";
+      device = "/dev/disk/by-uuid/fa0d46b3-2dfd-4971-900a-9ea982ea6bdc";
       fsType = "ext4";
     };
     "/boot" = {
-      device = "/dev/disk/by-uuid/7494-732B";
+      device = "/dev/disk/by-uuid/13BD-1F47";
       fsType = "vfat";
     };
   };
   swapDevices = [];
+
+  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
