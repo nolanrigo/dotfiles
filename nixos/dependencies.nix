@@ -6,7 +6,7 @@ with import <nixpkgs> {};
     owner = "nix-community";
     repo = "home-manager";
     rev = "release-${version}";
-    sha256 = "1liqvc6bhfypscbvq953j8izw806xn4vklh86zyqpkmsa5ac0yvp";
+    sha256 = "0zkhdf3d2pqr6lr2mibrngp0fjcpdjk9abc55kqp43mq05caq6f9";
   };
   nixos-hardware = fetchFromGitHub {
     name = "nixos-hardware";
@@ -48,14 +48,14 @@ with import <nixpkgs> {};
     owner = "HaoZeke";
     repo = "base16-zathura";
     rev = "main"; # d97b110bf6d576cd2c09e45cdf27d44f4e0af87b
-    sha256 = "1q0x2y0dzshrghd5f5b2gzc5bd538v60b1wd2xn8gfs71vx1v6wc";
+    sha256 = "1rjaan757k4fwy8xgjcjnrayxfivf00s9msis5w87dgj1756hllx";
   };
   base16-rofi = fetchFromGitHub {
     name = "base16-rofi";
     owner = "0xdec";
     repo = "base16-rofi";
     rev = "master"; # afbc4b22d8f415dc89f36ee509ac35fb161c6df4";
-    sha256 = "1f9gkfc4icdgdj0fkkgg1fw3n6imlr1sbi42qm9hbkjxy5fmzay2";
+    sha256 = "14868sfkxlcw1dz7msvvmsr95mzvv6av37wamssc5jaqjdpym8df";
   };
   rofi-emoji = fetchFromGitHub {
     name = "rofiemoji";
@@ -69,6 +69,6 @@ with import <nixpkgs> {};
     owner = "marioortizmanero";
     repo = "polybar-pulseaudio-control";
     rev = "master"; # d961976ebf0564ac2c321a30406f1e080fb1b206
-    sha256 = "0mmd1j1nzp69b0b59npdmpcjsaf2kgg85hh4m1xr7af026mblvh9";
+    sha256 = "1k7vf7k3lzywcvn0myjyrjxpybx0kqy9y711baamwi7cfn8r1wy0";
   };
 }
