@@ -3,7 +3,7 @@
   name = "earth";
   username = "nolan";
   fullname = "Nolan Rigo";
-  email = "nolanrigo@users.noreply.github.com";
+  email = "nolan@rigo.dev";
   password = "$6$c8tydkzzdHLfjan$2YB01HDIawthnPisIN/DgSzMPsZxiUDO7SCbcx3FQRuqhFIZySiWGMzckqmUJcflor2plAtCA7bbaq2iSsJI/0";
   timeZone = "Europe/Paris";
   nixos = {
