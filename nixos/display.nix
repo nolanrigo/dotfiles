@@ -229,11 +229,14 @@ in {
       monitors = {
         rog = "00ffffffffffff0006b3e017bb7701000a1f0104a52616783ba335a6534a9c27105054bfef00d1cf818081c0814081009500b300714f0cdf80a070384040304035007ed71000001e023a801871382d40582c45007ed71000001e000000fc00415355532058473137410a2020000000fd0030f0ffff3c010a2020202020200157020330f14c0103051404131f120211903f2309170783010000e200d565030c0010006d1a0000020130f0000000000000023a80d072382d40102c96807ed710000018047480d072382d40102c45807ed71000001e0474801871382d40582c45007ed71000001e2982805070384d400820f80c7ed71000001a00000000000000f2";
       };
-      screens = {
-        dp2 = "DP-2";
-        dp3 = "DP-3";
-        dp4 = "DP-4";
-        dp5 = "DP-5";
+      ports = {
+        hdmi0 = "HDMI-0";
+        dp0 = "DP-0";
+        dp1 = "DP-1";
+        dp11 = "DP-1-1";
+        dp12 = "DP-1-2";
+        dp13 = "DP-1-3";
+        dp14 = "DP-1-4";
       };
     in {
       enable = true;
@@ -245,24 +248,27 @@ in {
       profiles = {
         default = {
           fingerprint = {
-            "${screens.dp3}" = monitors.rog;
-            "${screens.dp4}" = monitors.rog;
+            "${ports.dp12}" = monitors.rog;
+            "${ports.dp13}" = monitors.rog;
           };
           config = {
-            "${screens.dp2}".enable = false;
-            "${screens.dp3}" = {
+            "${ports.hdmi0}".enable = false;
+            "${ports.dp0}".enable = false;
+            "${ports.dp1}".enable = false;
+            "${ports.dp11}".enable = false;
+            "${ports.dp14}".enable = false;
+            "${ports.dp12}" = {
               enable = true;
               position = "1920x0";
               mode = "1920x1080";
               rate = "120";
             };
-            "${screens.dp4}" = {
+            "${ports.dp13}" = {
               enable = true;
               position = "0x0";
               mode = "1920x1080";
               rate = "120";
             };
-            "${screens.dp5}".enable = false;
           };
         };
       };
