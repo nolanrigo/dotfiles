@@ -25,7 +25,7 @@
     # "9gag.com"
   ];
   fonts = rec {
-    size = 12.0;
+    size = 12;
 
     emoji = "FiraCode Nerd Font";
     serif = "Ubuntu";

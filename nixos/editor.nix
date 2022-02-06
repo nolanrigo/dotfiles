@@ -151,6 +151,7 @@ in {
 
     # nvim as $EDITOR
     home.sessionVariables.EDITOR = "nvim";
+    home.sessionVariables.VISUAL = "nvim";
 
     # nvim as git editor
     programs.git.extraConfig.core.editor = "nvim";

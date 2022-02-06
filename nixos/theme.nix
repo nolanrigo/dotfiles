@@ -14,7 +14,7 @@ in {
       enable = true;
       font = {
         package = pkgs.nerdfonts;
-        name = "3270 Nerd Font 12";
+        name = "${params.fonts.sansSerif} ${toString params.fonts.size}";
       };
       theme = {
         package = pkgs.arc-theme;

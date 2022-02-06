@@ -26,7 +26,6 @@ in {
       slack
       chatterino2                       # twitch
 
-      molotov                           # TV player
       vlc                               # Video viewer
       qview                             # Image viewer
       glow                              # Markdown viewer
@@ -35,10 +34,7 @@ in {
 
       # Dev tools
       insomnia
-      awscli
-      google-cloud-sdk
       dbeaver
-      robomongo
     ];
   };
 

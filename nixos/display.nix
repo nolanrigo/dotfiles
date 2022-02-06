@@ -50,7 +50,7 @@ in {
             fonts = {
               names = [params.fonts.sansSerif];
               style = params.fonts.sansSerif;
-              size = params.fonts.size;
+              size = params.fonts.size - 1.0;
             };
 
             window = {

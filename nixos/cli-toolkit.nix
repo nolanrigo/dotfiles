@@ -14,12 +14,12 @@ in {
       sd
       ripgrep
       ripgrep-all
-      broot
+      broot             # Find in a folder
       zip
       unzip
       nettools
-      bandwhich
-      grex
+      bandwhich         # network usage
+      grex              # Generate Regex
     ];
 
     programs.bat = {
