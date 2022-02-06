@@ -7,18 +7,10 @@ in {
     libinput = {
       enable = true;
       mouse = {
-        accelSpeed = "4";
+        accelSpeed = "3";
         accelProfile = "flat";
         leftHanded = false;
         naturalScrolling = false;
-      };
-      touchpad = {
-        accelSpeed = "0";
-        accelProfile = "flat";
-        leftHanded = false;
-        naturalScrolling = true;
-        tapping = false;
-        scrollMethod = "twofinger";
       };
     };
   };
