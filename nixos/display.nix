@@ -78,11 +78,6 @@ in {
                 always = true;
                 notification = false;
               }
-              {
-                command = "${pkgs.psmisc}/bin/killall polybar; polybar main &";
-                always = true;
-                notification = false;
-              }
             ];
 
             bars = [];

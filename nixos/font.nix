@@ -12,7 +12,12 @@ in {
     ];
     fontconfig = {
       enable = true;
-      defaultFonts = params.fonts.default;
+      defaultFonts = {
+        emoji = [params.fonts.emoji];
+        serif = [params.fonts.serif];
+        sansSerif = [params.fonts.sansSerif];
+        monospace = [params.fonts.monospace];
+      };
     };
   };
 

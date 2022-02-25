@@ -64,11 +64,4 @@ with import <nixpkgs> {};
     rev = "master"; # ad61572830c9d3c00e30eec078d46dad3cfdb4a2";
     sha256 = "16rhb2cs8cqwflkcyw5dr77alp5wik4bv1dg66m4hkgcplxv0dx0";
   };
-  polybar-pulseaudio-control = fetchFromGitHub {
-    name = "polybar-pulseaudio-control";
-    owner = "marioortizmanero";
-    repo = "polybar-pulseaudio-control";
-    rev = "master"; # d961976ebf0564ac2c321a30406f1e080fb1b206
-    sha256 = "1k7vf7k3lzywcvn0myjyrjxpybx0kqy9y711baamwi7cfn8r1wy0";
-  };
 }

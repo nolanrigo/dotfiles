@@ -20,6 +20,8 @@ in {
       nettools
       bandwhich         # network usage
       grex              # Generate Regex
+      youtube-dl
+      streamlink
     ];
 
     programs.bat = {
@@ -48,6 +50,9 @@ in {
       mb = "make build";
       mc = "make clean";
       mt = "make test";
+      youtubedl = "youtube-dl --format bestvideo+bestaudio";
+      twitchdl = "youtube-dl --format best";
+      t = "date";
     };
 
     # nix-index

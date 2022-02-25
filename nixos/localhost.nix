@@ -7,7 +7,7 @@ in {
   networking = {
     hosts = {
       "127.0.0.1" = [
-        "beremote.lan"
+        "app.beremote.lan"
         "auth.beremote.lan"
         "api.beremote.lan"
       ];
@@ -40,7 +40,7 @@ in {
 
     backends = [
       {
-        patterns = ["beremote.lan"];
+        patterns = ["app.beremote.lan"];
         server = {
           host = "127.0.0.1";
           port = 3000;

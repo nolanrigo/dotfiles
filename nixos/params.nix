@@ -31,13 +31,6 @@
     serif = "Ubuntu";
     sansSerif = "Ubuntu";
     monospace = "FiraCode Nerd Font";
-
-    default = {
-      emoji = [emoji];
-      serif = [serif];
-      sansSerif = [sansSerif];
-      monospace = [monospace];
-    };
   };
   theme = {
     base16-name = "onedark";
