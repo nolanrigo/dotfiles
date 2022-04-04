@@ -4,6 +4,57 @@ let
   params = import ./params.nix;
 in {
   home-manager.users."${params.username}" = {
+    # Vscode
+    programs.vscode = {
+      enable = true;
+      package = pkgs.vscodium;
+      extensions = with pkgs.vscode-extensions; [
+        coenraads.bracket-pair-colorizer-2
+        asvetliakov.vscode-neovim
+        bbenoist.nix
+        esbenp.prettier-vscode
+        zhuangtongfa.material-theme
+        bradlc.vscode-tailwindcss
+        # rust-lang.rust
+        # aaron-bond.better-comments
+        # pnp.polacode
+        # patbenatar.advanced-new-file OR sleistner.vscode-fileutils
+      ];
+      userSettings = {
+        # Bracket Pair Colorization
+        "editor.bracketPairColorization.enabled" = true;
+
+        # Prettier
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
+        "editor.formatOnSave" = true;
+
+        # Nvim
+        "vscode-neovim.neovimExecutablePaths.linux" = "nvim";
+
+        # Editor
+        "editor.fontFamily" = "'FiraCode Nerd Font', 'monospace', monospace";
+        "editor.fontLigatures" = true;
+        "editor.fontSize" = 16;
+        "editor.lineHeight" = 1.6;
+        "editor.tabSize" = 2;
+        "workbench.colorTheme" = "One Dark Pro";
+        "editor.cursorBlinking" = "solid";
+        "editor.minimap.enabled" = false;
+        "editor.suggest.preview" = true;
+
+        # Window
+        "breadcrumbs.icons" = false;
+        "workbench.editor.highlightModifiedTabs" = true;
+        "workbench.editor.showIcons" = false;
+        "workbench.editor.tabCloseButton" = "off";
+        "window.dialogStyle" = "custom";
+        "window.menuBarVisibility" = "hidden";
+        "workbench.activityBar.visible" = false;
+        "workbench.startupEditor" = "none";
+      };
+      # mutableExtensionsDir = false;
+    };
+
     # Neovim
     programs.neovim = {
       enable = true;
@@ -19,21 +70,9 @@ in {
         vim-airline
         vim-airline-themes
         editorconfig-vim
-        ale
         vim-polyglot
-        coc-nvim
-        coc-tsserver
-        coc-highlight
-        coc-css
-        coc-html
-        # coc-svg
-        # coc-tailwindcss
         ctrlp-vim
         Rename
-        vim-nix
-        vim-fish
-        vim-toml
-        rust-vim
       ];
 
       extraConfig = ''
@@ -86,8 +125,6 @@ in {
           return !col || getline('.')[col - 1]  =~# '\s'
         endfunction
 
-        inoremap <silent><expr> <c-space> coc#refresh()
-
         " Buffer
         map <C-J> :bnext<CR>
         map <C-K> :bprevious<CR>
@@ -101,11 +138,6 @@ in {
 
         " Ctrl-L to clear search
         map <C-C> :nohlsearch<CR>
-        map <F2> :NERDTreeToggle<CR>
-        map <F5> :NERDTreeRefreshRoot<CR>:CtrlPClearCache<CR>                     " Clear
-
-        " Elm
-        let g:polyglot_disabled = [ 'elm' ]                                       " Disable elm on polyglot
 
         " Airline
         let g:airline_theme='${params.theme.base16-name}'
@@ -120,34 +152,14 @@ in {
         let g:airline_right_sep = ' '
         let g:airline_right_alt_sep = '|'
 
-        " ALE Config
-        let g:ale_fixers = {
-        \   '*': ['trim_whitespace'],
-        \   'javascript': ['prettier', 'eslint'],
-        \   'typescript': ['prettier', 'eslint'],
-        \   'typescriptreact': ['prettier', 'eslint'],
-        \   'css': ['prettier'],
-        \   'html': ['prettier'],
-        \   'markdown': ['prettier'],
-        \   'json': ['prettier'],
-        \}
-        let g:ale_linters_explicit = 1
-        let g:ale_sign_column_always = 1
-        let g:ale_sign_error = ''
-        let g:ale_sign_warning = ''
-        let g:ale_fix_on_save = 1
-        let g:airline#extensions#ale#enabled = 1
-
         " Ctrl Config
         let g:ctrlp_custom_ignore = 'node_modules\|git\|elm-stuff\|dist\|.cache\|cdk.out'
-
-        " Rust
-        let g:rustfmt_autosave = 1
       '';
     };
 
     # nvim as "e" fish abbr
-    programs.fish.shellAbbrs.e = "nvim";
+    programs.fish.shellAbbrs.c = "codium";
+    programs.fish.shellAbbrs.v = "nvim";
 
     # nvim as $EDITOR
     home.sessionVariables.EDITOR = "nvim";

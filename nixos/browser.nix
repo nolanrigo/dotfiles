@@ -43,7 +43,7 @@ in {
           widgets = ["keypress" "url" "scroll" "history" "tabs" "progress"];
         };
         colors.webpage = {
-          bg = params.theme.colors.primary.background;
+          # bg = params.theme.colors.primary.background;
           preferred_color_scheme = "dark";
         };
       };
