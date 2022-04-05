@@ -9,21 +9,18 @@ in {
       enable = true;
       package = pkgs.vscodium;
       extensions = with pkgs.vscode-extensions; [
-        coenraads.bracket-pair-colorizer-2
         asvetliakov.vscode-neovim
         bbenoist.nix
         esbenp.prettier-vscode
         zhuangtongfa.material-theme
         bradlc.vscode-tailwindcss
+        graphql.vscode-graphql
+
         # rust-lang.rust
         # aaron-bond.better-comments
         # pnp.polacode
-        # patbenatar.advanced-new-file OR sleistner.vscode-fileutils
       ];
       userSettings = {
-        # Bracket Pair Colorization
-        "editor.bracketPairColorization.enabled" = true;
-
         # Prettier
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
         "editor.formatOnSave" = true;
@@ -31,13 +28,19 @@ in {
         # Nvim
         "vscode-neovim.neovimExecutablePaths.linux" = "nvim";
 
+        # Emmet
+        "emmet.excludeLanguages" = [
+          "markdown"
+          "typescriptreact"
+        ];
+
         # Editor
         "editor.fontFamily" = "'FiraCode Nerd Font', 'monospace', monospace";
         "editor.fontLigatures" = true;
         "editor.fontSize" = 16;
         "editor.lineHeight" = 1.6;
         "editor.tabSize" = 2;
-        "workbench.colorTheme" = "One Dark Pro";
+        "workbench.colorTheme" = "One Dark Pro Darker";
         "editor.cursorBlinking" = "solid";
         "editor.minimap.enabled" = false;
         "editor.suggest.preview" = true;
