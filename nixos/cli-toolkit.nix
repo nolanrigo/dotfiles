@@ -11,6 +11,7 @@ in {
       sl
       fd
       procs
+      killall
       sd
       ripgrep
       ripgrep-all

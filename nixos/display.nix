@@ -35,6 +35,7 @@ in {
 
     programs.fish.shellAbbrs = {
       lock = lockScreen;
+      ard = "autorandr -l default";
     };
 
     # I3

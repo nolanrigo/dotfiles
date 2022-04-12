@@ -10,3 +10,4 @@ spotify
 obs
 teamspeak
 rufus
+origin

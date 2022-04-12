@@ -8,7 +8,7 @@ in {
     fontDir.enable = true;
     fonts = with pkgs; [
       ubuntu_font_family
-      nerdfonts
+      (nerdfonts.override { fonts = [ "FiraCode" ]; })
     ];
     fontconfig = {
       enable = true;

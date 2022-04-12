@@ -4,60 +4,6 @@ let
   params = import ./params.nix;
 in {
   home-manager.users."${params.username}" = {
-    # Vscode
-    programs.vscode = {
-      enable = true;
-      package = pkgs.vscodium;
-      extensions = with pkgs.vscode-extensions; [
-        asvetliakov.vscode-neovim
-        bbenoist.nix
-        esbenp.prettier-vscode
-        zhuangtongfa.material-theme
-        bradlc.vscode-tailwindcss
-        graphql.vscode-graphql
-
-        # rust-lang.rust
-        # aaron-bond.better-comments
-        # pnp.polacode
-      ];
-      userSettings = {
-        # Prettier
-        "editor.defaultFormatter" = "esbenp.prettier-vscode";
-        "editor.formatOnSave" = true;
-
-        # Nvim
-        "vscode-neovim.neovimExecutablePaths.linux" = "nvim";
-
-        # Emmet
-        "emmet.excludeLanguages" = [
-          "markdown"
-          "typescriptreact"
-        ];
-
-        # Editor
-        "editor.fontFamily" = "'FiraCode Nerd Font', 'monospace', monospace";
-        "editor.fontLigatures" = true;
-        "editor.fontSize" = 16;
-        "editor.lineHeight" = 1.6;
-        "editor.tabSize" = 2;
-        "workbench.colorTheme" = "One Dark Pro Darker";
-        "editor.cursorBlinking" = "solid";
-        "editor.minimap.enabled" = false;
-        "editor.suggest.preview" = true;
-
-        # Window
-        "breadcrumbs.icons" = false;
-        "workbench.editor.highlightModifiedTabs" = true;
-        "workbench.editor.showIcons" = false;
-        "workbench.editor.tabCloseButton" = "off";
-        "window.dialogStyle" = "custom";
-        "window.menuBarVisibility" = "hidden";
-        "workbench.activityBar.visible" = false;
-        "workbench.startupEditor" = "none";
-      };
-      # mutableExtensionsDir = false;
-    };
-
     # Neovim
     programs.neovim = {
       enable = true;
@@ -67,15 +13,33 @@ in {
 
       plugins = with pkgs.vimPlugins; [
         base16-vim
+        neovim-sensible
         vim-gitgutter
         vim-fugitive
         vim-surround
         vim-airline
         vim-airline-themes
+        vim-prettier # instead of coc-prettier
+        marks-nvim
+
         editorconfig-vim
         vim-polyglot
         ctrlp-vim
         Rename
+        coc-nvim
+        coc-tsserver
+        coc-json
+        # coc-html
+        # coc-css
+        # coc-eslint
+        coc-explorer # ✅
+        # coc-emmet
+        # coc-docker
+        # coc-graphql
+        # coc-sql
+        # coc-xml
+        # coc-nginx
+        # coc-sh
       ];
 
       extraConfig = ''
@@ -83,7 +47,6 @@ in {
         set termguicolors
         colorscheme base16-${params.theme.base16-name}
 
-        set mouse=a
         set encoding=utf-8                                                        " Set default encoding to UTF-8
         set backspace=indent,eol,start                                            " Makes backspace key more powerful.
         set splitbelow                                                            " Horizontal split below current.
@@ -101,16 +64,11 @@ in {
         set smartcase                                                             " ... but not when search pattern contains upper case characters
         set autoindent
         set hlsearch                                                              " Highlight found searches
-        set tabstop=2 shiftwidth=2 expandtab
         set gdefault                                                              " Use 'g' flag by default with :s/foo/bar/.
         set magic                                                                 " Use 'magic' patterns (extended regular expressions).
-        set number
-        set relativenumber
         set nowrap
         set list
         set smarttab
-        set colorcolumn=80
-        set expandtab
         set hidden
         set cmdheight=2
         set signcolumn=yes
@@ -127,6 +85,9 @@ in {
           let col = col('.') - 1
           return !col || getline('.')[col - 1]  =~# '\s'
         endfunction
+
+        " Ctrl-space to trigger coc hints
+        inoremap <silent><expr> <c-space> coc#refresh()
 
         " Buffer
         map <C-J> :bnext<CR>
@@ -157,12 +118,21 @@ in {
 
         " Ctrl Config
         let g:ctrlp_custom_ignore = 'node_modules\|git\|elm-stuff\|dist\|.cache\|cdk.out'
+
+        " Prettier
+        map <C-I> :Prettier<CR>
+        let g:prettier#autoformat = 0
+        let g:prettier#autoformat_require_pragma = 0
+        let g:prettier#autoformat_config_present = 1
+        " let g:prettier#exec_cmd_async = 1
+
+        " Coc Explorer
+        :nmap <C-e> :CocCommand explorer --position=floating --toggle --no-quit-on-open --sources=file+ <CR>
       '';
     };
 
     # nvim as "e" fish abbr
-    programs.fish.shellAbbrs.c = "codium";
-    programs.fish.shellAbbrs.v = "nvim";
+    programs.fish.shellAbbrs.e = "nvim";
 
     # nvim as $EDITOR
     home.sessionVariables.EDITOR = "nvim";
