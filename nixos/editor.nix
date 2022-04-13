@@ -13,7 +13,6 @@ in {
 
       plugins = with pkgs.vimPlugins; [
         base16-vim
-        neovim-sensible
         vim-gitgutter
         vim-fugitive
         vim-surround
@@ -22,9 +21,11 @@ in {
         vim-prettier # instead of coc-prettier
         marks-nvim
 
+        telescope-nvim
+          nvim-treesitter
+
         editorconfig-vim
         vim-polyglot
-        ctrlp-vim
         Rename
         coc-nvim
         coc-tsserver
@@ -47,6 +48,16 @@ in {
         set termguicolors
         colorscheme base16-${params.theme.base16-name}
 
+        " Sensible (but manual)
+        set number relativenumber
+        set nopaste
+        set clipboard=unnamedplus
+        set colorcolumn=80
+        let mapleader=","
+        set expandtab shiftwidth=2
+        set list listchars=tab:▸▸,trail:·
+        set mouse=a
+
         set encoding=utf-8                                                        " Set default encoding to UTF-8
         set backspace=indent,eol,start                                            " Makes backspace key more powerful.
         set splitbelow                                                            " Horizontal split below current.
@@ -67,13 +78,10 @@ in {
         set gdefault                                                              " Use 'g' flag by default with :s/foo/bar/.
         set magic                                                                 " Use 'magic' patterns (extended regular expressions).
         set nowrap
-        set list
         set smarttab
         set hidden
         set cmdheight=2
         set signcolumn=yes
-        set nopaste
-        set clipboard=unnamedplus
 
         let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
@@ -90,18 +98,16 @@ in {
         inoremap <silent><expr> <c-space> coc#refresh()
 
         " Buffer
-        map <C-J> :bnext<CR>
-        map <C-K> :bprevious<CR>
-        map <C-W> :bdelete<CR>
+        map <C-J> <cmd>bnext<cr>
+        map <C-K> <cmd>bprevious<cr>
+        map <C-H> <cmd>tabprevious<cr>
+        map <C-L> <cmd>tabnext<cr>
 
         " Inverse () to )(
         nnoremap ( )
         vnoremap ( )
         nnoremap ) (
         vnoremap ) (
-
-        " Ctrl-L to clear search
-        map <C-C> :nohlsearch<CR>
 
         " Airline
         let g:airline_theme='${params.theme.base16-name}'
@@ -116,18 +122,26 @@ in {
         let g:airline_right_sep = ' '
         let g:airline_right_alt_sep = '|'
 
-        " Ctrl Config
-        let g:ctrlp_custom_ignore = 'node_modules\|git\|elm-stuff\|dist\|.cache\|cdk.out'
+        " Prettier
+        let g:prettier#autoformat = 0 " disable format on save
+        let g:prettier#autoformat_require_pragma = 0
+        let g:prettier#autoformat_config_present = 0 " disable format on save
+
+        " shortcuts
+        let mapleader = " "
+
+        " Explorer
+        nnoremap <leader>ff <cmd>Telescope find_files<cr>
+        nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+        nnoremap <leader>fb <cmd>Telescope buffers<cr>
+        nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+        nnoremap <leader>fe <cmd>CocCommand explorer --position=floating --toggle --no-quit-on-open --sources=file+ <cr>
+
+        " Search
+        noremap <leader>sc <cmd>nohlsearch<cr>
 
         " Prettier
-        map <C-I> :Prettier<CR>
-        let g:prettier#autoformat = 0
-        let g:prettier#autoformat_require_pragma = 0
-        let g:prettier#autoformat_config_present = 1
-        " let g:prettier#exec_cmd_async = 1
-
-        " Coc Explorer
-        :nmap <C-e> :CocCommand explorer --position=floating --toggle --no-quit-on-open --sources=file+ <CR>
+        noremap <leader>pp <cmd>Prettier<cr>
       '';
     };
 
