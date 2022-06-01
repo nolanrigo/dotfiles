@@ -52,7 +52,7 @@ in {
       mc = "make clean";
       mt = "make test";
       youtubedl = "youtube-dl --format bestvideo+bestaudio";
-      twitchdl = "youtube-dl --format best";
+      twitchdl = "youtube-dl --format best -o \"%(id)s.%(ext)s\"";
       t = "date";
     };
 

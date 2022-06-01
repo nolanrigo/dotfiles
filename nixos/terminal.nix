@@ -28,8 +28,10 @@ in {
         epdf = "zathura";
         eimg = "qview";
 
+        cam = "cvlc v4l2:///dev/video0:width=1280:height=720:fps=30 &; disown";
+
         nrs = "sudo nixos-rebuild switch";
-        nrsu = "sudo nixos-rebuild switch --upgrade";
+        nrsu = "sudo nixos-rebuild boot --upgrade";
         nrsi = "sudo nixos-rebuild switch; i3-msg restart";
         ngd = "sudo nix-collect-garbage -d";
         dre = "direnv reload";
@@ -84,6 +86,8 @@ in {
         add_newline = true;
         line_break.disabled = false;
         directory.truncate_to_repo = true;
+        gcloud.disabled = true;
+        time.disabled = false;
       };
     };
 

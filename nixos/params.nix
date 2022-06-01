@@ -5,7 +5,7 @@
   fullname = "Nolan Rigo";
   email = "nolan@rigo.dev";
   password = "$6$c8tydkzzdHLfjan$2YB01HDIawthnPisIN/DgSzMPsZxiUDO7SCbcx3FQRuqhFIZySiWGMzckqmUJcflor2plAtCA7bbaq2iSsJI/0";
-  timeZone = "Europe/Paris";
+  timeZone = "Europe/Sofia";
   nixos = {
     version = "21.11";
   };

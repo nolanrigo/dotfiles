@@ -44,6 +44,7 @@
     ./node.nix
     ./sql.nix
     ./music.nix
+    ./rssreader.nix
     ./localhost.nix
   ];
 

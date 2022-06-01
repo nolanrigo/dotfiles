@@ -138,10 +138,11 @@ in {
         nnoremap <leader>fe <cmd>CocCommand explorer --position=floating --toggle --no-quit-on-open --sources=file+ <cr>
 
         " Search
-        noremap <leader>sc <cmd>nohlsearch<cr>
+        noremap <leader>sx <cmd>nohlsearch<cr>
 
         " Prettier
-        noremap <leader>pp <cmd>Prettier<cr>
+        nnoremap <leader>pp <cmd>Prettier<cr>
+        vnoremap <leader>pp <cmd>'<,'>PrettierPartial<cr>
       '';
     };
 

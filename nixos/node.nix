@@ -31,6 +31,7 @@ in {
       nh = "npm home";
       nr = "npm repo";
       ncu = "npx npm-check-updates -u";
+      ycu = "yarn upgrade-interactive --latest";
 
       # Yarn
       y = "yarn";

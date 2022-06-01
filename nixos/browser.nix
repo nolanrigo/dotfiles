@@ -52,8 +52,9 @@ in {
 
     xdg.configFile."qutebrowser/quickmarks".text = quickmarksConf {
       # General
-      mail = "https://beta.protonmail.com";
-      cal = "https://calendar.protonmail.com";
+      mail = "https://mail.proton.me";
+      cal = "https://www.icloud.com/calendar"; # waiting for protonmail on IOS cal = "https://calendar.proton.me";
+      drive = "https://drive.proton.me";
       maps = "https://maps.google.com";
       wsp = "https://web.whatsapp.com";
 

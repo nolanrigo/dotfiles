@@ -2,6 +2,7 @@
 
 {
   environment.systemPackages = [];
+
   services.xserver = {
     dpi = 96;
     videoDrivers = ["nvidia"];
@@ -16,7 +17,8 @@
       driSupport32Bit = true;
     };
     nvidia = {
-      modesetting.enable = true;
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
+      powerManagement.enable = true;
       prime = {
         sync.enable = true;
         nvidiaBusId = "PCI:1:0:0";
