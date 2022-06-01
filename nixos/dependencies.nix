@@ -6,7 +6,7 @@ with import <nixpkgs> {};
     owner = "nix-community";
     repo = "home-manager";
     rev = "release-${version}";
-    sha256 = "0kvn3fdpcy23z8rh7vi3fq31fbj9y695p5vys703zq1s1kh2744b";
+    sha256 = "1fi27zabvqlyc2ggg7wr01j813gs46rswg1i897h9hqkbgqsjkny";
   };
   nixos-hardware = fetchFromGitHub {
     name = "nixos-hardware";
