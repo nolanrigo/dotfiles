@@ -108,6 +108,13 @@ in {
       enableFishIntegration = true;
     };
 
+    # Atuin
+    # Wait enableFishIntegration to be include on release-21.11
+    # programs.atuin = {
+    #   enable = true;
+    #   enableFishIntegration = true;
+    # };
+
     # Direnv
     programs.direnv = {
       enable = true;

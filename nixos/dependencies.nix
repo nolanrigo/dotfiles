@@ -34,7 +34,7 @@ with import <nixpkgs> {};
     owner = "theova";
     repo = "base16-qutebrowser";
     rev = "main"; # 67453c938c2c47633c652172b27b5b8abf218142
-    sha256 = "0rwsphq77l6v15gz4pzyv2zzwg5wnm80qzcccn0nwwnhm6nrv4ak";
+    sha256 = "1b9p98rqv1b4cm4cxj93j48pnv2crcqpghl1nkm4k4hrrvkf5dwl";
   };
   base16-textmate = fetchFromGitHub {
     name = "base16-textmate";

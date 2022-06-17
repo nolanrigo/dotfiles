@@ -26,7 +26,7 @@ in {
   };
 
   home-manager.users."${params.username}" = let
-    lockScreen = "${pkgs.i3lock}/bin/i3lock -c 000000";
+    lockScreen = "${pkgs.betterlockscreen}/bin/betterlockscreen -l";
   in {
     home.packages = with pkgs; [
       xorg.xev # X event monitor

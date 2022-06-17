@@ -35,6 +35,10 @@ in {
       };
     };
 
+    programs.bottom = {
+      enable = true;
+    };
+
     # as fish abbrs
     programs.fish.shellAbbrs = rec {
       l = "exa -al --icons --git --group-directories-first";
@@ -54,6 +58,8 @@ in {
       youtubedl = "youtube-dl --format bestvideo+bestaudio";
       twitchdl = "youtube-dl --format best -o \"%(id)s.%(ext)s\"";
       t = "date";
+      top = "btm";
+      htop = "btm";
     };
 
     # nix-index
