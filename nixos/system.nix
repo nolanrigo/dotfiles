@@ -8,7 +8,7 @@ in {
     stateVersion = params.nixos.version;
     autoUpgrade = {
       enable = true;
-      allowReboot = true;
+      allowReboot = false;
       channel = "https://nixos.org/channels/nixos-${params.nixos.version}";
     };
   };

@@ -9,9 +9,31 @@ in {
       enable = true;
       viAlias = true;
       vimAlias = true;
+      vimdiffAlias = true;
       withNodeJs = true;
 
+      coc = {
+        enable = true;
+        # bug: neovim: rebuilding with coc support does not work when nodejs is in PATH
+        # https://github.com/nix-community/home-manager/issues/2966
+        # Solution:
+        # https://github.com/sumnerevans/home-manager-config/commit/da138d4ff3d04cddb37b0ba23f61edfb5bf7b85e
+        package = pkgs.vimUtils.buildVimPluginFrom2Nix {
+          pname = "coc.nvim";
+          version = "2022-05-21";
+          src = pkgs.fetchFromGitHub {
+            owner = "neoclide";
+            repo = "coc.nvim";
+            rev = "791c9f673b882768486450e73d8bda10e391401d";
+            sha256 = "sha256-MobgwhFQ1Ld7pFknsurSFAsN5v+vGbEFojTAYD/kI9c=";
+          };
+          meta.homepage = "https://github.com/neoclide/coc.nvim/";
+        };
+      };
+
       plugins = with pkgs.vimPlugins; [
+        # copilot-vim FIXME: install the upgraded version of copilot
+        vim-prisma
         base16-vim
         vim-gitgutter
         vim-fugitive
@@ -27,13 +49,9 @@ in {
         editorconfig-vim
         vim-polyglot
         Rename
-        coc-nvim
-        coc-tsserver
-        coc-json
         # coc-html
         # coc-css
         # coc-eslint
-        coc-explorer # ✅
         # coc-emmet
         # coc-docker
         # coc-graphql
@@ -41,6 +59,11 @@ in {
         # coc-xml
         # coc-nginx
         # coc-sh
+
+        # Coc plugins
+        coc-tsserver
+        coc-json
+        coc-explorer
       ];
 
       extraConfig = ''

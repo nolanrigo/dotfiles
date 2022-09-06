@@ -8,8 +8,8 @@ in {
 
   hardware.pulseaudio = {
     enable = true;
-    support32Bit = true;
-    package = pkgs.pulseaudioFull;
+    # support32Bit = true;
+    # package = pkgs.pulseaudioFull;
   };
 
   # Allow user to manage audio

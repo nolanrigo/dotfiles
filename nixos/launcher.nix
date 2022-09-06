@@ -12,6 +12,7 @@ in {
       # xclip & xsel are dependencies to rofi emoji
       xclip
       xsel
+      rbw
     ];
 
 
@@ -21,6 +22,17 @@ in {
       # extraConfig = ''
       #   modi: "window,run,ssh,drun"
       # '';
+
+      plugins = with pkgs; [
+        rofi-calc
+        # rofi-vpn
+        # rofi-rbw
+        # rofi-systemd
+        # rofi-power-menu
+        # rofi-pulse-select
+      ];
+
+      terminal = "alacritty";
       theme = "${deps.base16-rofi}/themes/base16-${params.theme.base16-name}.rasi";
     };
 
@@ -29,7 +41,7 @@ in {
     in {
       "${mod}+apostrophe" = exec "rofi -modi drun -show drun";
       "${mod}+Shift+apostrophe" = exec "rofi -modi 'emoji:${deps.rofi-emoji}/rofiemoji.sh' -show emoji";
+      "${mod}+Shift+period" = exec "rofi -modi calc -show calc";
     };
   };
-
 }

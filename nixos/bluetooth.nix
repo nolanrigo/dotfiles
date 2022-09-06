@@ -22,25 +22,8 @@ in {
   services.dbus.packages = [ pkgs.blueman ];
 
   home-manager.users."${params.username}" = {
-
     # Blueman applet (add to the tray)
-    services.blueman-applet.enable = true;
-
-    # Bind media buttons on bluetooth headset
-    # Info: https://nixos.wiki/wiki/Bluetooth#Using_Bluetooth_headset_buttons_to_control_media_player
-    /*
-    systemd.user.services.mpris-proxy = {
-      Unit = {
-        Description = "Mpris proxy";
-        After = [
-          "network.target"
-          "sound.target"
-        ];
-      };
-      Service.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
-      Install.WantedBy = ["default.target"];
-    };
-    */
+    services.blueman-applet.enable = false;
 
     # Open blueman as a popup
     xsession.windowManager.i3.config.floating.criteria = [{ class = ".blueman-manager-wrapped"; }];

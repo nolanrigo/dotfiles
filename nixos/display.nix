@@ -6,6 +6,9 @@ let
   deps = import ./dependencies.nix;
   i3workspaces = import ./helpers/i3-workspaces.nix;
   exec = import ./helpers/i3-exec.nix;
+  # Shortcuts
+  lockScreen = "${pkgs.betterlockscreen}/bin/betterlockscreen -l";
+  autoRandrDefault = "${pkgs.autorandr}/bin/autorandr -l default";
 in {
   # Display Manager
   services.xserver = let
@@ -22,20 +25,21 @@ in {
         enable = enable;
         greeter.enable = enable;
       };
+      sessionCommands = autoRandrDefault;
     };
   };
 
-  home-manager.users."${params.username}" = let
-    lockScreen = "${pkgs.betterlockscreen}/bin/betterlockscreen -l";
-  in {
+
+  home-manager.users."${params.username}" = {
     home.packages = with pkgs; [
       xorg.xev # X event monitor
       xorg.xwininfo # X window info
+      arandr
     ];
 
     programs.fish.shellAbbrs = {
       lock = lockScreen;
-      ard = "autorandr -l default";
+      ard = autoRandrDefault;
     };
 
     # I3

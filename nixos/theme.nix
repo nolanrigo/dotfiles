@@ -27,7 +27,8 @@ in {
     };
 
     # Cursor
-    xsession.pointerCursor = {
+    home.pointerCursor = {
+      x11.enable = true;
       package = pkgs.capitaine-cursors;
       name = "capitaine-cursors-white";
       size = 32;
@@ -35,7 +36,7 @@ in {
 
     # Colors
     xresources = {
-      extraConfig = readFile "${deps.base16-xresources}/xresources/base16-${params.theme.base16-name}.Xresources";
+      extraConfig = readFile "${deps.base16-xresources}/base16-${params.theme.base16-name}.Xresources";
     };
   };
 }

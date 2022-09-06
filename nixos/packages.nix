@@ -4,6 +4,9 @@ let
   params = import ./params.nix;
 in {
   nixpkgs.config.allowUnfree = true;
+
+  services.teamviewer.enable = true;
+
   home-manager.users."${params.username}" = {
     # Accept unfree package
     nixpkgs.config.allowUnfree = true;
@@ -13,7 +16,6 @@ in {
         { allowUnfree = true; }
       '';
     };
-
 
     home.packages = with pkgs; [
       # Doc

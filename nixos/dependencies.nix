@@ -6,7 +6,7 @@ with import <nixpkgs> {};
     owner = "nix-community";
     repo = "home-manager";
     rev = "release-${version}";
-    sha256 = "1fi27zabvqlyc2ggg7wr01j813gs46rswg1i897h9hqkbgqsjkny";
+    sha256 = "Nlnm4jeQWEGjYrE6hxi/7HYHjBSZ/E0RtjCYifnNsWk=";
   };
   nixos-hardware = fetchFromGitHub {
     name = "nixos-hardware";
@@ -19,29 +19,29 @@ with import <nixpkgs> {};
     name = "base16-i3";
     owner = "khamer";
     repo = "base16-i3";
-    rev = "master"; # 78292138812a3f88c3fc4794f615f5b36b0b6d7c";
-    sha256 = "1ikhywvf6gzyw6win07rzn0zna5bl516gpvkfrr4lfq25xh3vy4x";
+    rev = "master";
+    sha256 = "MF26th9rMIzvT1KNdElshHPFvbSPH20dtqO/dSdoaCk=";
   };
   base16-xresources = fetchFromGitHub {
-    name = "base16-xresources";
-    owner = "base16-templates";
-    repo = "base16-xresources";
+    name = "xresources-themes";
+    owner = "janoamaral";
+    repo = "xresources-themes";
     rev = "master"; # 79e6e1de591f7444793fd8ed38b67ce7fce25ab6";
-    sha256 = "1nnj5py5n0m8rkq3ic01wzyzkgl3g9a8q5dc5pcgj3qr47hhddbw";
+    sha256 = "cd9wFyTxmAhbAMQ/j7po9Cfmr0gxujO4TnpFHIsxWIY=";
   };
   base16-qutebrowser = fetchFromGitHub {
     name = "base16-qutebrowser";
     owner = "theova";
     repo = "base16-qutebrowser";
     rev = "main"; # 67453c938c2c47633c652172b27b5b8abf218142
-    sha256 = "1b9p98rqv1b4cm4cxj93j48pnv2crcqpghl1nkm4k4hrrvkf5dwl";
+    sha256 = "R2I69BPqX3VrBDAbTeotLn4W6VgHahzcrxTkMY07xc0=";
   };
   base16-textmate = fetchFromGitHub {
     name = "base16-textmate";
     owner = "chriskempson";
     repo = "base16-textmate";
     rev = "master"; # 1d9e52afb74e03f5a2fdc53d9327428fe00c70c7";
-    sha256 = "1h10ynqdrnh9xh9pxjzrd2yk85zavmmqs9mx6hb2v0dq4m81hkmr";
+    sha256 = "reYGXrhhHNSp/1k6YJ2hxj4jnJQCDgy2Nzxse2PviTA=";
   };
   base16-zathura = fetchFromGitHub {
     name = "base16-zathura";

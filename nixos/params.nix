@@ -5,9 +5,9 @@
   fullname = "Nolan Rigo";
   email = "nolan@rigo.dev";
   password = "$6$c8tydkzzdHLfjan$2YB01HDIawthnPisIN/DgSzMPsZxiUDO7SCbcx3FQRuqhFIZySiWGMzckqmUJcflor2plAtCA7bbaq2iSsJI/0";
-  timeZone = "Europe/Berlin";
+  timeZone = "Europe/Paris";
   nixos = {
-    version = "21.11";
+    version = "22.05";
   };
   networkInterfaces = [
     "enp89s0"   # Ethernet
@@ -19,10 +19,10 @@
     "20min.ch"
     "20minutes.fr"
     "lematin.ch"
-    # "koreus.com"
-    # "nokenny.co"
-    # "choualbox.com"
-    # "9gag.com"
+    "koreus.com"
+    "nokenny.co"
+    "choualbox.com"
+    "9gag.com"
   ];
   fonts = rec {
     size = 12;

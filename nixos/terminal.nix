@@ -120,7 +120,6 @@ in {
       enable = true;
       enableBashIntegration = false;
       enableZshIntegration = false;
-      enableFishIntegration = true;
     };
 
     # Add keybindings to i3

@@ -39,7 +39,6 @@ in {
       };
     };
 
-
     programs.fish.shellAbbrs = {
       kbd = kbd;
     };

@@ -19,7 +19,7 @@ in {
         DEFAULT = "https://duckduckgo.com/?q={}&kae=d&kp=-2&kak=-1&kax=-1&kaq=-1&kap=-1&kao=-1&kt=p&t=hk&ia=web";
         g = "https://www.google.com/search?q={}";
         yt = "https://www.youtube.com/results?search_query={}";
-        gh = "https://github.com/{}";
+        gh = "https://github.com/nolanrigo/{}";
         npm = "https://www.npmjs.com/package/{}";
         npmd = "https://www.npmjs.com/package/@types/{}";
         npms = "https://www.npmjs.com/search?q={}";
@@ -70,6 +70,7 @@ in {
       ricons = "https://react-icons.github.io/react-icons";
       wdns = "https://www.whatsmydns.net";
       httpbin = "https://requestbin.net";
+      cdk = "https://docs.aws.amazon.com/cdk/api/v2/index.html";
     };
 
     # qutebrowser as $BROWSER
