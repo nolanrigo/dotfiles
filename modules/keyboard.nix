@@ -1,7 +1,4 @@
-{ config, pkgs, lib, ... }:
-
-let
-  params = import ./params.nix;
+{ config, pkgs, lib, ... }: let
   kbCustomLayout = pkgs.writeText "xkb-layout" ''
     keycode 90 = eacute Eacute
     keycode 87 = ecircumflex Ecircumflex
@@ -18,16 +15,11 @@ let
 in {
   services.xserver = {
     layout = "us";
-    xkbVariant = "altgr-intl";
+    # xkbVariant = "altgr-intl";
     displayManager.sessionCommands = kbd;
   };
 
-  home-manager.users."${params.username}" = {
-    # Activate numlock
-    xsession.numlock = {
-      enable = true;
-    };
-
+  home-manager.users.${config.user.name} = {
     /**
      * FIXME: home-manager, by default, reset keyboard when it starts
      * apply this change to keep our keyboard' updates applied
@@ -44,4 +36,3 @@ in {
     };
   };
 }
-

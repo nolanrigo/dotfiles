@@ -1,11 +1,13 @@
-{ config, pkgs, ... }:
-
-let
-  inherit (builtins) readFile;
-  params = import ./params.nix;
-  deps = import ./dependencies.nix;
+{ config, pkgs, ... }: let 
+  theme = pkgs.fetchFromGitHub {
+    name = "zathura";
+    owner = "dracula";
+    repo = "zathura";
+    rev = "master";
+    sha256 = "sha256-g6vxwPw0Q9QFJBc3d4R3ZsHnnEvU5o1f4DSuyLeN5XQ=";
+  };
 in {
-  home-manager.users."${params.username}" = {
+  home-manager.users.${config.user.name} = {
     programs.zathura = {
       enable = true;
       options = {
@@ -17,8 +19,7 @@ in {
         window-title-basename = true;
         selection-clipboard = "clipboard";
       };
-      extraConfig = readFile "${deps.base16-zathura}/build_schemes/colors/base16-${params.theme.base16-name}.config";
+      extraConfig = builtins.readFile "${theme}/zathurarc";
     };
   };
 }
-

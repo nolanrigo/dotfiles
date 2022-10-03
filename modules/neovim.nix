@@ -1,66 +1,41 @@
-{ config, pkgs, ... }:
-
-let
-  params = import ./params.nix;
-in {
-  home-manager.users."${params.username}" = {
-    # Neovim
+{ config, pkgs, ... }: {
+  home-manager.users.${config.user.name} = {
     programs.neovim = {
       enable = true;
       viAlias = true;
       vimAlias = true;
       vimdiffAlias = true;
-      withNodeJs = true;
-
       coc = {
         enable = true;
-        # bug: neovim: rebuilding with coc support does not work when nodejs is in PATH
-        # https://github.com/nix-community/home-manager/issues/2966
-        # Solution:
-        # https://github.com/sumnerevans/home-manager-config/commit/da138d4ff3d04cddb37b0ba23f61edfb5bf7b85e
-        package = pkgs.vimUtils.buildVimPluginFrom2Nix {
-          pname = "coc.nvim";
-          version = "2022-05-21";
-          src = pkgs.fetchFromGitHub {
-            owner = "neoclide";
-            repo = "coc.nvim";
-            rev = "791c9f673b882768486450e73d8bda10e391401d";
-            sha256 = "sha256-MobgwhFQ1Ld7pFknsurSFAsN5v+vGbEFojTAYD/kI9c=";
-          };
-          meta.homepage = "https://github.com/neoclide/coc.nvim/";
-        };
       };
-
       plugins = with pkgs.vimPlugins; [
-        # copilot-vim FIXME: install the upgraded version of copilot
-        vim-prisma
-        base16-vim
-        vim-gitgutter
-        vim-fugitive
+        # General
+        Rename
         vim-surround
+
+        # Theme
+        dracula-vim
         vim-airline
         vim-airline-themes
-        vim-prettier # instead of coc-prettier
-        marks-nvim
 
+        # Syntax
+        vim-polyglot
+
+        # Formater
+        editorconfig-vim
+        vim-prettier
+
+        # Node.js
+        vim-prisma
+
+        # Git
+        vim-gitgutter
+
+        # File
         telescope-nvim
           nvim-treesitter
 
-        editorconfig-vim
-        vim-polyglot
-        Rename
-        # coc-html
-        # coc-css
-        # coc-eslint
-        # coc-emmet
-        # coc-docker
-        # coc-graphql
-        # coc-sql
-        # coc-xml
-        # coc-nginx
-        # coc-sh
-
-        # Coc plugins
+        # Coc
         coc-tsserver
         coc-json
         coc-explorer
@@ -69,7 +44,7 @@ in {
       extraConfig = ''
         syntax on
         set termguicolors
-        colorscheme base16-${params.theme.base16-name}
+        colorscheme dracula
 
         " Sensible (but manual)
         set number relativenumber
@@ -111,14 +86,10 @@ in {
         set updatetime=300
         set shortmess+=c
 
-        inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-        function! s:check_back_space() abort
-          let col = col('.') - 1
-          return !col || getline('.')[col - 1]  =~# '\s'
-        endfunction
-
-        " Ctrl-space to trigger coc hints
+        " Enter to autocomplete
+        set completeopt=longest,menuone
         inoremap <silent><expr> <c-space> coc#refresh()
+        inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
 
         " Buffer
         map <C-J> <cmd>bnext<cr>
@@ -133,7 +104,7 @@ in {
         vnoremap ) (
 
         " Airline
-        let g:airline_theme='${params.theme.base16-name}'
+        let g:airline_theme='dracula'
         let g:airline_powerline_fonts=1
         let g:airline#extensions#tabline#enabled = 1
         let g:airline#extensions#tabline#left_sep = ' '
@@ -168,16 +139,5 @@ in {
         vnoremap <leader>pp <cmd>'<,'>PrettierPartial<cr>
       '';
     };
-
-    # nvim as "e" fish abbr
-    programs.fish.shellAbbrs.e = "nvim";
-
-    # nvim as $EDITOR
-    home.sessionVariables.EDITOR = "nvim";
-    home.sessionVariables.VISUAL = "nvim";
-
-    # nvim as git editor
-    programs.git.extraConfig.core.editor = "nvim";
   };
 }
-

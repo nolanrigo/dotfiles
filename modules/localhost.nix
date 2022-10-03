@@ -1,16 +1,22 @@
-{ config, pkgs, ... }:
-
-let
-  params = import ./params.nix;
+{ config, nixpkgs, ... }: let
+  mappings = [
+    {
+      address = "app.beremote.lan";
+      port = 3000;
+    }
+    {
+      address = "api.beremote.lan";
+      port = 3001;
+    }
+    {
+      address = "auth.beremote.lan";
+      port = 3002;
+    }
+  ];
 in {
-
   networking = {
     hosts = {
-      "127.0.0.1" = [
-        "app.beremote.lan"
-        "auth.beremote.lan"
-        "api.beremote.lan"
-      ];
+      "127.0.0.1" = builtins.map (m: m.address) mappings;
     };
   };
 
@@ -38,28 +44,15 @@ in {
       }
     ];
 
-    backends = [
-      {
-        patterns = ["app.beremote.lan"];
+    backends = (
+      builtins.map (m: {
+        patterns = [m.address];
         server = {
           host = "127.0.0.1";
-          port = 3000;
+          port = m.port;
         };
-      }
-      {
-        patterns = ["api.beremote.lan"];
-        server = {
-          host = "127.0.0.1";
-          port = 3001;
-        };
-      }
-      {
-        patterns = ["auth.beremote.lan"];
-        server = {
-          host = "127.0.0.1";
-          port = 3002;
-        };
-      }
+      }) mappings
+    ) ++ [
       {
         patterns = [];
         server = {
@@ -70,4 +63,3 @@ in {
     ];
   };
 }
-

@@ -1,14 +1,15 @@
-{ config, pkgs, ... }:
-
-let
-  params = import ./params.nix;
-in {
-  home-manager.users."${params.username}" = {
-    # Git
+{ config, pkgs, ... }: {
+  home-manager.users.${config.user.name} = {
     programs.git = {
       enable = true;
-      userName = params.fullname;
-      userEmail = params.email;
+      userName = config.user.display;
+      userEmail = config.user.email;
+
+      ignores = [
+        ".direnv/"
+        ".ssh/id_rsa"
+        ".ssh/id_rsa.pub"
+      ];
 
       extraConfig = {
         github.user = "nolanrigo";
@@ -22,7 +23,8 @@ in {
         };
 
         core = {
-          pager = "cat";
+          pager = "bat";
+          editor = "nvim";
           autocrlf = "input";
           ignorecase = "false";
           whitespace = "trailing-space,space-before-tab";
@@ -92,14 +94,8 @@ in {
           autoupdate = "true";
         };
       };
-
-      ignores = [
-        ".ssh/id_rsa"
-        ".ssh/id_rsa.pub"
-      ];
     };
 
-    # Git as fish abbrs
     programs.fish.shellAbbrs = {
       gs = "git status -sb";
       gl = "git lg";
@@ -131,4 +127,3 @@ in {
     };
   };
 }
-
