@@ -67,7 +67,7 @@ in {
       font = {
         name = "Ubuntu Nerd Font";
         package = pkgs.ubuntu_font_family;
-        size = 11;
+        size = 10;
       };
     };
 
@@ -99,7 +99,7 @@ in {
       caffeine.enable = true;
 
       picom = {
-        enable = true;
+        enable = false;
 
         # Opacity
         activeOpacity = 1.0;
@@ -122,7 +122,6 @@ in {
 
         # Others
         backend = "glx";
-        experimentalBackends = true;
         vSync = true;
 
         settings = {
@@ -175,7 +174,7 @@ in {
         enable = true;
         package = pkgs.i3-gaps;
         config = let
-          mod = "Mod1";
+          mod = "Mod4";
         in {
           modifier = mod;
           defaultWorkspace = "f";
@@ -234,6 +233,14 @@ in {
             hideEdgeBorders = "none"; # "none", "vertical", "horizontal", "both", "smart"
             titlebar = false;
             border = 3;
+            commands = [
+              # workaround for https://github.com/i3/i3/issues/5149
+              {
+                # criteria = { class = "XTerm"; };
+                criteria = {all = true;};
+                command = "border pixel 3";
+              }
+            ];
           };
           floating = {
             titlebar = false;
@@ -253,7 +260,7 @@ in {
           fonts = {
             names = ["Ubuntu Nerd Font"];
             style = "Medium";
-            size = 11.0;
+            size = 10.0;
           };
           keybindings = let
             exec = path: "exec --no-startup-id \"${path}\"";
@@ -311,6 +318,8 @@ in {
             "XF86AudioPause" = exec "playerctl play-pause";
             "XF86AudioNext" = exec "playerctl next";
             "XF86AudioPrev" = exec "playerctl previous";
+            "XF86ScreenSaver" = exec "betterlockscreen --lock";
+            "Print" = exec "flameshot gui";
 
             # Programs
             "${mod}+Return" = exec "kitty";

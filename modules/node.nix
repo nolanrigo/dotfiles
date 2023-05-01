@@ -21,6 +21,7 @@
       nun = "npm un";
       ncu = "npx npm-check-updates -u";
       ycu = "yarn upgrade-interactive --latest";
+      npkill = "npx npkill";
 
       # Yarn
       y = "yarn";

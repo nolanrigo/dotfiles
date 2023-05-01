@@ -33,7 +33,7 @@ in {
 
     programs.qutebrowser = {
       enable = true;
-      searchEngines = (translationEngines ["fr" "en" "de" "es" "et"]) // {
+      searchEngines = (translationEngines ["fr" "en" "de" "es" "et" "et"]) // {
         DEFAULT = "https://duckduckgo.com/?q={}&kae=d&kp=-2&kak=-1&kax=-1&kaq=-1&kap=-1&kao=-1&kt=p&t=hk&ia=web";
         g = "https://www.google.com/search?q={}";
         yt = "https://www.youtube.com/results?search_query={}";
@@ -41,16 +41,20 @@ in {
         npm = "https://www.npmjs.com/package/{}";
         npmd = "https://www.npmjs.com/package/@types/{}";
         npms = "https://www.npmjs.com/search?q={}";
+        npmq = "https://packagequality.com/#?package={}";
         nip = "https://search.nixos.org/packages?from=0&size=30&sort=relevance&query={}";
         e = "http://e.localhost:{}";
       };
       quickmarks = {
         # General
         mail = "https://mail.proton.me";
-        cal = "https://www.icloud.com/calendar"; # waiting for protonmail on IOS cal = "https://calendar.proton.me";
+        cal = "https://calendar.proton.me";
         drive = "https://drive.proton.me";
         maps = "https://maps.google.com";
         wsp = "https://web.whatsapp.com";
+        music = "https://music.youtube.com";
+        todo = "https://app.clickup.com";
+        podcast = "https://play.pocketcasts.com/podcasts";
 
         # Qutebrowser
         settings = "https://www.qutebrowser.org/doc/help/settings.html";
@@ -65,6 +69,10 @@ in {
         wdns = "https://www.whatsmydns.net";
         httpbin = "https://requestbin.net";
         cdk = "https://docs.aws.amazon.com/cdk/api/v2/index.html";
+
+        # others
+        fingers = "https://zty.pe";
+        email-spam-tester = "https://www.mail-tester.com";
       };
       settings = {
         url = {
@@ -85,6 +93,8 @@ in {
           # bg = params.theme.colors.primary.background;
           preferred_color_scheme = "dark";
         };
+        # fix aspect ratio, see https://github.com/qutebrowser/qutebrowser/discussions/6649?sort=top#discussioncomment-1221450
+        qt.args = [ "enable-experimental-web-platform-features" ];
       };
       extraConfig = ''
         import dracula.draw

@@ -6,6 +6,7 @@
     ./packages.nix
     ./modules/dunst.nix
     ./modules/qutebrowser.nix
+    ./modules/brave.nix
     ./modules/discord.nix
     ./modules/i3.nix
     ./modules/bluetooth.nix
@@ -17,6 +18,7 @@
     ./modules/git.nix
     ./modules/neovim.nix
     ./modules/keyboard.nix
+    ./modules/vpn.nix
   ];
 
   users.users.${config.user.name} = {
@@ -32,6 +34,7 @@
       "camera"
       "lp"
       "scanner"
+      "docker"
     ];
   };
 
@@ -50,10 +53,13 @@
     };
   };
 
+  virtualisation.docker.enable = true;
+
   fileSystems = {
     "/" = { fsType = "ext4"; device = "/dev/disk/by-label/nixos"; };
     "/boot/efi" = { fsType = "vfat"; device = "/dev/disk/by-label/BOOT"; };
     "/windows" = { fsType = "ntfs"; device = "/dev/nvme0n1p5"; options = ["rw" "uid=1000"]; };
+    # "/usb" = { device = "/dev/sda2"; options = ["rw" "uid=1000"]; };
   };
 
   swapDevices = [
@@ -100,6 +106,7 @@
   networking = {
     hostName = config.host.name;
     networkmanager.enable = true;
+
     nameservers = [
       "208.67.222.222"
       "208.67.220.220"
@@ -176,6 +183,7 @@
 
     printing = {
       enable = true;
+      webInterface = true;
       browsing = true;
     };
 
@@ -183,6 +191,7 @@
   };
 
   programs = {
+    fish.enable = true;
     nm-applet.enable = true;
     dconf.enable = true;
   };
@@ -209,8 +218,8 @@
       };
 
       manual = {
-        html.enable = true;
-        manpages.enable = true;
+        html.enable = false;
+        manpages.enable = false;
       };
 
       dconf.settings = { }; # Settings to write to the dconf configuration system. 
@@ -249,11 +258,6 @@
 
         # broot.enable = true;
 
-        chromium = {
-          enable = false;
-          extensions = [ ];
-        };
-
         dircolors = {
           enable = true;
           enableFishIntegration = true;
@@ -287,7 +291,7 @@
             # Nixos
             nrs = "sudo nixos-rebuild switch";
             nrsi = "sudo nixos-rebuild switch; i3-msg restart";
-            nrsu = "sudo nixos-rebuild boot --upgrade";
+            nrsu = "sudo nixos-rebuild switch --upgrade";
             nip = "nix-shell -p";
             psgrep = "ps -ax | rg";
 
@@ -321,45 +325,51 @@
             t = "date";
             top = "btm";
             htop = "btm";
+            j = "just";
 
             # Others
             copy = "xclip -selection clipboard";
             paste = "xclip -o -selection clipboard";
             download = "aria2";
+
+            # Vpn
+            von = "nmcli con up";
+            voff = "nmcli con down";
+
+            # Bluetooth
+            bon = "bluetoothctl power on";
+            boff = "bluetoothctl power off";
+            bapon = "bluetoothctl connect 60:BE:C4:6C:79:67";
+            bapoff = "bluetoothctl disconnect 60:BE:C4:6C:79:67";
+            bapre = "boff; bon; bapon";
           };
           functions = {
             gitignore = "curl -sL https://www.gitignore.io/api/$argv";
             nixify =
               let
                 shellDotNix = ''
-                  	        with import <nixpkgs> {};
-                                  stdenv.mkDerivation {
-                                    name = \"env\";
-                                    buildInputs = [
-                                    ];
-                                    ENV_VARIABLE = \"VALUE\";
-                  	        }
-                  	      '';
-              in
-              ''
-                              if test ! -e ./.envrc
-                                echo "use nix" > ./.envrc
-                                direnv allow
-                              end
-                              if test ! -e ./shell.nix
-                                echo "${shellDotNix}" > ./shell.nix
-                                $EDITOR ./shell.nix
-                              end
-                	    '';
+                  with import <nixpkgs> {};
+                  stdenv.mkDerivation {
+                    name = \"env\";
+                    buildInputs = [
+                    ];
+                    ENV_VARIABLE = \"VALUE\";
+                  }
+                '';
+              in ''
+                if test ! -e ./.envrc
+                  echo "use nix" > ./.envrc
+                  direnv allow
+                end
+                if test ! -e ./shell.nix
+                  echo "${shellDotNix}" > ./shell.nix
+                  $EDITOR ./shell.nix
+                end
+              '';
           };
         };
 
         jq.enable = true;
-
-        just = {
-          enable = true;
-          enableFishIntegration = true;
-        };
 
         kitty = {
           enable = true;
@@ -368,7 +378,7 @@
             # package = (pkgs.nerdfonts.override {
             #   fonts = ["FiraCode"];
             # });
-            size = 11;
+            size = 10;
           };
           settings = {
             enable_audio_bell = "no";

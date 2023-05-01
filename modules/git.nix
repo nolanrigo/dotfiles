@@ -7,6 +7,7 @@
 
       ignores = [
         ".direnv/"
+        "secrets.nix"
         ".ssh/id_rsa"
         ".ssh/id_rsa.pub"
       ];
@@ -57,6 +58,10 @@
         log = {
           abbrevCommit = "true";
           follow = "true";
+        };
+
+        commit = {
+          verbose = true;
         };
 
         grep = {
@@ -124,6 +129,9 @@
       gbrd = "git branch -d";
       gdf = "git diff";
       gdfs = "git diff --staged";
+      gir = "git reset";
+      girh = "git reset --hard";
+      girs = "git reset --soft";
     };
   };
 }

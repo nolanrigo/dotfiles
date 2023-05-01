@@ -42,9 +42,12 @@
     };
 
     home.packages = with pkgs; [
+      vmware-horizon-client
       neofetch
       sl
+      arandr
       pavucontrol # Audio control
+      pocket-casts # Podcasts
       spotify
       vlc # Media Player
       glow # Readme reader
@@ -54,7 +57,7 @@
       gnome.file-roller # Archive Manager
       pcmanfm # File Manager
       rsync # Syncer $ rsync -r dir1/ dir2/
-      unzip # Zip files
+      unzip zip # Zip files
       unrar # Rar files
       xclip
       playerctl
@@ -65,11 +68,20 @@
       procs
       fd
       sd
+      inetutils
       discord
+      slack
       tmatrix
       insomnia
       dbeaver
+      mongodb-compass
       protonvpn-gui
+      kdenlive
+      ranger
+      drawio
+      gh
+      just
+      tdesktop
     ];
   };
 }

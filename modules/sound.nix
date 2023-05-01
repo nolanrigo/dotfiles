@@ -17,7 +17,5 @@
     pulse.enable = true;
   };
 
-  home-manager.users.${config.user.name} = {
-    services.easyeffects.enable = true;
-  };
+  home-manager.users.${config.user.name} = { };
 }

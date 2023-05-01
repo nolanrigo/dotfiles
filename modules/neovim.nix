@@ -39,6 +39,9 @@
         coc-tsserver
         coc-json
         coc-explorer
+
+        # Copilot
+        copilot-vim
       ];
 
       extraConfig = ''
@@ -89,7 +92,7 @@
         " Enter to autocomplete
         set completeopt=longest,menuone
         inoremap <silent><expr> <c-space> coc#refresh()
-        inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
+        inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
 
         " Buffer
         map <C-J> <cmd>bnext<cr>
@@ -137,6 +140,9 @@
         " Prettier
         nnoremap <leader>pp <cmd>Prettier<cr>
         vnoremap <leader>pp <cmd>'<,'>PrettierPartial<cr>
+
+        " Copilot
+        let g:copilot_node_command = "${pkgs.nodejs-16_x}/bin/node"
       '';
     };
   };

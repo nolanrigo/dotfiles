@@ -60,7 +60,7 @@
       name = "nuc-nixos";
     };
     time = {
-      zone = "Europe/Zurich";
+      zone = "Europe/Tallinn";
     };
     theme = {
       background = "#282a36";
