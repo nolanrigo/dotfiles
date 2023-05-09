@@ -65,8 +65,7 @@ in {
         package = pkgs.papirus-icon-theme;
       };
       font = {
-        name = "Ubuntu Nerd Font";
-        package = pkgs.ubuntu_font_family;
+        name = "Ubuntu";
         size = 10;
       };
     };
@@ -258,7 +257,7 @@ in {
             mouseWarping = true;
           };
           fonts = {
-            names = ["Ubuntu Nerd Font"];
+            names = ["Ubuntu"];
             style = "Medium";
             size = 10.0;
           };

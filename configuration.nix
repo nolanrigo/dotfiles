@@ -159,11 +159,14 @@
 
   fonts = {
     fontDir.enable = true;
-    fonts = with pkgs; [nerdfonts];
+    fonts = with pkgs; [
+      nerdfonts
+      ubuntu_font_family
+    ];
     fontconfig = {
       enable = true;
       defaultFonts = let
-        font = "Ubuntu Nerd Font";
+        font = "Ubuntu";
       in {
         emoji = [font];
         serif = [font];
@@ -375,9 +378,6 @@
           enable = true;
           font = {
             name = "FiraCode Nerd Font";
-            # package = (pkgs.nerdfonts.override {
-            #   fonts = ["FiraCode"];
-            # });
             size = 10;
           };
           settings = {

@@ -82,6 +82,7 @@
       gh
       just
       tdesktop
+      pup
     ];
   };
 }

@@ -17,7 +17,7 @@ in {
       terminal = "kitty";
 
       theme = "${theme}/theme/config1";
-      font = "Ubuntu Nerd Font 11";
+      font = "Ubuntu 11";
 
       plugins = with pkgs; [
         rofi-calc
