@@ -78,7 +78,6 @@
       };
       grub = {
         enable = true;
-        version = 2;
         devices = [ "nodev" ];
         efiSupport = true;
         useOSProber = true;
@@ -161,7 +160,7 @@
 
   fonts = {
     fontDir.enable = true;
-    fonts = with pkgs; [
+    packages = with pkgs; [
       nerdfonts
       ubuntu_font_family
     ];
@@ -227,7 +226,7 @@
         manpages.enable = false;
       };
 
-      dconf.settings = { }; # Settings to write to the dconf configuration system. 
+      dconf.settings = { }; # Settings to write to the dconf configuration system.
 
       editorconfig = {
         enable = true;
@@ -438,7 +437,7 @@
 
         flameshot = {
           enable = true;
-          settings = {}; # TODO: 
+          settings = {}; # TODO:
         };
 
         xsettingsd = {
