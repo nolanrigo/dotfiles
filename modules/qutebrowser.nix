@@ -51,6 +51,7 @@ in {
         maildev = "http://localhost:8025";
         cal = "https://calendar.proton.me";
         drive = "https://drive.proton.me";
+        timer = "https://track.toggl.com/timer";
         maps = "https://maps.google.com";
         wsp = "https://web.whatsapp.com";
         music = "https://music.youtube.com";
@@ -110,6 +111,15 @@ in {
             }
         }) 
       '';
+    };
+
+    programs.firefox = {
+      enable = true;
+      profiles = {
+        nolan = {
+          bookmarks = [];
+        };
+      };
     };
   };
 }

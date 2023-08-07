@@ -142,7 +142,7 @@
         vnoremap <leader>pp <cmd>'<,'>PrettierPartial<cr>
 
         " Copilot
-        let g:copilot_node_command = "${pkgs.nodejs-16_x}/bin/node"
+        " let g:copilot_node_command = "${pkgs.nodejs}/bin/node"
       '';
     };
   };

@@ -333,6 +333,7 @@
             youtubedl = "youtube-dl --format bestvideo+bestaudio";
             twitchdl = "youtube-dl --format best -o \"%(id)s.%(ext)s\"";
             t = "date";
+            tu = "date -u";
             top = "btm";
             htop = "btm";
             j = "just";
