@@ -48,6 +48,7 @@ in {
       quickmarks = {
         # General
         mail = "https://mail.proton.me";
+        maildev = "http://localhost:8025";
         cal = "https://calendar.proton.me";
         drive = "https://drive.proton.me";
         maps = "https://maps.google.com";

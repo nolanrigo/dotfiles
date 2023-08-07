@@ -192,6 +192,12 @@
     };
 
     avahi.enable = true;
+
+    mailhog = {
+      enable = true;
+      uiPort = 8025;
+      smtpPort = 1025;
+    };
   };
 
   programs = {
