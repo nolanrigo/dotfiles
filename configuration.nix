@@ -21,6 +21,7 @@
     ./modules/starship.nix
     ./modules/keyboard.nix
     ./modules/vpn.nix
+    ./modules/dropbox.nix
   ];
 
   users.users.${config.user.name} = {
@@ -61,7 +62,6 @@
     "/" = { fsType = "ext4"; device = "/dev/disk/by-label/nixos"; };
     "/boot/efi" = { fsType = "vfat"; device = "/dev/disk/by-label/BOOT"; };
     "/windows" = { fsType = "ntfs"; device = "/dev/nvme0n1p5"; options = ["rw" "uid=1000"]; };
-    # "/usb" = { device = "/dev/sda2"; options = ["rw" "uid=1000"]; };
   };
 
   swapDevices = [
@@ -99,7 +99,7 @@
     };
     kernelModules = [ "kvm-intel" ];
     kernel = {
-      sysctl."wm.swap" = 0;
+      sysctl."wm.swappiness" = 0;
     };
     extraModulePackages = [ ];
   };
@@ -324,7 +324,7 @@
             ls = l;
             ltree = "exa -al --git --icons --tree --group-directories-first";
             cat = "bat";
-            find = "fd";
+            find = "fd --hidden";
             ps = "procs";
             sed = "sd";
             grep = "rg";
@@ -352,7 +352,8 @@
             boff = "bluetoothctl power off";
             bapon = "bluetoothctl connect 60:BE:C4:6C:79:67";
             bapoff = "bluetoothctl disconnect 60:BE:C4:6C:79:67";
-            bapre = "boff; bon; bapon";
+            bqcon = "bluetoothctl connect 04:52:C7:F1:8F:B5";
+            bqcoff = "bluetoothctl disconnect 04:52:C7:F1:8F:B5";
           };
           functions = {
             gitignore = "curl -sL https://www.gitignore.io/api/$argv";
@@ -440,8 +441,6 @@
       };
 
       services = {
-        dropbox.enable = true;
-
         flameshot = {
           enable = true;
           settings = {}; # TODO:
