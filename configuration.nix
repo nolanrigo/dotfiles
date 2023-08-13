@@ -54,6 +54,14 @@
       driSupport = true;
       driSupport32Bit = true;
     };
+    nvidia = {
+      modesetting.enable = true;
+      prime = {
+        sync.enable = true;
+        nvidiaBusId = "PCI:1:0:0";
+        intelBusId = "PCI:0:2:0";
+      };
+    };
   };
 
   virtualisation.docker.enable = true;
@@ -180,7 +188,7 @@
   services = {
     xserver = {
       enable = true;
-      videoDrivers = [ "modesettings" ]; #
+      videoDrivers = [ "nvidia" /*"modesettings"*/ ];
       dpi = 96; #
       exportConfiguration = true; #
     };
@@ -211,7 +219,6 @@
     useGlobalPkgs = true;
 
     users.${config.user.name} = {
-
       home = {
         stateVersion = config.stateVersion;
         username = config.user.name;
