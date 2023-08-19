@@ -2,7 +2,7 @@
   home-manager.users.${config.user.name} = {
     programs.starship = {
       enable = true;
-      enableTransience = true;
+      enableTransience = false;
       enableFishIntegration = true;
       settings = {
         add_newline = true;

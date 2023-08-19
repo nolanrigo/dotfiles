@@ -4,6 +4,7 @@
     <home-manager/nixos>
     ./config.nix
     ./packages.nix
+    ./modules/accounts.nix
     ./modules/dunst.nix
     ./modules/qutebrowser.nix
     ./modules/brave.nix
@@ -435,7 +436,18 @@
 
         # SEE: SCMPUFF
 
-        tealdeer.enable = true;
+        tealdeer = {
+          enable = true;
+          settings = {
+            display = {
+              compact = false;
+              use_pager = true;
+            };
+            updates = {
+              autoUpdate = true;
+            };
+          };
+        };
 
         watson = {
           enable = true;

@@ -138,8 +138,7 @@
         noremap <leader>sx <cmd>nohlsearch<cr>
 
         " Prettier
-        nnoremap <leader>pp <cmd>Prettier<cr>
-        vnoremap <leader>pp <cmd>'<,'>PrettierPartial<cr>
+        nnoremap <leader>pp <cmd>PrettierAsync<cr>
 
         " Copilot
         " let g:copilot_node_command = "${pkgs.nodejs}/bin/node"

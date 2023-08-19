@@ -33,6 +33,8 @@ in {
 
     programs.qutebrowser = {
       enable = true;
+      package = pkgs.qutebrowser-qt6.override { enableWideVine = true; };
+
       searchEngines = (translationEngines ["fr" "en" "de" "es" "et" "et"]) // {
         DEFAULT = "https://duckduckgo.com/?q={}&kae=d&kp=-2&kak=-1&kax=-1&kaq=-1&kap=-1&kao=-1&kt=p&t=hk&ia=web";
         g = "https://www.google.com/search?q={}";
