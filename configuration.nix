@@ -18,7 +18,6 @@
     ./modules/localhost.nix
     ./modules/git.nix
     ./modules/neovim.nix
-    ./modules/watson.nix
     ./modules/starship.nix
     ./modules/keyboard.nix
     ./modules/vpn.nix
@@ -259,8 +258,8 @@
         aria2.enable = true;
 
         autojump = {
-          enable = true;
-          enableFishIntegration = false;
+          enable = false;
+          enableFishIntegration = true;
         };
 
         bat.enable = true;
@@ -277,7 +276,7 @@
         direnv = {
           enable = true;
           nix-direnv.enable = true;
-          # enableFishIntegration = true;
+          # enableFishIntegration = true; INFO: this field is readonly
         };
 
         exa = {
@@ -413,7 +412,7 @@
         };
 
         navi = {
-          enable = true;
+          enable = false;
           enableFishIntegration = true;
         };
 
@@ -422,6 +421,7 @@
           plugins = [ ];
         };
 
+        # INFO: `z folder` switch to directory
         pazi = {
           enable = true;
           enableFishIntegration = true;
@@ -440,11 +440,6 @@
               autoUpdate = true;
             };
           };
-        };
-
-        watson = {
-          enable = true;
-          enableFishIntegration = true;
         };
 
         zathura = {
