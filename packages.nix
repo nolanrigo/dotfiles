@@ -83,8 +83,6 @@
       just
       tdesktop
       pup
-      google-chrome
-      google-chrome-dev
     ];
   };
 }

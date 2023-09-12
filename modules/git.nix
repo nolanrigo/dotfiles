@@ -117,6 +117,7 @@
       grba = "git rebase --abort";
       gpl = "git pull";
       gpu = "git push";
+      gmb = "git merge-base";
       gpuu = "git push -u origin";
       gpuf = "git push --force";
       gpufl = "git push --force-with-lease";

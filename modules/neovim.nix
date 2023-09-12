@@ -10,8 +10,8 @@
       };
       plugins = with pkgs.vimPlugins; [
         # General
-        Rename
         vim-surround
+        vim-commentary
 
         # Theme
         dracula-vim
@@ -42,6 +42,11 @@
 
         # Copilot
         copilot-vim
+
+        # Database
+        vim-dadbod
+        vim-dadbod-ui
+        vim-dadbod-completion
       ];
 
       extraConfig = ''

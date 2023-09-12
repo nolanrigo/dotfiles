@@ -6,23 +6,24 @@
   environment.systemPackages = with pkgs; [
     maestral
     maestral-gui
+    bash
+    libnotify
   ];
 
-  /*
-  systemd.user.services.maestral = {
-    description = "Maestral";
-    wantedBy = ["graphical-session.target"];
-    environment = {};
+  systemd.services.maestral = let
+    maestral = "${pkgs.maestral}/bin/maestral";
+    bash = "${pkgs.bash}/bin/bash";
+    notifySend = "${pkgs.libnotify}/bin/notify-send";
+  in {
+    description = "Maestral daemon";
+    wantedBy = [ "multi-user.target" ];
     serviceConfig = {
-      ExecStart = "${lib.getBin pkgs.maestral}/bin/maestral start";
-      ExecReload = "${lib.getBin pkgs.coreutils}/bin/kill -HUP $MAINPID";
-      ExecStop = "${lib.getBin pkgs.maestral}/bin/maestral stop";
-      KillMode = "control-group"; # upstream recommends process
-      Restart = "on-failure";
-      PrivateTmp = true;
-      ProtectSystem = "full";
-      Nice = 10;
+      Type = "notify";
+      NotifyAccess = "exec";
+      ExecStart = "${maestral} start -f";
+      ExecStop = "${maestral} stop";
+      ExecStopPost = "${bash} -c 'if [ ${"$"}{SERVICE_RESULT} != success ]; then ${notifySend} Maestral \"Daemon failed\"; fi'";
+      WatchdogSec = "30s";
     };
   };
-  */
 }

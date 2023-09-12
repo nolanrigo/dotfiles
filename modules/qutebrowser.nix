@@ -33,7 +33,7 @@ in {
 
     programs.qutebrowser = {
       enable = true;
-      package = pkgs.qutebrowser-qt6.override { enableWideVine = true; };
+      package = pkgs.qutebrowser.override { enableWideVine = true; };
 
       searchEngines = (translationEngines ["fr" "en" "de" "es" "et" "et"]) // {
         DEFAULT = "https://duckduckgo.com/?q={}&kae=d&kp=-2&kak=-1&kax=-1&kaq=-1&kap=-1&kao=-1&kt=p&t=hk&ia=web";
@@ -100,6 +100,16 @@ in {
         # fix aspect ratio, see https://github.com/qutebrowser/qutebrowser/discussions/6649?sort=top#discussioncomment-1221450
         qt.args = [ "enable-experimental-web-platform-features" ];
       };
+      keyBindings = {
+        normal = {
+          "<Ctrl-k>" = "tab-prev";
+          "<Ctrl-j>" = "tab-next";
+        };
+        passthrough = {
+          "<Ctrl-k>" = "tab-prev";
+          "<Ctrl-j>" = "tab-next";
+        };
+      };
       extraConfig = ''
         import dracula.draw
 
@@ -113,15 +123,6 @@ in {
             }
         }) 
       '';
-    };
-
-    programs.firefox = {
-      enable = true;
-      profiles = {
-        nolan = {
-          bookmarks = [];
-        };
-      };
     };
   };
 }

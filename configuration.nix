@@ -7,7 +7,6 @@
     ./modules/accounts.nix
     ./modules/dunst.nix
     ./modules/qutebrowser.nix
-    ./modules/brave.nix
     ./modules/discord.nix
     ./modules/i3.nix
     ./modules/bluetooth.nix
@@ -17,11 +16,14 @@
     ./modules/node.nix
     ./modules/localhost.nix
     ./modules/git.nix
-    ./modules/neovim.nix
+    ./neovim/neovim.nix
+    # ./modules/neovim.nix
     ./modules/starship.nix
     ./modules/keyboard.nix
     ./modules/vpn.nix
     ./modules/dropbox.nix
+    ./modules/disable-sleep.nix
+    ./modules/obs.nix
   ];
 
   users.users.${config.user.name} = {
@@ -305,9 +307,6 @@
             nip = "nix-shell -p";
             psgrep = "ps -ax | rg";
 
-            # git
-            ga = "git add";
-
             # Video/Image/Document viewer
             # TODO: replace by `xdg-open` `open README.md` would open glow
             e = "nvim";
@@ -416,11 +415,6 @@
           enableFishIntegration = true;
         };
 
-        obs-studio = {
-          enable = true;
-          plugins = [ ];
-        };
-
         # INFO: `z folder` switch to directory
         pazi = {
           enable = true;
@@ -457,6 +451,8 @@
           enable = true;
           settings = {};
         };
+
+	gnome-keyring.enable = true;
       };
     };
   };

@@ -1,14 +1,18 @@
 { config, pkgs, ... }: let
-  wallpaper = pkgs.nixos-artwork.wallpapers.nineish-dark-gray.gnomeFilePath;
+  backgroundColor = "#282a36";
 in {
   services = {
     xserver = {
       enable = true;
       exportConfiguration = true;
       displayManager = {
+        autoLogin = {
+          enable = config.user.autoLogin;
+          user = config.user.name;
+        };
         lightdm = {
           enable = true;
-          background = wallpaper;
+          # background = backgroundColor;
           greeters = {
             gtk = {
               theme = {
@@ -142,10 +146,7 @@ in {
         provider = "geoclue2";
       };
 
-      betterlockscreen = {
-        enable = true;
-        arguments = ["--blur 0.5" "--color #ef8616" "-u ${wallpaper}"];
-      };
+      betterlockscreen.enable = true;
 
       udiskie = {
         enable = true;
@@ -184,6 +185,13 @@ in {
           assigns = {
             # Assign program to a specific workspace
           };
+          startup = [
+            {
+	      command = "${pkgs.hsetroot}/bin/hsetroot -solid \"${backgroundColor}\"";
+              always = true;
+              notification = false;
+            }
+          ];
           colors = {
             background = "#f8f8f2";
             focused = {
@@ -224,8 +232,8 @@ in {
           };
           gaps = {
             outer = 0;
-            inner = 20;
-            smartBorders = "off"; # "on", "off", "no_gaps"
+            inner = 0;
+            smartBorders = "on"; # "on", "off", "no_gaps"
             smartGaps = false;
           };
           window = {
@@ -271,15 +279,16 @@ in {
             "q" "w" "e" "r"
             "a" "s" "d" "f"
             "z" "x" "c" "v"
+            "1" "2" "3" "4" "5"
           ] // {
             # Kill
             "${mod}+p" = "kill";
 
             # Navigation
-            "${mod}+h" = "focus left";
+            "${mod}+h" = "focus left"; # exec "${pkgs.i3-cycle-focus}/bin/i3-cycle-focus reverse";
             "${mod}+j" = "focus down";
             "${mod}+k" = "focus up";
-            "${mod}+l" = "focus right";
+            "${mod}+l" = "focus right"; # exec "${pkgs.i3-cycle-focus}/bin/i3-cycle-focus cycle";
 
             "${mod}+Shift+h" = "move left";
             "${mod}+Shift+j" = "move down";
@@ -323,7 +332,8 @@ in {
             # Programs
             "${mod}+Return" = exec "kitty";
             "${mod}+slash" = exec "qutebrowser";
-            "${mod}+Shift+slash" = exec "rofi -modi calc -show calc";
+            "${mod}+Shift+slash" = exec "qutebrowser --target private-window";
+            "${mod}+Shift+period" = exec "rofi -modi calc -show calc";
             "${mod}+apostrophe" = exec "rofi -modi drun -show drun -show-icons";
             "${mod}+Shift+apostrophe" = exec "rofi -modi emoji -show emoji -emoji-mode copy";
 

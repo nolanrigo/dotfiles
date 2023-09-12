@@ -7,6 +7,7 @@
           name = mkOption { type = str; };
           display = mkOption { type = str; };
           email = mkOption { type = str; };
+          autoLogin = mkOption { type = bool; };
         };
       };
     };
@@ -55,6 +56,7 @@
       name = "nolan";
       display = "Nolan Rigo";
       email = "nolan@rigo.dev";
+      autoLogin = true;
     };
     host = {
       name = "nuc-nixos";
