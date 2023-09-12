@@ -281,7 +281,7 @@
           # enableFishIntegration = true; INFO: this field is readonly
         };
 
-        exa = {
+        eza = {
           enable = true;
           enableAliases = true;
         };
@@ -319,9 +319,9 @@
             cpr = "cp -R";
 
             # Terminal
-            l = "exa -al --icons --git --group-directories-first";
+            l = "eza -al --icons --git --group-directories-first";
             ls = l;
-            ltree = "exa -al --git --icons --tree --group-directories-first";
+            ltree = "eza -al --git --icons --tree --group-directories-first";
             cat = "bat";
             find = "fd --hidden";
             ps = "procs";
