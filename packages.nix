@@ -42,6 +42,7 @@
     };
 
     home.packages = with pkgs; [
+      qdigidoc
       vmware-horizon-client
       neofetch
       sl
