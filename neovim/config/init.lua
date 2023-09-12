@@ -332,7 +332,7 @@ require("lazy").setup({
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function () 
       local builtin = require("telescope.builtin")
-      local themes = require("telescope.themes");
+      local themes = require("telescope.themes")
 
       -- IMPROVE: use fzf plugin, do I use fzf ?
 
@@ -340,6 +340,7 @@ require("lazy").setup({
       vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = '[F]ind [D]iagnostics' })
       vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "[F]ind file by [G]rep" })
       vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = '[F]ind existing [B]uffers' }) -- vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
+      vim.keymap.set("n", "<leader><space>", builtin.buffers, { desc = '[F]ind existing [B]uffers' }) -- vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
       vim.keymap.set("n", "<leader>fs", function ()
         builtin.grep_string({ search = vim.fn.input("Grep > ") })
       end)
@@ -435,11 +436,10 @@ require("lazy").setup({
     "neoclide/coc.nvim",
     branch = "release",
     build = function ()
-      print("build")
+      vim.cmd[[CocInstall coc-explorer]]
     end,
     config = function ()
-      print("config")
-      vim.api.nvim_set_keymap('n', '<leader>fe', [[<Cmd>CocCommand explorer --position=floating --toggle --no-quit-on-open --sources=file+ --explorer.file.showHiddenFiles <CR>]], { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<leader>fe', [[<Cmd>CocCommand explorer --position=floating --toggle --no-quit-on-open --sources=file+ <CR>]], { noremap = true, silent = true })
     end,
   },
   -- INFO: when lua_lsp will work { "folke/neodev.nvim", opts = {}, }
