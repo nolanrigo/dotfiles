@@ -14,6 +14,7 @@
 
     home.packages = with pkgs; [
       gcc
+      prettierd
     ];
 
     home.file.".config/nvim/" = {
