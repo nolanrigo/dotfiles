@@ -318,14 +318,14 @@ in {
             "${mod}+space" = "focus mode_toggle";
 
             # Media
-            "XF86AudioRaiseVolume" = exec "pactl set-sink-volume @DEFAULT_SINK@ +5%";
-            "XF86AudioLowerVolume" = exec "pactl set-sink-volume @DEFAULT_SINK@ -5%";
-            "XF86AudioMute" = exec "pactl set-sink-mute @DEFAULT_SINK@ toggle";
-            "XF86AudioMicMute" = exec "pactl set-source-mute @DEFAULT_SOURCE@ toggle";
-            "XF86AudioPlay" = exec "playerctl play-pause";
-            "XF86AudioPause" = exec "playerctl play-pause";
-            "XF86AudioNext" = exec "playerctl next";
-            "XF86AudioPrev" = exec "playerctl previous";
+            "XF86AudioRaiseVolume" = exec "${pkgs.pulseaudio}/bin/pactl set-sink-volume @DEFAULT_SINK@ +5%";
+            "XF86AudioLowerVolume" = exec "${pkgs.pulseaudio}/bin/pactl set-sink-volume @DEFAULT_SINK@ -5%";
+            "XF86AudioMute" = exec "${pkgs.pulseaudio}/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle";
+            "XF86AudioMicMute" = exec "${pkgs.pulseaudio}/bin/pactl set-source-mute @DEFAULT_SOURCE@ toggle";
+            "XF86AudioPlay" = exec "${pkgs.playerctl}/bin/playerctl play-pause";
+            "XF86AudioPause" = exec "${pkgs.playerctl}/bin/playerctl play-pause";
+            "XF86AudioNext" = exec "${pkgs.playerctl}/bin/playerctl next";
+            "XF86AudioPrev" = exec "${pkgs.playerctl}/bin/playerctl previous";
             "XF86ScreenSaver" = exec "betterlockscreen --lock";
             "Print" = exec "flameshot gui";
 

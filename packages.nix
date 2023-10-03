@@ -4,7 +4,7 @@
   nixpkgs.config.allowUnfree = true;
 
   # Automatically update nix channels
-  system.autoUpgrade.enable = true;        
+  system.autoUpgrade.enable = true;
 
   nix = {
     settings = {
@@ -61,8 +61,9 @@
       unzip zip # Zip files
       unrar # Rar files
       xclip
-      playerctl
-      pulseaudio
+      # playerctl
+      # pulseaudio
+      qpwgraph
       killall
       youtube-dl
       ripgrep

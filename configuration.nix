@@ -377,6 +377,36 @@
                   $EDITOR ./shell.nix
                 end
               '';
+            mmry = ''
+              set pid $argv[1]
+              set follow $argv[2]
+
+              if test -z "$pid"
+                  echo "Please provide a PID."
+                  return 1
+              end
+
+              if not test -f /proc/$pid/status
+                  echo "Invalid PID or insufficient permissions."
+                  return 1
+              end
+
+              while true
+                  if test "$follow" = "-f"
+                    clear
+                  end
+                  set memory_lines (grep 'Vm' /proc/$pid/status)
+                  for line in $memory_lines
+                      echo $line
+                  end
+
+                  if not test "$follow" = "-f"
+                      break
+                  end
+
+                  sleep 1
+              end
+            '';
           };
         };
 
