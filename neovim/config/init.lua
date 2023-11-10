@@ -544,7 +544,6 @@ require("lazy").setup({
         fallback_formatter = {
           formatters.remove_trailing_whitespace,
           formatters.remove_trailing_newlines,
-          formatters.prettierd,
         },
 
         -- By default, all shell commands are prefixed with "sh -c" (see PR #3)

@@ -19,7 +19,7 @@
       nci = "npm ci";
       nid = "npm i -D";
       nun = "npm un";
-      ncu = "npx npm-check-updates -u";
+      ncu = "npx npm-check-updates -i";
       ycu = "yarn upgrade-interactive --latest";
       npkill = "npx npkill";
 
