@@ -1,7 +1,14 @@
 { config, lib, pkgs, ... }: {
 
   # Allow unfree
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    packageOverrides = pkgs: {
+      nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
+        inherit pkgs;
+      };
+    };
+  };
 
   # Automatically update nix channels
   system.autoUpgrade.enable = true;
@@ -19,26 +26,12 @@
   };
 
   # Overlays
-  nixpkgs.overlays = [
-    # Discord
-    (self: super: {
-      discord = super.discord.overrideAttrs (
-        _: {
-          src = builtins.fetchTarball {
-            url = "https://discord.com/api/download?platform=linux&format=tar.gz";
-            sha256 = "sha256:1kwqn1xr96kvrlbjd14m304g2finc5f5ljvnklg6fs5k4avrvmn4";
-          };
-        }
-      );
-    })
-  ];
+  nixpkgs.overlays = [];
 
   home-manager.users.${config.user.name} = {
     xdg.configFile.nixpkgs = {
       target = "nixpkgs/config.nix";
-      text = ''
-        { allowUnfree = true; }
-      '';
+      source = ./nixpkgs.nix;
     };
 
     home.packages = with pkgs; [

@@ -7,6 +7,7 @@
     ./modules/accounts.nix
     ./modules/dunst.nix
     ./modules/qutebrowser.nix
+    ./modules/firefox.nix
     ./modules/discord.nix
     ./modules/i3.nix
     ./modules/bluetooth.nix

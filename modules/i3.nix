@@ -331,8 +331,8 @@ in {
 
             # Programs
             "${mod}+Return" = exec "kitty";
-            "${mod}+slash" = exec "qutebrowser";
-            "${mod}+Shift+slash" = exec "qutebrowser --target private-window";
+            "${mod}+slash" = exec "firefox"; # exec "qutebrowser";
+            "${mod}+Shift+slash" = exec "firefox --private-window"; # exec "qutebrowser --target private-window";
             "${mod}+Shift+period" = exec "rofi -modi calc -show calc";
             "${mod}+apostrophe" = exec "rofi -modi drun -show drun -show-icons";
             "${mod}+Shift+apostrophe" = exec "rofi -modi emoji -show emoji -emoji-mode copy";

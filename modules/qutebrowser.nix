@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: let 
+{ config, pkgs, ... }: let
   theme = pkgs.fetchFromGitHub {
     name = "qutebrowser-dracula-theme";
     owner = "dracula";
@@ -22,17 +22,12 @@
   );
 in {
   home-manager.users.${config.user.name} = {
-
-    home.packages = with pkgs; [
-      brave
-    ];
-
     xdg.configFile."qutebrowser/dracula" = {
       source = theme;
     };
 
     programs.qutebrowser = {
-      enable = true;
+      enable = false;
       package = pkgs.qutebrowser.override { enableWideVine = true; };
 
       searchEngines = (translationEngines ["fr" "en" "de" "es" "et" "et"]) // {
@@ -121,7 +116,7 @@ in {
                 'vertical': 4,
                 'horizontal': 4
             }
-        }) 
+        })
       '';
     };
   };
