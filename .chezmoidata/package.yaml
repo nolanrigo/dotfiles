@@ -1,0 +1,10 @@
+packages:
+  darwin:
+    brews:
+    - chezmoi
+    - git
+    casks:
+    - firefox-developer-edition
+    - whatsapp
+    - protonmail-bridge
+    - protonvpn
