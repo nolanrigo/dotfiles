@@ -1,0 +1,4 @@
+.direnv/
+secrets.nix
+.ssh/id_rsa
+.ssh/id_rsa.pub

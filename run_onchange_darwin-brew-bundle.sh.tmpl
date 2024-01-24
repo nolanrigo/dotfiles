@@ -2,4 +2,5 @@
 
 # dconf.ini hash: {{ include "Brewfile" | sha256sum }}
 
+brew bundle cleanup --verbose --force
 brew bundle --verbose --file=Brewfile
